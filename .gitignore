@@ -6,6 +6,13 @@
 .quarto/
 .DS_Store
 
+# Losse render-uitvoer naast een .qmd (ontstaat bij Ctrl+Shift+K op één bestand).
+# Deze bestanden veroorzaken dubbele posts in het overzicht.
+posts/**/index.html
+posts/**/index_files/
+en/posts/**/index.html
+en/posts/**/index_files/
+
 # _site en _freeze gaan WEL mee in de commit: Netlify publiceert _site
 # en _freeze houdt de chunk-uitvoer reproduceerbaar.
 

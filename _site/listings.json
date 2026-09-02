@@ -7,25 +7,13 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/blog.html",
     "items": [
+      "/posts/2026-09-02-new-post/index.html",
       "/en/posts/2026-07-14-mind-energy/index.html",
       "/posts/2026-07-14-mind-energy/index.html",
       "/en/posts/2026-01-19-quarto-workflow/index.html",
       "/posts/2026-01-19-quarto-workflow/index.html"
-    ]
-  },
-  {
-    "listing": "/en/research.html",
-    "items": [
-      "/en/posts/2026-07-14-mind-energy/index.html"
-    ]
-  },
-  {
-    "listing": "/en/index.html",
-    "items": [
-      "/en/posts/2026-07-14-mind-energy/index.html",
-      "/en/posts/2026-01-19-quarto-workflow/index.html"
     ]
   },
   {
@@ -36,8 +24,22 @@
     ]
   },
   {
-    "listing": "/blog.html",
+    "listing": "/en/index.html",
     "items": [
+      "/en/posts/2026-07-14-mind-energy/index.html",
+      "/en/posts/2026-01-19-quarto-workflow/index.html"
+    ]
+  },
+  {
+    "listing": "/en/research.html",
+    "items": [
+      "/en/posts/2026-07-14-mind-energy/index.html"
+    ]
+  },
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/2026-09-02-new-post/index.html",
       "/en/posts/2026-07-14-mind-energy/index.html",
       "/posts/2026-07-14-mind-energy/index.html",
       "/en/posts/2026-01-19-quarto-workflow/index.html",

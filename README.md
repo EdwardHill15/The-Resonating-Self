@@ -50,9 +50,22 @@ mkdir -p posts/2026-09-14-mijn-artikel
 cp posts/_template.qmd posts/2026-09-14-mijn-artikel/index.qmd
 ```
 
-Open het bestand in RStudio, schrijf, en gebruik **Render** (of `Ctrl+Shift+K`)
-voor een preview van alleen dat artikel. `quarto preview` geeft de hele site met
-live herladen.
+Open het bestand in RStudio en schrijf. Gebruik voor de preview
+`quarto preview` in de terminal — dat geeft de hele site met live herladen.
+
+Vermijd **Render** / `Ctrl+Shift+K` op één artikel: dat schrijft een `index.html`
+naast de `index.qmd`, en zulke losse bestanden verschijnen als dubbele post in
+het overzicht. Staan ze er al, ruim ze dan op:
+
+```bash
+find posts en/posts -name index.html -delete
+find posts en/posts -name 'index_files' -type d -exec rm -rf {} +
+git rm -r --cached posts en/posts
+git add posts en/posts
+```
+
+De listings matchen sinds v7 expliciet op `posts/*/index.qmd`, dus losse HTML
+wordt niet meer meegeteld. `.gitignore` houdt hem bovendien uit de repository.
 
 Als het klaar is: haal `draft: true` uit de kop, dan:
 

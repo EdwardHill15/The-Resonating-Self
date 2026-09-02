@@ -2,90 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://the-resonating-self.netlify.app/theory.html</loc>
-    <lastmod>2026-09-02T09:55:11.794Z</lastmod>
+    <lastmod>2026-09-02T10:59:33.640Z</lastmod>
   </url>
   <url>
     <loc>https://the-resonating-self.netlify.app/research.html</loc>
-    <lastmod>2026-09-02T09:55:11.752Z</lastmod>
+    <lastmod>2026-09-02T10:59:34.436Z</lastmod>
   </url>
   <url>
-    <loc>https://the-resonating-self.netlify.app/posts/2026-07-14-mind-energy/index.html</loc>
-    <lastmod>2026-09-02T09:55:12.446Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/index.html</loc>
-    <lastmod>2026-09-02T09:55:12.536Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/thanks.html</loc>
-    <lastmod>2026-09-02T09:55:09.672Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/research.html</loc>
-    <lastmod>2026-09-02T09:55:12.250Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/posts/2026-07-14-mind-energy/index.html</loc>
-    <lastmod>2026-09-02T09:55:12.366Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/index.html</loc>
-    <lastmod>2026-09-02T09:55:12.218Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/blog.html</loc>
-    <lastmod>2026-09-02T09:55:12.203Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/contact.html</loc>
-    <lastmod>2026-09-02T09:55:12.525Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/bedankt.html</loc>
-    <lastmod>2026-09-02T09:55:09.864Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/about.html</loc>
-    <lastmod>2026-09-02T09:55:12.479Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/blog.html</loc>
-    <lastmod>2026-09-02T09:55:12.493Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/about.html</loc>
-    <lastmod>2026-09-02T09:55:12.193Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/contact.html</loc>
-    <lastmod>2026-09-02T09:55:12.203Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/posts/2026-01-19-quarto-workflow/index.html</loc>
-    <lastmod>2026-09-02T09:55:12.347Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/publications.html</loc>
-    <lastmod>2026-09-02T09:55:12.234Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/suite.html</loc>
-    <lastmod>2026-09-02T09:55:12.265Z</lastmod>
-  </url>
-  <url>
-    <loc>https://the-resonating-self.netlify.app/en/theory.html</loc>
-    <lastmod>2026-09-02T09:55:12.290Z</lastmod>
+    <loc>https://the-resonating-self.netlify.app/posts/2026-09-02-new-post/index.html</loc>
+    <lastmod>2026-09-02T10:46:35.573Z</lastmod>
   </url>
   <url>
     <loc>https://the-resonating-self.netlify.app/posts/2026-01-19-quarto-workflow/index.html</loc>
-    <lastmod>2026-09-02T09:55:12.430Z</lastmod>
+    <lastmod>2026-09-02T10:59:34.282Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/theory.html</loc>
+    <lastmod>2026-09-02T10:59:34.153Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/suite.html</loc>
+    <lastmod>2026-09-02T10:59:34.118Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/publications.html</loc>
+    <lastmod>2026-09-02T10:59:34.091Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/posts/2026-01-19-quarto-workflow/index.html</loc>
+    <lastmod>2026-09-02T10:59:34.197Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/contact.html</loc>
+    <lastmod>2026-09-02T10:59:34.064Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/about.html</loc>
+    <lastmod>2026-09-02T10:59:34.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/blog.html</loc>
+    <lastmod>2026-09-02T10:59:34.350Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/about.html</loc>
+    <lastmod>2026-09-02T10:59:34.327Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/bedankt.html</loc>
+    <lastmod>2026-09-02T10:59:34.338Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/contact.html</loc>
+    <lastmod>2026-09-02T10:59:34.381Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/blog.html</loc>
+    <lastmod>2026-09-02T10:59:34.052Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/index.html</loc>
+    <lastmod>2026-09-02T10:59:34.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/posts/2026-07-14-mind-energy/index.html</loc>
+    <lastmod>2026-09-02T10:59:34.216Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/research.html</loc>
+    <lastmod>2026-09-02T10:59:34.105Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/en/thanks.html</loc>
+    <lastmod>2026-09-02T10:59:34.132Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/index.html</loc>
+    <lastmod>2026-09-02T10:59:34.393Z</lastmod>
+  </url>
+  <url>
+    <loc>https://the-resonating-self.netlify.app/posts/2026-07-14-mind-energy/index.html</loc>
+    <lastmod>2026-09-02T10:59:34.295Z</lastmod>
   </url>
   <url>
     <loc>https://the-resonating-self.netlify.app/publications.html</loc>
-    <lastmod>2026-09-02T09:55:12.557Z</lastmod>
+    <lastmod>2026-09-02T10:59:34.414Z</lastmod>
   </url>
   <url>
     <loc>https://the-resonating-self.netlify.app/suite.html</loc>
-    <lastmod>2026-09-02T09:55:11.782Z</lastmod>
+    <lastmod>2026-09-02T10:59:33.625Z</lastmod>
   </url>
 </urlset>

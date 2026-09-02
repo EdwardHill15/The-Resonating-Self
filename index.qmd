@@ -4,7 +4,7 @@ page-layout: full
 toc: false
 listing:
   id: recent
-  contents: posts
+  contents: posts/*/index.qmd
   type: grid
   grid-columns: 3
   max-items: 3
