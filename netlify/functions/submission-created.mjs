@@ -1,6 +1,6 @@
 /* Wordt door Netlify automatisch aangeroepen zodra iemand een formulier op de
    site verstuurt (event: submission-created). Mailt de inhoud van de inzending
-   naar total-health@kpnmail.nl via Resend.
+   naar totalegezondheidbv@gmail.com via Resend.
 
    Ontbreekt RESEND_API_KEY of MAIL_FROM, dan doet de functie niets en breekt er
    niets: de inzending staat altijd in het Netlify-dashboard onder Forms.
@@ -8,9 +8,9 @@
    Omgevingsvariabelen (Netlify -> Site configuration -> Environment variables):
      RESEND_API_KEY   van resend.com
      MAIL_FROM        verifieerd afzenderadres, bv. site@jouwdomein.nl
-     MAIL_TO          standaard total-health@kpnmail.nl                        */
+     MAIL_TO          standaard totalegezondheidbv@gmail.com                        */
 
-const MAIL_TO = process.env.MAIL_TO || "total-health@kpnmail.nl";
+const MAIL_TO = process.env.MAIL_TO || "totalegezondheidbv@gmail.com";
 
 const esc = (s) =>
   String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

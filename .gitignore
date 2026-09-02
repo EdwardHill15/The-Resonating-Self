@@ -8,3 +8,6 @@
 
 # _site en _freeze gaan WEL mee in de commit: Netlify publiceert _site
 # en _freeze houdt de chunk-uitvoer reproduceerbaar.
+
+/.quarto/
+**/*.quarto_ipynb
