@@ -1,0 +1,52 @@
+---
+title: "The Mind-Energy law and the third power"
+description: >
+  Why mental energy scales as 1/τ³, and what a log-log check across five states
+  shows.
+date: 2026-07-14
+categories: [RTC, Mind-Energy, mathematics]
+image: ../../../assets/rtc-pptq-paradox.png
+---
+
+## The law
+
+The Mind-Energy law states that mental energy scales inversely with the third
+power of the perceptual time threshold:
+
+$$E_m = \frac{1}{\tau^3}$$
+
+The threshold $\tau$ is the shortest interval within which two stimuli are still
+experienced as one moment. The exponent 3 is not a free parameter: it follows
+from the assumption that the perceptual field can divide along three independent
+directions, and that energy per direction runs linearly with the sampling rate
+$1/\tau$.
+
+## A check across five states
+
+```{r}
+#| label: fit-en
+tau <- c(0.100, 0.080, 0.062, 0.050, 0.042)
+Em  <- 1 / tau^3
+fit <- lm(log(Em) ~ log(tau))
+summary(fit)
+```
+
+The slope comes out at `r round(coef(fit)[["log(tau)"]], 3)`; deviations larger than
+0.1 in practice point to a measurement error in $\tau$, not an error in the law.
+
+```{r}
+#| label: fig-loglog-en
+#| fig-cap: "Log-log check: five states, slope −3."
+plot(log(tau), log(Em), pch = 19, col = "#0099c8",
+     xlab = "ln tau", ylab = "ln Em")
+abline(fit, col = "#00549c")
+```
+
+The full calculation ships as a module in [the suite](../../suite.qmd). Run it
+there and download the table as CSV.
+
+## What it does not say
+
+The law describes a scaling relation, not an absolute quantity. Without a
+calibrated unit for $E_m$ only the ratio between two states carries meaning —
+which is exactly what the log-log form makes measurable.

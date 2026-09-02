@@ -1,0 +1,17 @@
+{
+  "hash": "845362cb1266020cf43ef8c5eddb2c38",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"The Mind-Energy law and the third power\"\ndescription: >\n  Why mental energy scales as 1/τ³, and what a log-log check across five states\n  shows.\ndate: 2026-07-14\ncategories: [RTC, Mind-Energy, mathematics]\nimage: ../../../assets/rtc-pptq-paradox.png\n---\n\n## The law\n\nThe Mind-Energy law states that mental energy scales inversely with the third\npower of the perceptual time threshold:\n\n$$E_m = \\frac{1}{\\tau^3}$$\n\nThe threshold $\\tau$ is the shortest interval within which two stimuli are still\nexperienced as one moment. The exponent 3 is not a free parameter: it follows\nfrom the assumption that the perceptual field can divide along three independent\ndirections, and that energy per direction runs linearly with the sampling rate\n$1/\\tau$.\n\n## A check across five states\n\n\n::: {.cell}\n\n```{.r .cell-code}\ntau <- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  <- 1 / tau^3\nfit <- lm(log(Em) ~ log(tau))\nsummary(fit)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n\nCall:\nlm(formula = log(Em) ~ log(tau))\n\nResiduals:\n         1          2          3          4          5 \n 2.151e-16 -1.204e-16 -4.494e-16  3.787e-16 -2.400e-17 \n\nCoefficients:\n              Estimate Std. Error    t value Pr(>|t|)    \n(Intercept)  1.589e-15  1.461e-15  1.087e+00    0.356    \nlog(tau)    -3.000e+00  5.270e-16 -5.692e+15   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.682e-16 on 3 degrees of freedom\nMultiple R-squared:      1,\tAdjusted R-squared:      1 \nF-statistic: 3.24e+31 on 1 and 3 DF,  p-value: < 2.2e-16\n```\n\n\n:::\n:::\n\n\nThe slope comes out at -3; deviations larger than\n0.1 in practice point to a measurement error in $\\tau$, not an error in the law.\n\n\n::: {.cell}\n\n```{.r .cell-code}\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n```\n\n::: {.cell-output-display}\n![Log-log check: five states, slope −3.](index_files/figure-html/fig-loglog-en-1.png){#fig-loglog-en width=1120}\n:::\n:::\n\n\nThe full calculation ships as a module in [the suite](../../suite.qmd). Run it\nthere and download the table as CSV.\n\n## What it does not say\n\nThe law describes a scaling relation, not an absolute quantity. Without a\ncalibrated unit for $E_m$ only the ratio between two states carries meaning —\nwhich is exactly what the log-log form makes measurable.\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

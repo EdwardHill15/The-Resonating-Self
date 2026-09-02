@@ -1,0 +1,83 @@
+---
+title: "Resonance Theory of Consciousness"
+subtitle: "The assumptions, the formulas and what remains open"
+lang: en
+toc-title: "On this page"
+---
+
+::: {.eyebrow}
+Theory
+:::
+
+RTC describes conscious experience as a resonance state of a coupled oscillator
+field. The theory is built to be computable: every step below has a module in
+[the suite](suite.qmd).
+
+## The starting point
+
+Perception is not instantaneous. What is experienced as one moment spans an
+interval of a few tens of milliseconds. RTC takes that interval, the perceptual
+time threshold $\tau$, as its point of departure rather than as a measurement
+artefact.
+
+## Four assumptions
+
+1. The brain holds a large number of oscillators with differing natural frequencies.
+2. Those oscillators are mutually coupled with a strength $K$ that can vary.
+3. Conscious access relates to the degree of phase synchronisation, measured as order parameter $R$.
+4. Attention acts not as an extra signal but as a controller of $K$.
+
+## The order parameter
+
+In the mean-field form of the Kuramoto model a single complex number summarises
+the state of the whole field:
+
+$$z = \left\langle e^{i\theta_j} \right\rangle, \qquad R = |z|, \qquad \Psi = \arg(z)$$
+
+$$\frac{d\theta_i}{dt} = \omega_i + K R \sin(\Psi - \theta_i)$$
+
+```{r}
+#| label: fig-kuramoto-en
+#| fig-cap: "Order parameter R(t) at K = 2, N = 50 oscillators."
+kuramoto <- function(N = 50, K = 2.0, dt = 0.01, steps = 2000, sd_omega = 0.5) {
+  set.seed(42)
+  omega <- rnorm(N, 0, sd_omega); theta <- runif(N, 0, 2 * pi)
+  R_hist <- numeric(steps)
+  for (s in seq_len(steps)) {
+    z <- mean(exp(1i * theta)); R <- Mod(z); Psi <- Arg(z)
+    theta <- theta + dt * (omega + K * R * sin(Psi - theta))
+    R_hist[s] <- R
+  }
+  R_hist
+}
+plot(kuramoto(), type = "l", ylim = c(0, 1), col = "#00549c",
+     xlab = "iteration", ylab = "order parameter R")
+abline(h = 0.6, lty = 2, col = "#0099c8")
+```
+
+As $K$ rises, $R$ first stays low and noisy and then jumps within a short time.
+That sharp knee is the candidate mechanism for the on-or-off character of
+conscious access.
+
+## From synchronisation to energy
+
+A field integrating phase information across a window $\tau$ can distinguish
+$1/\tau$ independent states per unit time. Assume this happens along three
+independent directions, and mental energy scales with the third power of that
+rate:
+
+$$E_m = \frac{1}{\tau^3}$$
+
+The exponent therefore follows from the dimensionality assumption, not from a
+fit. That makes it testable: a measured slope clearly departing from $-3$ refutes
+the assumption, not merely the parameter.
+
+## What remains open
+
+- The measurement procedure for $\tau$ is not calibrated across laboratories.
+- The unit of $E_m$ is not fixed, so only ratios carry meaning.
+- The link between $R$ and reported experience is correlational; the model does
+  not yet yield an independent prediction that rules out the standard alternatives.
+
+Those three points are why the computing modules on this site are open. Anyone
+who wants to test the assumptions needs the code, not only the conclusion.

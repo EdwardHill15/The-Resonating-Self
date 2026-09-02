@@ -1,6 +1,5 @@
 ---
 title: "The Resonating Self"
-subtitle: "Bewustzijn als resonantie, doorgerekend in de browser"
 page-layout: full
 toc: false
 listing:
@@ -36,6 +35,7 @@ R-code en download de uitkomst.
 ::: {layout-ncol=3}
 ::: {.card .p-4}
 #### De suite
+
 Acht RTC-modules, de volledige handleiding in NL en EN, en een R-omgeving met
 vier panelen, pakketbeheer en Quarto-preview.
 
@@ -44,6 +44,7 @@ vier panelen, pakketbeheer en Quarto-preview.
 
 ::: {.card .p-4}
 #### RTC in kort bestek
+
 Van het schijnbare nu naar de Mind-Energy-wet: de aannames, de formules en wat
 er nog openstaat.
 
@@ -52,6 +53,7 @@ er nog openstaat.
 
 ::: {.card .p-4}
 #### Alles uit .qmd
+
 Artikelen worden in RStudio als Quarto-document geschreven, lokaal gerenderd en
 via GitHub naar Netlify gepubliceerd.
 

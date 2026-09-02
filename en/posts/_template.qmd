@@ -1,0 +1,24 @@
+---
+title: "Article title"
+description: >
+  One or two lines that appear on the card in the listing.
+date: today
+categories: [RTC]          # RTC · mathematics · philosophy · workflow
+image: ../../../assets/holographic-field.jpg
+draft: true                # remove when it may go live
+---
+
+## First heading
+
+Markdown prose. Formulas inline as $\tau$ or as a block:
+
+$$E_m = \frac{1}{\tau^3}$$
+
+```{r}
+#| label: fig-example
+#| fig-cap: "Description of the figure."
+tau <- c(0.100, 0.080, 0.062)
+plot(tau, 1 / tau^3, pch = 19, col = "#0099c8", xlab = "tau", ylab = "Em")
+```
+
+Point readers at [the suite](../../suite.qmd).

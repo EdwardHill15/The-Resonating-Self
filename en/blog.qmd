@@ -1,0 +1,27 @@
+---
+title: "Articles and notes"
+subtitle: "Research, essays and short notes"
+lang: en
+page-layout: full
+toc: false
+listing:
+  id: posts-en
+  contents: posts
+  type: grid
+  grid-columns: 3
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, description, categories, reading-time]
+  feed: true
+---
+
+::: {.eyebrow}
+Blog
+:::
+
+Every piece is a Quarto document whose calculations genuinely ran at render
+time. The source of each article sits in
+[the repository](https://github.com/EdwardHill15/The-Resonating-Self/tree/main/en/posts).
+
+:::{#posts-en}
+:::

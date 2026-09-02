@@ -1,0 +1,42 @@
+---
+title: "From .qmd to published article"
+description: >
+  How every article on this site comes about: write in RStudio, render, push to
+  GitHub, Netlify publishes.
+date: 2026-01-19
+categories: [workflow, Quarto]
+image: ../../../assets/holographic-field.jpg
+---
+
+## Four steps
+
+1. **Write.** New article: `en/posts/YYYY-MM-DD-slug/index.qmd`. The YAML header
+   carries title, `description`, `date`, `categories` and `image`. The prose is
+   markdown; calculations sit in R chunks.
+2. **Render.** In RStudio: **Build → Render Website**, or `quarto render` in the
+   terminal. The result lands in `_site/`, including the figures the R chunks drew.
+3. **Push.** Source and `_site/` go to GitHub in one commit.
+4. **Publish.** Netlify picks up `_site` and puts the new version live. No build
+   step on the server.
+
+## Why rendered HTML is committed
+
+Because the R chunks need packages and data that need not live on a build
+server. Rendering locally keeps output reproducible on one machine and the deploy
+simple: Netlify publishes what is there.
+
+`freeze: auto` in `_quarto.yml` makes a chunk re-run only when its `.qmd` file
+changed. The stored results live in `_freeze/` and are committed too.
+
+## Draft and publication
+
+Set `draft: true` in the YAML header and the article stays out of the listing.
+Half-finished pieces sit safely in the repository without going live.
+
+```yaml
+---
+title: "Working title"
+date: 2026-09-01
+draft: true
+---
+```

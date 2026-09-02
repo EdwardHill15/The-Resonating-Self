@@ -1,0 +1,37 @@
+---
+title: "Edward F. Hillenaar"
+subtitle: "Psychologist, philosopher and data scientist"
+lang: en
+image: ../assets/founder-travel.jpg
+about:
+  template: solana
+  image-shape: rounded
+  image-width: 16em
+  links:
+    - icon: globe
+      text: Totale Gezondheid
+      href: https://resonance-consciousness.netlify.app/
+    - icon: github
+      text: GitHub
+      href: https://github.com/EdwardHill15
+---
+
+In my practice Totale Gezondheid I work with EMDR and mindfulness; alongside
+that I write the Resonance Theory of Consciousness, an attempt to make conscious
+experience computable as a resonance state.
+
+Those two tracks sit closer together than they appear. In practice I see daily
+that the width of the experienced now changes under stress, attention and
+training. In the theory that same width is the quantity on which the model
+stands or falls.
+
+## Why this site
+
+Because a theory resting on formulas should also be inspectable as formulas.
+Everything here is runnable: the modules execute real R code in your browser,
+and every article comes from a Quarto document whose calculations ran at render
+time.
+
+Responses, objections and measurement data are welcome. Objections especially:
+the three open points in [the theory chapter](theory.qmd) have not become
+smaller since I wrote them down.

@@ -1,0 +1,19 @@
+---
+title: "Downloads"
+subtitle: "Manual, calculator and individual figures"
+lang: en
+toc: false
+---
+
+::: {.eyebrow}
+Publications
+:::
+
+The manual and the suite work offline without installation.
+
+| Format | Title | Contents | |
+|---|---|---|---|
+| PDF · 32 pp. | Calculus Companion Manual | Derivations, worked examples and the R appendices for the RTC modules. | [Download](../downloads/Calculus_Companion_Manual_RTC_EN.pdf) |
+| HTML | RTC Companion (complete) | The entire suite in one file: manual, calculator, R environment. | [Download](../downloads/rtc-companion-compleet.html) |
+| TXT | Manual — source text | The plain text of the manual. | [Download](../downloads/manual.txt) |
+| PNG | PPTQ paradox | The same measurements on a linear and a logarithmic scale. | [Download](../assets/rtc-pptq-paradox.png) |

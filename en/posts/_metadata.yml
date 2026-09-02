@@ -1,0 +1,8 @@
+author: "Edward F. Hillenaar"
+lang: en
+freeze: auto
+title-block-banner: "#00335c"
+title-block-banner-color: "#ffffff"
+toc: true
+toc-title: "On this page"
+code-tools: true

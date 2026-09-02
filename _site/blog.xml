@@ -12,6 +12,151 @@
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Mon, 13 Jul 2026 22:00:00 GMT</lastBuildDate>
 <item>
+  <title>The Mind-Energy law and the third power</title>
+  <dc:creator>Edward F. Hillenaar</dc:creator>
+  <link>https://the-resonating-self.netlify.app/en/posts/2026-07-14-mind-energy/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="the-law" class="level2">
+<h2 class="anchored" data-anchor-id="the-law">The law</h2>
+<p>The Mind-Energy law states that mental energy scales inversely with the third power of the perceptual time threshold:</p>
+<p><img src="https://latex.codecogs.com/png.latex?E_m%20=%20%5Cfrac%7B1%7D%7B%5Ctau%5E3%7D"></p>
+<p>The threshold <img src="https://latex.codecogs.com/png.latex?%5Ctau"> is the shortest interval within which two stimuli are still experienced as one moment. The exponent 3 is not a free parameter: it follows from the assumption that the perceptual field can divide along three independent directions, and that energy per direction runs linearly with the sampling rate <img src="https://latex.codecogs.com/png.latex?1/%5Ctau">.</p>
+</section>
+<section id="a-check-across-five-states" class="level2">
+<h2 class="anchored" data-anchor-id="a-check-across-five-states">A check across five states</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1">tau <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">c</span>(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.100</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.080</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.062</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.050</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.042</span>)</span>
+<span id="cb1-2">Em  <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span> tau<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">^</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb1-3">fit <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">lm</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log</span>(Em) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">~</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log</span>(tau))</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">summary</span>(fit)</span></code></pre></div></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = log(Em) ~ log(tau))
+
+Residuals:
+         1          2          3          4          5 
+ 2.151e-16 -1.204e-16 -4.494e-16  3.787e-16 -2.400e-17 
+
+Coefficients:
+              Estimate Std. Error    t value Pr(&gt;|t|)    
+(Intercept)  1.589e-15  1.461e-15  1.087e+00    0.356    
+log(tau)    -3.000e+00  5.270e-16 -5.692e+15   &lt;2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 3.682e-16 on 3 degrees of freedom
+Multiple R-squared:      1, Adjusted R-squared:      1 
+F-statistic: 3.24e+31 on 1 and 3 DF,  p-value: &lt; 2.2e-16</code></pre>
+</div>
+</div>
+<p>The slope comes out at -3; deviations larger than 0.1 in practice point to a measurement error in <img src="https://latex.codecogs.com/png.latex?%5Ctau">, not an error in the law.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log</span>(tau), <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log</span>(Em), <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">pch =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">19</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#0099c8"</span>,</span>
+<span id="cb3-2">     <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">xlab =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ln tau"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">ylab =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ln Em"</span>)</span>
+<span id="cb3-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">abline</span>(fit, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">col =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#00549c"</span>)</span></code></pre></div></div>
+<div class="cell-output-display">
+<div id="fig-loglog-en" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-loglog-en-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://the-resonating-self.netlify.app/en/posts/2026-07-14-mind-energy/index_files/figure-html/fig-loglog-en-1.png" class="img-fluid figure-img" width="1120">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-loglog-en-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Log-log check: five states, slope −3.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The full calculation ships as a module in <a href="../../../en/suite.html">the suite</a>. Run it there and download the table as CSV.</p>
+</section>
+<section id="what-it-does-not-say" class="level2">
+<h2 class="anchored" data-anchor-id="what-it-does-not-say">What it does not say</h2>
+<p>The law describes a scaling relation, not an absolute quantity. Without a calibrated unit for <img src="https://latex.codecogs.com/png.latex?E_m"> only the ratio between two states carries meaning — which is exactly what the log-log form makes measurable.</p>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>RTC</category>
+  <category>Mind-Energy</category>
+  <category>mathematics</category>
+  <guid>https://the-resonating-self.netlify.app/en/posts/2026-07-14-mind-energy/</guid>
+  <pubDate>Mon, 13 Jul 2026 22:00:00 GMT</pubDate>
+  <media:content url="https://the-resonating-self.netlify.app/assets/rtc-pptq-paradox.png" medium="image" type="image/png" height="112" width="144"/>
+</item>
+<item>
   <title>De Mind-Energy-wet en de derde macht</title>
   <dc:creator>Edward F. Hillenaar</dc:creator>
   <link>https://the-resonating-self.netlify.app/posts/2026-07-14-mind-energy/</link>
@@ -155,6 +300,80 @@ Figuur&nbsp;1: Log-log-controle: vijf toestanden, helling −3.
   <guid>https://the-resonating-self.netlify.app/posts/2026-07-14-mind-energy/</guid>
   <pubDate>Mon, 13 Jul 2026 22:00:00 GMT</pubDate>
   <media:content url="https://the-resonating-self.netlify.app/assets/rtc-pptq-paradox.png" medium="image" type="image/png" height="112" width="144"/>
+</item>
+<item>
+  <title>From .qmd to published article</title>
+  <dc:creator>Edward F. Hillenaar</dc:creator>
+  <link>https://the-resonating-self.netlify.app/en/posts/2026-01-19-quarto-workflow/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="four-steps" class="level2">
+<h2 class="anchored" data-anchor-id="four-steps">Four steps</h2>
+<ol type="1">
+<li><strong>Write.</strong> New article: <code>en/posts/YYYY-MM-DD-slug/index.qmd</code>. The YAML header carries title, <code>description</code>, <code>date</code>, <code>categories</code> and <code>image</code>. The prose is markdown; calculations sit in R chunks.</li>
+<li><strong>Render.</strong> In RStudio: <strong>Build → Render Website</strong>, or <code>quarto render</code> in the terminal. The result lands in <code>_site/</code>, including the figures the R chunks drew.</li>
+<li><strong>Push.</strong> Source and <code>_site/</code> go to GitHub in one commit.</li>
+<li><strong>Publish.</strong> Netlify picks up <code>_site</code> and puts the new version live. No build step on the server.</li>
+</ol>
+</section>
+<section id="why-rendered-html-is-committed" class="level2">
+<h2 class="anchored" data-anchor-id="why-rendered-html-is-committed">Why rendered HTML is committed</h2>
+<p>Because the R chunks need packages and data that need not live on a build server. Rendering locally keeps output reproducible on one machine and the deploy simple: Netlify publishes what is there.</p>
+<p><code>freeze: auto</code> in <code>_quarto.yml</code> makes a chunk re-run only when its <code>.qmd</code> file changed. The stored results live in <code>_freeze/</code> and are committed too.</p>
+</section>
+<section id="draft-and-publication" class="level2">
+<h2 class="anchored" data-anchor-id="draft-and-publication">Draft and publication</h2>
+<p>Set <code>draft: true</code> in the YAML header and the article stays out of the listing. Half-finished pieces sit safely in the repository without going live.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">title</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Working title"</span></span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">date</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> 2026-09-01</span></span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">draft</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">:</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;"> </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">true</span></span>
+<span id="cb1-5"><span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">---</span></span></code></pre></div></div>
+
+
+<!-- -->
+
+</section>
+
+ ]]></description>
+  <category>workflow</category>
+  <category>Quarto</category>
+  <guid>https://the-resonating-self.netlify.app/en/posts/2026-01-19-quarto-workflow/</guid>
+  <pubDate>Sun, 18 Jan 2026 23:00:00 GMT</pubDate>
+  <media:content url="https://the-resonating-self.netlify.app/assets/holographic-field.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Van .qmd naar gepubliceerd artikel</title>

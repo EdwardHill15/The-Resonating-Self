@@ -1,0 +1,136 @@
+/* Total Health Design System — webfonts and brand chrome.
+   Loaded via format.html.css so url() paths stay relative to /brand.css. */
+
+@font-face{font-family:"Oranienbaum";src:url("assets/fonts/Oranienbaum-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Carlito";src:url("assets/fonts/Carlito-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Carlito";src:url("assets/fonts/Carlito-Italic.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Carlito";src:url("assets/fonts/Carlito-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Carlito";src:url("assets/fonts/Carlito-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+
+:root{
+  --blue-700:#00549c; --blue-900:#00335c;
+  --teal-400:#2bb6dd; --teal-500:#0099c8; --teal-600:#007fa8;
+  --sky-050:#f1f7fb; --sky-100:#dbe9f2;
+  --ink:#1c2a33; --muted:#5d7280; --border-hair:#d9e3ea;
+  --content-max:1120px;
+  --shadow-card:0 1px 2px rgba(0,51,92,.05), 0 8px 24px rgba(0,51,92,.06);
+  --shadow-card-hover:0 2px 4px rgba(0,51,92,.07), 0 14px 32px rgba(0,51,92,.10);
+}
+
+body{font-family:"Carlito","Calibri",Arial,sans-serif;color:var(--ink);}
+h1,h2,h3,h4,h5,.navbar-brand,.quarto-title-block .title,.listing-title,.card-title{
+  font-family:"Oranienbaum",Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:.002em;
+}
+p,li{text-wrap:pretty}
+.page-columns .content p{max-width:70ch}
+
+/* ---- header ---------------------------------------------------------- */
+.navbar{
+  background:rgba(255,255,255,.94)!important;
+  backdrop-filter:saturate(1.4) blur(6px);
+  border-bottom:1px solid var(--border-hair);
+  padding-block:.35rem;
+}
+.navbar-brand{font-size:1.4rem;color:var(--blue-700)!important}
+.navbar .nav-link{
+  color:var(--ink)!important;font-size:.95rem;
+  padding:.42rem .8rem!important;border-radius:999px;
+  transition:background .16s ease,color .16s ease;
+}
+.navbar .nav-link:hover{background:var(--sky-050);color:var(--blue-700)!important}
+.navbar .nav-link.active,.navbar .nav-item.active .nav-link{
+  background:var(--sky-050);color:var(--blue-700)!important;
+}
+
+/* language switch, injected by brand.js */
+.lang-switch{display:flex;align-items:center;gap:1px;margin-left:.6rem;padding-left:.7rem;border-left:1px solid var(--border-hair)}
+.lang-switch a{
+  font-size:.8rem;letter-spacing:.04em;padding:.3rem .45rem;color:var(--muted);
+  text-decoration:none;border-radius:6px;
+}
+.lang-switch a:hover{color:var(--blue-700);background:var(--sky-050)}
+.lang-switch a[aria-current="true"]{color:var(--blue-700);font-weight:700}
+
+/* ---- hero ------------------------------------------------------------ */
+.hero{
+  position:relative;color:#fff;
+  margin:0 calc(50% - 50vw) 3.5rem;padding:6rem 1.5rem 5.5rem;width:100vw;
+  background:linear-gradient(180deg,rgba(0,32,58,.72),rgba(0,32,58,.88)),
+             url("assets/waterfall-1.jpg") center/cover no-repeat;
+}
+.hero-inner{max-width:var(--content-max);margin:0 auto}
+.hero h1{color:#fff;font-size:3.2rem;line-height:1.06;max-width:19ch;margin:0 0 1.1rem}
+.hero p{color:var(--sky-100);font-size:1.18rem;line-height:1.55;max-width:62ch;margin:0 0 1.7rem}
+.hero .eyebrow{color:var(--teal-400)}
+.hero .btn{border-radius:999px;padding:.72rem 1.65rem;font-size:1rem;margin-right:.6rem}
+.hero .btn-primary{background:var(--teal-500);border-color:var(--teal-500)}
+.hero .btn-primary:hover{background:var(--teal-600);border-color:var(--teal-600)}
+.hero .btn-outline-light:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* eyebrow label */
+.eyebrow{
+  font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--teal-600);margin-bottom:.9rem;
+}
+
+/* ---- cards & listings ------------------------------------------------ */
+.card{
+  border:1px solid var(--border-hair);border-radius:12px;background:#fff;
+  box-shadow:var(--shadow-card);transition:box-shadow .16s ease;
+}
+.card:hover{box-shadow:var(--shadow-card-hover)}
+.card h4,.card h3{margin-top:0;font-size:1.4rem}
+.quarto-grid-item .card-img-top,.quarto-grid-item img{border-radius:12px 12px 0 0}
+.listing-categories .listing-category{
+  border:1px solid var(--border-hair);border-radius:999px;padding:.15rem .7rem;
+  font-size:.78rem;color:var(--blue-700);background:var(--sky-050);margin-right:.3rem;
+}
+.quarto-listing-category .category{color:var(--muted);cursor:pointer}
+.quarto-listing-category .category.active{color:var(--blue-700);font-weight:700}
+.listing-date,.listing-reading-time{color:var(--muted);font-size:.85rem}
+table.quarto-listing-table thead th{
+  border-bottom:1px solid var(--border-hair);font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted);font-weight:400;
+}
+table.quarto-listing-table td{border-bottom:1px solid var(--border-hair);padding:1.1rem .4rem}
+
+/* ---- equations, code, figures ---------------------------------------- */
+.katex-display{
+  background:var(--sky-050);border-radius:10px;padding:1.05rem 1.2rem;margin:1.5rem 0;
+}
+div.sourceCode{background:var(--blue-900);border:0;border-radius:8px 8px 0 0;margin-bottom:0}
+div.sourceCode pre,div.sourceCode pre code{background:transparent;color:#e8f2f8}
+pre code span.co{color:#8fb8cc}
+pre code span.st,pre code span.dv,pre code span.fl{color:#2bb6dd}
+.cell-output pre{background:var(--sky-050);border:0;border-radius:0 0 8px 8px;margin-top:0}
+.cell-output-display img{border:1px solid var(--border-hair);border-radius:8px;background:#fff}
+figcaption{color:var(--muted);font-size:.85rem}
+
+/* ---- title blocks, toc, footer --------------------------------------- */
+.quarto-title-block .quarto-title-banner{background:var(--blue-900)!important}
+.quarto-title-banner h1,.quarto-title-banner .subtitle{color:#fff!important}
+#quarto-margin-sidebar .nav-link{color:var(--muted);font-size:.88rem}
+#quarto-margin-sidebar .nav-link.active{color:var(--blue-700);border-left-color:var(--teal-500)}
+#TOC>h2,.toc-actions{color:var(--muted)}
+.nav-footer{
+  background:var(--blue-900);color:var(--sky-100);border-top:0;padding-block:1.6rem;
+}
+.nav-footer a{color:var(--sky-100)}
+.nav-footer a:hover{color:#fff}
+
+/* ---- the suite iframe ------------------------------------------------ */
+.suite-frame{
+  width:100%;height:calc(100vh - 150px);min-height:680px;
+  border:1px solid var(--border-hair);border-radius:12px;background:var(--sky-050);
+}
+
+a{color:var(--blue-700)}
+a:hover{color:var(--teal-600)}
+.btn-primary{background:var(--blue-700);border-color:var(--blue-700);border-radius:999px}
+.btn-primary:hover{background:var(--blue-900);border-color:var(--blue-900)}
+.btn-outline-primary{color:var(--blue-700);border-color:var(--blue-700);border-radius:999px}
+
+@media (max-width:768px){
+  .hero{padding:4rem 1.25rem 3.5rem}
+  .hero h1{font-size:2.3rem}
+}

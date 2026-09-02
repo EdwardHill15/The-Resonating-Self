@@ -1,0 +1,29 @@
+---
+title: "Research line"
+subtitle: "The pieces in which the theory is built up or tested"
+lang: en
+toc: false
+listing:
+  id: research-en
+  contents: posts
+  type: table
+  sort: "date desc"
+  categories: false
+  include:
+    categories: "RTC"
+  fields: [date, title, description]
+  field-display-names:
+    date: "Year"
+    title: "Title"
+    description: "Summary"
+---
+
+::: {.eyebrow}
+Research
+:::
+
+Only the pieces carrying the **RTC** category. Essays and notes sit in the
+[blog](blog.qmd).
+
+:::{#research-en}
+:::

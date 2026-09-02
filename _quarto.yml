@@ -4,6 +4,8 @@ project:
   resources:
     - "app/**"          # the Companion Suite, copied in as-is
     - "downloads/**"
+    - "brand.css"
+    - "brand.js"
 
 website:
   title: "The Resonating Self"
@@ -12,6 +14,7 @@ website:
   favicon: assets/favicon.png
   navbar:
     background: light
+    collapse-below: lg
     left:
       - href: index.qmd
         text: Home
@@ -25,13 +28,14 @@ website:
         text: Onderzoek
       - href: publications.qmd
         text: Publicaties
-    right:
       - href: about.qmd
         text: Over
       - href: contact.qmd
         text: Contact
   page-footer:
+    background: dark
     left: "© 2026 Edward F. Hillenaar · The Resonating Self"
+    center: "Geschreven in Quarto · beheerd in GitHub · gepubliceerd via Netlify"
     right:
       - text: "Bron op GitHub"
         href: https://github.com/EdwardHill15/The-Resonating-Self
@@ -39,7 +43,11 @@ website:
 format:
   html:
     theme: [default, styles.scss]
-    mainfont: Carlito, system-ui, sans-serif
+    css: brand.css
+    include-in-header:
+      - text: |
+          <script defer src="/brand.js"></script>
+    mainfont: Carlito, Calibri, Arial, sans-serif
     fontsize: 1.05rem
     linestretch: 1.6
     toc: true
