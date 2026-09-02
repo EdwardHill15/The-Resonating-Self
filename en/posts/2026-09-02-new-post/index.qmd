@@ -5,7 +5,7 @@ author: "Edward F. Hillenaar"
 date: last-modified
 date-format: "D MMMM YYYY"
 categories: [werkwijze, Quarto]
-image: ../../assets/vibration.jpg
+image: vibration.jpg
 
 bibliography: references.bib
 nocite: |
