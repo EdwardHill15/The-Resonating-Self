@@ -10,14 +10,17 @@
 <atom:link href="https://the-resonating-self.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Research and computation around the Resonance Theory of Consciousness.</description>
 <generator>quarto-1.8.25</generator>
-<lastBuildDate>Sat, 25 Jul 2026 13:09:57 GMT</lastBuildDate>
+<lastBuildDate>Wed, 02 Sep 2026 10:46:35 GMT</lastBuildDate>
 <item>
   <title>{B4F502887207:/posts/2026-09-02-new-post/index.html}</title>
   <dc:creator>Edward F. Hillenaar</dc:creator>
   <link>https://the-resonating-self.netlify.app/posts/2026-09-02-new-post/</link>
   <description>{B4F502887207:/posts/2026-09-02-new-post/index.html}</description>
+  <category>werkwijze</category>
+  <category>Quarto</category>
   <guid>https://the-resonating-self.netlify.app/posts/2026-09-02-new-post/</guid>
-  <pubDate>Sat, 25 Jul 2026 13:09:57 GMT</pubDate>
+  <pubDate>Wed, 02 Sep 2026 10:46:35 GMT</pubDate>
+  <media:content url="https://the-resonating-self.netlify.app/assets/vibration.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>{B4F502887207:/en/posts/2026-07-14-mind-energy/index.html}</title>

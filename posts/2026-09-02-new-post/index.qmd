@@ -4,6 +4,8 @@ subtitle: "Interactive Simulation of Prima Experientia and the Psychophysical Ti
 author: "Edward F. Hillenaar"
 date: last-modified
 date-format: "D MMMM YYYY"
+categories: [werkwijze, Quarto]
+image: ../../assets/vibration.jpg
 
 bibliography: references.bib
 nocite: |
@@ -25,8 +27,6 @@ execute:
   message: false
 jupyter: python3
 ---
-![Source: Brainwave entrainment & Singing Bowl Sound – Lucky Thanka/](vibration.jpg)
-
 
 # Introduction
 
