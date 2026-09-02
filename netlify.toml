@@ -12,11 +12,8 @@
 [functions]
   node_bundler = "esbuild"
 
-# Nette 404 vanuit Quarto
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+# Geen catch-all redirect: Netlify serveert 404.html automatisch wanneer een
+# pad niet bestaat. Een regel 'from = "/*"' kan bestaande pagina's afvangen.
 
 # De suite in een eigen tabblad
 [[redirects]]
