@@ -21,6 +21,18 @@
   to = "/app/index.html"
   status = 301
 
+# Elke pagina ook bereikbaar met een afsluitende schuine streep.
+# status 200 = rewrite: de URL in de adresbalk blijft staan.
+[[redirects]]
+  from = "/:page/"
+  to = "/:page.html"
+  status = 200
+
+[[redirects]]
+  from = "/en/:page/"
+  to = "/en/:page.html"
+  status = 200
+
 [[headers]]
   for = "/app/*"
   [headers.values]
