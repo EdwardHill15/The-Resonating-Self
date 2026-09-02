@@ -1,0 +1,32 @@
+# Netlify publiceert de map die Quarto lokaal heeft gerenderd.
+# Er is geen buildstap op de server: 'quarto render' draait op je eigen machine.
+
+[build]
+  publish = "_site"
+  command = ""
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Nette 404 vanuit Quarto
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+
+# De suite in een eigen tabblad
+[[redirects]]
+  from = "/suite/app"
+  to = "/app/index.html"
+  status = 301
+
+[[headers]]
+  for = "/app/*"
+  [headers.values]
+    Cross-Origin-Opener-Policy = "same-origin"
+    Cross-Origin-Embedder-Policy = "credentialless"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

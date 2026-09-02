@@ -1,0 +1,28 @@
+---
+title: "Onderzoekslijn"
+subtitle: "De stukken waarin de theorie wordt opgebouwd of getoetst"
+listing:
+  id: research
+  contents: posts
+  type: table
+  sort: "date desc"
+  categories: false
+  include:
+    categories: "RTC"
+  fields: [date, title, description]
+  field-display-names:
+    date: "Jaar"
+    title: "Titel"
+    description: "Samenvatting"
+toc: false
+---
+
+::: {.eyebrow}
+Onderzoek
+:::
+
+Alleen de stukken met de categorie **RTC**. Essays en notities staan in de
+[blog](blog.qmd).
+
+:::{#research}
+:::

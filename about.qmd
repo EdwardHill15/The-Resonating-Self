@@ -1,0 +1,36 @@
+---
+title: "Edward F. Hillenaar"
+subtitle: "Psycholoog, filosoof en datawetenschapper"
+image: assets/founder-travel.jpg
+about:
+  template: solana
+  image-shape: rounded
+  image-width: 16em
+  links:
+    - icon: globe
+      text: Totale Gezondheid
+      href: https://resonance-consciousness.netlify.app/
+    - icon: github
+      text: GitHub
+      href: https://github.com/EdwardHill15
+---
+
+In mijn praktijk Totale Gezondheid werk ik met EMDR en mindfulness; daarnaast
+schrijf ik aan de Resonance Theory of Consciousness, een poging om bewuste
+ervaring als resonantietoestand doorrekenbaar te maken.
+
+Die twee sporen liggen dichter bij elkaar dan ze lijken. In de praktijk zie ik
+dagelijks dat de breedte van het ervaren nu verandert onder spanning, aandacht en
+training. In de theorie is precies die breedte de grootheid waar het model op
+staat of valt.
+
+## Waarom deze site
+
+Omdat een theorie die op formules rust, ook te bekijken moet zijn als formules.
+Alles op deze site is uitvoerbaar: de modules draaien echte R-code in je browser,
+en elk artikel komt uit een Quarto-document waarvan de berekeningen bij het
+renderen zijn uitgevoerd.
+
+Reacties, tegenwerpingen en meetgegevens zijn welkom. Vooral tegenwerpingen: de
+drie openstaande punten in [het theoriehoofdstuk](theory.qmd) zijn er niet minder
+van geworden sinds ik ze opschreef.

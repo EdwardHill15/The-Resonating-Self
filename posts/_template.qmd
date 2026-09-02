@@ -1,0 +1,24 @@
+---
+title: "Titel van het artikel"
+description: >
+  Eén of twee regels die op de kaart in het overzicht komen te staan.
+date: today
+categories: [RTC]          # RTC · wiskunde · filosofie · werkwijze
+image: ../../assets/holographic-field.jpg
+draft: true                # weghalen als het live mag
+---
+
+## Eerste kop
+
+Tekst in markdown. Formules inline met $\tau$ of als blok:
+
+$$E_m = \frac{1}{\tau^3}$$
+
+```{r}
+#| label: fig-voorbeeld
+#| fig-cap: "Beschrijving van de figuur."
+tau <- c(0.100, 0.080, 0.062)
+plot(tau, 1 / tau^3, pch = 19, col = "#0099c8", xlab = "tau", ylab = "Em")
+```
+
+Verwijs naar de rekenomgeving met [de suite](../../suite.qmd).

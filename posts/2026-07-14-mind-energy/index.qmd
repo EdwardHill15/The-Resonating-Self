@@ -1,0 +1,52 @@
+---
+title: "De Mind-Energy-wet en de derde macht"
+description: >
+  Waarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf
+  toestanden laat zien.
+date: 2026-07-14
+categories: [RTC, Mind-Energy, wiskunde]
+image: ../../assets/rtc-pptq-paradox.png
+---
+
+## De wet
+
+De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde
+macht van de perceptuele tijdsdrempel:
+
+$$E_m = \frac{1}{\tau^3}$$
+
+De drempel $\tau$ is de kleinste tijdsduur waarbinnen twee prikkels nog als één
+moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de
+aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan
+opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie
+$1/\tau$ meeloopt.
+
+## Controle op vijf toestanden
+
+```{r}
+#| label: fit
+tau <- c(0.100, 0.080, 0.062, 0.050, 0.042)
+Em  <- 1 / tau^3
+fit <- lm(log(Em) ~ log(tau))
+summary(fit)
+```
+
+De helling komt uit op `r round(coef(fit)[["log(tau)"]], 3)`; afwijkingen groter dan
+0,1 wijzen in de praktijk op een meetfout in $\tau$, niet op een fout in de wet.
+
+```{r}
+#| label: fig-loglog
+#| fig-cap: "Log-log-controle: vijf toestanden, helling −3."
+plot(log(tau), log(Em), pch = 19, col = "#0099c8",
+     xlab = "ln tau", ylab = "ln Em")
+abline(fit, col = "#00549c")
+```
+
+De volledige berekening staat als module in [de suite](../../suite.qmd). Voer hem
+daar uit en download de tabel als CSV.
+
+## Wat het niet zegt
+
+De wet beschrijft een schaalverhouding, geen absolute hoeveelheid. Zonder een
+geijkte eenheid voor $E_m$ blijft alleen de verhouding tussen twee toestanden
+zinvol — en dat is precies wat de log-log-vorm meetbaar maakt.

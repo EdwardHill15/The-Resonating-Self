@@ -1,0 +1,92 @@
+---
+title: "The Resonating Self"
+subtitle: "Bewustzijn als resonantie, doorgerekend in de browser"
+page-layout: full
+toc: false
+listing:
+  id: recent
+  contents: posts
+  type: grid
+  grid-columns: 3
+  max-items: 3
+  sort: "date desc"
+  categories: false
+  fields: [image, date, title, description, reading-time]
+---
+
+::: {.hero}
+::: {.hero-inner}
+::: {.eyebrow}
+Resonance Theory of Consciousness
+:::
+
+# Bewustzijn als resonantie, doorgerekend in de browser
+
+Onderzoek, essays en een volledige rekenomgeving rond de Resonance Theory of
+Consciousness. Elke formule op deze site is uitvoerbaar: open de suite, draai de
+R-code en download de uitkomst.
+
+[Open de suite](suite.qmd){.btn .btn-primary}
+[Lees de theorie](theory.qmd){.btn .btn-outline-light}
+:::
+:::
+
+## Wat hier staat
+
+::: {layout-ncol=3}
+::: {.card .p-4}
+#### De suite
+Acht RTC-modules, de volledige handleiding in NL en EN, en een R-omgeving met
+vier panelen, pakketbeheer en Quarto-preview.
+
+[Naar de suite →](suite.qmd)
+:::
+
+::: {.card .p-4}
+#### RTC in kort bestek
+Van het schijnbare nu naar de Mind-Energy-wet: de aannames, de formules en wat
+er nog openstaat.
+
+[Lees de theorie →](theory.qmd)
+:::
+
+::: {.card .p-4}
+#### Alles uit .qmd
+Artikelen worden in RStudio als Quarto-document geschreven, lokaal gerenderd en
+via GitHub naar Netlify gepubliceerd.
+
+[Bekijk de werkwijze →](posts/2026-01-19-quarto-workflow/index.qmd)
+:::
+:::
+
+## De drempel die alles bepaalt
+
+De perceptuele tijdsdrempel $\tau$ is de kleinste duur waarbinnen twee prikkels nog
+als één moment worden ervaren. In RTC is die drempel geen bijproduct van
+waarneming maar de basiseenheid van het model.
+
+$$E_m = \frac{1}{\tau^3}$$
+
+Dezelfde vijf metingen leveren op een lineaire schaal een paradox op, en op een
+log-log-schaal een rechte lijn met helling $-3$.
+
+```{r}
+#| label: fig-mind-energy
+#| fig-cap: "Mind-Energy-wet: log-log-controle op vijf perceptuele toestanden."
+tau <- c(0.100, 0.080, 0.062, 0.050, 0.042)
+Em  <- 1 / tau^3
+fit <- lm(log(Em) ~ log(tau))
+
+plot(log(tau), log(Em), pch = 19, col = "#0099c8",
+     xlab = "ln tau", ylab = "ln Em")
+abline(fit, col = "#00549c")
+```
+
+De helling komt uit op `r round(coef(fit)[["log(tau)"]], 3)`, zoals de wet voorspelt.
+
+## Recent
+
+:::{#recent}
+:::
+
+[Alle artikelen →](blog.qmd)

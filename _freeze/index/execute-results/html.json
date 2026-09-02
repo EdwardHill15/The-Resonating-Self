@@ -1,0 +1,17 @@
+{
+  "hash": "7fc15b9faa8500678d64e5b477eec175",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"The Resonating Self\"\nsubtitle: \"Bewustzijn als resonantie, doorgerekend in de browser\"\npage-layout: full\ntoc: false\nlisting:\n  id: recent\n  contents: posts\n  type: grid\n  grid-columns: 3\n  max-items: 3\n  sort: \"date desc\"\n  categories: false\n  fields: [image, date, title, description, reading-time]\n---\n\n::: {.hero}\n::: {.hero-inner}\n::: {.eyebrow}\nResonance Theory of Consciousness\n:::\n\n# Bewustzijn als resonantie, doorgerekend in de browser\n\nOnderzoek, essays en een volledige rekenomgeving rond de Resonance Theory of\nConsciousness. Elke formule op deze site is uitvoerbaar: open de suite, draai de\nR-code en download de uitkomst.\n\n[Open de suite](suite.qmd){.btn .btn-primary}\n[Lees de theorie](theory.qmd){.btn .btn-outline-light}\n:::\n:::\n\n## Wat hier staat\n\n::: {layout-ncol=3}\n::: {.card .p-4}\n#### De suite\nAcht RTC-modules, de volledige handleiding in NL en EN, en een R-omgeving met\nvier panelen, pakketbeheer en Quarto-preview.\n\n[Naar de suite →](suite.qmd)\n:::\n\n::: {.card .p-4}\n#### RTC in kort bestek\nVan het schijnbare nu naar de Mind-Energy-wet: de aannames, de formules en wat\ner nog openstaat.\n\n[Lees de theorie →](theory.qmd)\n:::\n\n::: {.card .p-4}\n#### Alles uit .qmd\nArtikelen worden in RStudio als Quarto-document geschreven, lokaal gerenderd en\nvia GitHub naar Netlify gepubliceerd.\n\n[Bekijk de werkwijze →](posts/2026-01-19-quarto-workflow/index.qmd)\n:::\n:::\n\n## De drempel die alles bepaalt\n\nDe perceptuele tijdsdrempel $\\tau$ is de kleinste duur waarbinnen twee prikkels nog\nals één moment worden ervaren. In RTC is die drempel geen bijproduct van\nwaarneming maar de basiseenheid van het model.\n\n$$E_m = \\frac{1}{\\tau^3}$$\n\nDezelfde vijf metingen leveren op een lineaire schaal een paradox op, en op een\nlog-log-schaal een rechte lijn met helling $-3$.\n\n\n::: {.cell}\n\n```{.r .cell-code}\ntau <- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  <- 1 / tau^3\nfit <- lm(log(Em) ~ log(tau))\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n```\n\n::: {.cell-output-display}\n![Mind-Energy-wet: log-log-controle op vijf perceptuele toestanden.](index_files/figure-html/fig-mind-energy-1.png){#fig-mind-energy width=1120}\n:::\n:::\n\n\nDe helling komt uit op -3, zoals de wet voorspelt.\n\n## Recent\n\n:::{#recent}\n:::\n\n[Alle artikelen →](blog.qmd)\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

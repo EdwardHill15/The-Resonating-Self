@@ -1,0 +1,63 @@
+name: Check render
+
+# Je rendert lokaal en pusht de HTML mee. Deze workflow controleert alleen of
+# dat gebeurd is, en kan op verzoek zelf een volledige render doen.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      full_render:
+        description: "Volledige render uitvoeren en committen"
+        type: boolean
+        default: false
+
+jobs:
+  verify:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: _site aanwezig?
+        run: |
+          test -f _site/index.html || {
+            echo "::error::_site/index.html ontbreekt — draai 'quarto render' en commit de uitvoer."
+            exit 1
+          }
+      - name: Zijn er .qmd-bestanden nieuwer dan _site?
+        run: |
+          newest_src=$(find . -name '*.qmd' -newer _site/index.html -not -path './_site/*' | head -n 20)
+          if [ -n "$newest_src" ]; then
+            echo "::warning::Deze bronbestanden zijn nieuwer dan _site — mogelijk vergeten te renderen:"
+            echo "$newest_src"
+          fi
+
+  render:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.full_render }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.5.57
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: "4.4.1"
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: |
+            any::rmarkdown
+            any::knitr
+            any::ggplot2
+            any::dplyr
+            any::deSolve
+            any::pracma
+      - run: quarto render
+      - name: Uitvoer committen
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _site _freeze
+          git diff --staged --quiet || git commit -m "Render site (workflow_dispatch)"
+          git push

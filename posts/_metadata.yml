@@ -1,0 +1,7 @@
+# geldt voor alle posts
+author: "Edward F. Hillenaar"
+freeze: auto
+title-block-banner: "#00335c"
+title-block-banner-color: "#ffffff"
+toc: true
+code-tools: true

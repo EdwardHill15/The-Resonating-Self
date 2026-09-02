@@ -1,0 +1,170 @@
+[
+  {
+    "objectID": "theory.html",
+    "href": "theory.html",
+    "title": "Resonance Theory of Consciousness",
+    "section": "",
+    "text": "Theorie\nRTC beschrijft bewuste ervaring als een resonantietoestand van een gekoppeld oscillatorveld. De theorie is opgezet om doorrekenbaar te zijn: elke stap hieronder heeft een module in de suite."
+  },
+  {
+    "objectID": "theory.html#het-uitgangspunt",
+    "href": "theory.html#het-uitgangspunt",
+    "title": "Resonance Theory of Consciousness",
+    "section": "Het uitgangspunt",
+    "text": "Het uitgangspunt\nWaarneming is niet ogenblikkelijk. Wat als één moment wordt ervaren, bestrijkt een interval van enkele tientallen milliseconden. RTC neemt dat interval, de perceptuele tijdsdrempel \\tau, als vertrekpunt in plaats van als meetartefact."
+  },
+  {
+    "objectID": "theory.html#vier-aannames",
+    "href": "theory.html#vier-aannames",
+    "title": "Resonance Theory of Consciousness",
+    "section": "Vier aannames",
+    "text": "Vier aannames\n\nHet brein bevat een groot aantal oscillatoren met uiteenlopende eigenfrequenties.\nDie oscillatoren zijn onderling gekoppeld met een sterkte K die kan variëren.\nBewuste toegang hangt samen met de mate van fasesynchronisatie, gemeten als ordeparameter R.\nAandacht werkt niet als extra signaal maar als regelaar van K."
+  },
+  {
+    "objectID": "theory.html#de-ordeparameter",
+    "href": "theory.html#de-ordeparameter",
+    "title": "Resonance Theory of Consciousness",
+    "section": "De ordeparameter",
+    "text": "De ordeparameter\nIn de mean-field vorm van het Kuramoto-model vat één complex getal de toestand van het hele veld samen:\nz = \\left\\langle e^{i\\theta_j} \\right\\rangle, \\qquad R = |z|, \\qquad \\Psi = \\arg(z)\n\\frac{d\\theta_i}{dt} = \\omega_i + K R \\sin(\\Psi - \\theta_i)\n\nkuramoto &lt;- function(N = 50, K = 2.0, dt = 0.01, steps = 2000, sd_omega = 0.5) {\n  set.seed(42)\n  omega &lt;- rnorm(N, 0, sd_omega); theta &lt;- runif(N, 0, 2 * pi)\n  R_hist &lt;- numeric(steps)\n  for (s in seq_len(steps)) {\n    z &lt;- mean(exp(1i * theta)); R &lt;- Mod(z); Psi &lt;- Arg(z)\n    theta &lt;- theta + dt * (omega + K * R * sin(Psi - theta))\n    R_hist[s] &lt;- R\n  }\n  R_hist\n}\nplot(kuramoto(), type = \"l\", ylim = c(0, 1), col = \"#00549c\",\n     xlab = \"iteratie\", ylab = \"ordeparameter R\")\nabline(h = 0.6, lty = 2, col = \"#0099c8\")\n\n\n\n\n\n\n\nFiguur 1: Ordeparameter R(t) bij K = 2, N = 50 oscillatoren.\n\n\n\n\n\nWanneer K oploopt, blijft R eerst laag en ruisig en klapt daarna binnen korte tijd omhoog. Die scherpe knik is het kandidaat-mechanisme voor het aan-of-uit-karakter van bewuste toegang."
+  },
+  {
+    "objectID": "theory.html#van-synchronisatie-naar-energie",
+    "href": "theory.html#van-synchronisatie-naar-energie",
+    "title": "Resonance Theory of Consciousness",
+    "section": "Van synchronisatie naar energie",
+    "text": "Van synchronisatie naar energie\nEen veld dat over een venster \\tau fase-informatie integreert, kan per tijdseenheid 1/\\tau onafhankelijke toestanden onderscheiden. Neem aan dat dit in drie onafhankelijke richtingen gebeurt, en de mentale energie schaalt met de derde macht van die frequentie:\nE_m = \\frac{1}{\\tau^3}\nDe exponent volgt dus uit de aanname over dimensionaliteit, niet uit een fit. Dat maakt hem toetsbaar: een gemeten helling die duidelijk van -3 afwijkt, weerlegt de aanname en niet alleen de parameter."
+  },
+  {
+    "objectID": "theory.html#wat-er-openstaat",
+    "href": "theory.html#wat-er-openstaat",
+    "title": "Resonance Theory of Consciousness",
+    "section": "Wat er openstaat",
+    "text": "Wat er openstaat\n\nDe meetprocedure voor \\tau is niet geijkt tussen laboratoria.\nDe eenheid van E_m is niet vastgelegd, waardoor alleen verhoudingen zinvol zijn.\nDe koppeling tussen R en gerapporteerde ervaring is correlationeel; het model geeft nog geen onafhankelijke voorspelling die de gangbare alternatieven uitsluit.\n\nDie drie punten zijn de reden dat de rekenmodules op deze site openstaan. Wie de aannames wil testen, heeft de code nodig — niet alleen de conclusie."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Onderzoekslijn",
+    "section": "",
+    "text": "Onderzoek\n\nAlleen de stukken met de categorie RTC. Essays en notities staan in de blog.\n\n\n   \n    \n    \n      Sorteer op\n      Standaard\n      \n        Jaar - Oudste\n      \n      \n        Jaar - Nieuwste\n      \n      \n        Titel\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nJaar\n\n\n\nTitel\n\n\n\nSamenvatting\n\n\n\n\n\n\n\n\n14 jul 2026\n\n\nDe Mind-Energy-wet en de derde macht\n\n\nWaarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf toestanden laat zien. \n\n\n\n\n\n\nGeen overeenkomsten"
+  },
+  {
+    "objectID": "posts/2026-07-14-mind-energy/index.html",
+    "href": "posts/2026-07-14-mind-energy/index.html",
+    "title": "De Mind-Energy-wet en de derde macht",
+    "section": "",
+    "text": "De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde macht van de perceptuele tijdsdrempel:\nE_m = \\frac{1}{\\tau^3}\nDe drempel \\tau is de kleinste tijdsduur waarbinnen twee prikkels nog als één moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie 1/\\tau meeloopt."
+  },
+  {
+    "objectID": "posts/2026-07-14-mind-energy/index.html#de-wet",
+    "href": "posts/2026-07-14-mind-energy/index.html#de-wet",
+    "title": "De Mind-Energy-wet en de derde macht",
+    "section": "",
+    "text": "De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde macht van de perceptuele tijdsdrempel:\nE_m = \\frac{1}{\\tau^3}\nDe drempel \\tau is de kleinste tijdsduur waarbinnen twee prikkels nog als één moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie 1/\\tau meeloopt."
+  },
+  {
+    "objectID": "posts/2026-07-14-mind-energy/index.html#controle-op-vijf-toestanden",
+    "href": "posts/2026-07-14-mind-energy/index.html#controle-op-vijf-toestanden",
+    "title": "De Mind-Energy-wet en de derde macht",
+    "section": "Controle op vijf toestanden",
+    "text": "Controle op vijf toestanden\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\nsummary(fit)\n\n\nCall:\nlm(formula = log(Em) ~ log(tau))\n\nResiduals:\n         1          2          3          4          5 \n 2.151e-16 -1.204e-16 -4.494e-16  3.787e-16 -2.400e-17 \n\nCoefficients:\n              Estimate Std. Error    t value Pr(&gt;|t|)    \n(Intercept)  1.589e-15  1.461e-15  1.087e+00    0.356    \nlog(tau)    -3.000e+00  5.270e-16 -5.692e+15   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.682e-16 on 3 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:      1 \nF-statistic: 3.24e+31 on 1 and 3 DF,  p-value: &lt; 2.2e-16\n\n\nDe helling komt uit op -3; afwijkingen groter dan 0,1 wijzen in de praktijk op een meetfout in \\tau, niet op een fout in de wet.\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFiguur 1: Log-log-controle: vijf toestanden, helling −3.\n\n\n\n\n\nDe volledige berekening staat als module in de suite. Voer hem daar uit en download de tabel als CSV."
+  },
+  {
+    "objectID": "posts/2026-07-14-mind-energy/index.html#wat-het-niet-zegt",
+    "href": "posts/2026-07-14-mind-energy/index.html#wat-het-niet-zegt",
+    "title": "De Mind-Energy-wet en de derde macht",
+    "section": "Wat het niet zegt",
+    "text": "Wat het niet zegt\nDe wet beschrijft een schaalverhouding, geen absolute hoeveelheid. Zonder een geijkte eenheid voor E_m blijft alleen de verhouding tussen twee toestanden zinvol — en dat is precies wat de log-log-vorm meetbaar maakt."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "The Resonating Self",
+    "section": "",
+    "text": "Resonance Theory of Consciousness\n\n\n\nOnderzoek, essays en een volledige rekenomgeving rond de Resonance Theory of Consciousness. Elke formule op deze site is uitvoerbaar: open de suite, draai de R-code en download de uitkomst.\nOpen de suite Lees de theorie"
+  },
+  {
+    "objectID": "index.html#wat-hier-staat",
+    "href": "index.html#wat-hier-staat",
+    "title": "The Resonating Self",
+    "section": "Wat hier staat",
+    "text": "Wat hier staat\n\n\n\nDe suite\nAcht RTC-modules, de volledige handleiding in NL en EN, en een R-omgeving met vier panelen, pakketbeheer en Quarto-preview.\nNaar de suite →\n\n\nRTC in kort bestek\nVan het schijnbare nu naar de Mind-Energy-wet: de aannames, de formules en wat er nog openstaat.\nLees de theorie →\n\n\nAlles uit .qmd\nArtikelen worden in RStudio als Quarto-document geschreven, lokaal gerenderd en via GitHub naar Netlify gepubliceerd.\nBekijk de werkwijze →"
+  },
+  {
+    "objectID": "index.html#de-drempel-die-alles-bepaalt",
+    "href": "index.html#de-drempel-die-alles-bepaalt",
+    "title": "The Resonating Self",
+    "section": "De drempel die alles bepaalt",
+    "text": "De drempel die alles bepaalt\nDe perceptuele tijdsdrempel \\tau is de kleinste duur waarbinnen twee prikkels nog als één moment worden ervaren. In RTC is die drempel geen bijproduct van waarneming maar de basiseenheid van het model.\nE_m = \\frac{1}{\\tau^3}\nDezelfde vijf metingen leveren op een lineaire schaal een paradox op, en op een log-log-schaal een rechte lijn met helling -3.\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFiguur 1: Mind-Energy-wet: log-log-controle op vijf perceptuele toestanden.\n\n\n\n\n\nDe helling komt uit op -3, zoals de wet voorspelt."
+  },
+  {
+    "objectID": "index.html#recent",
+    "href": "index.html#recent",
+    "title": "The Resonating Self",
+    "section": "Recent",
+    "text": "Recent\n\n\n\n\n\n\n\n\n\n\nDe Mind-Energy-wet en de derde macht\n\n1 min\n\nWaarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf toestanden laat zien.\n\n\n\n14 jul 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVan .qmd naar gepubliceerd artikel\n\n1 min\n\nHoe elk artikel op deze site ontstaat: schrijven in RStudio, renderen, pushen naar GitHub, Netlify publiceert.\n\n\n\n19 jan 2026\n\n\n\n\n\n\nGeen overeenkomsten\n\nAlle artikelen →"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Artikelen en notities",
+    "section": "",
+    "text": "Blog\n\nElk stuk is een Quarto-document waarvan de berekeningen bij het renderen echt zijn uitgevoerd. De bron van elk artikel staat in de repository.\n\n\n\n\n\n\n\n\n\n\nDe Mind-Energy-wet en de derde macht\n\n1 min\n\n\nRTC\n\nMind-Energy\n\nwiskunde\n\n\n\nWaarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf toestanden laat zien.\n\n\n\n14 jul 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVan .qmd naar gepubliceerd artikel\n\n1 min\n\n\nwerkwijze\n\nQuarto\n\n\n\nHoe elk artikel op deze site ontstaat: schrijven in RStudio, renderen, pushen naar GitHub, Netlify publiceert.\n\n\n\n19 jan 2026\n\n\n\n\n\n\nGeen overeenkomsten"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Edward F. Hillenaar",
+    "section": "",
+    "text": "In mijn praktijk Totale Gezondheid werk ik met EMDR en mindfulness; daarnaast schrijf ik aan de Resonance Theory of Consciousness, een poging om bewuste ervaring als resonantietoestand doorrekenbaar te maken.\nDie twee sporen liggen dichter bij elkaar dan ze lijken. In de praktijk zie ik dagelijks dat de breedte van het ervaren nu verandert onder spanning, aandacht en training. In de theorie is precies die breedte de grootheid waar het model op staat of valt."
+  },
+  {
+    "objectID": "about.html#waarom-deze-site",
+    "href": "about.html#waarom-deze-site",
+    "title": "Edward F. Hillenaar",
+    "section": "Waarom deze site",
+    "text": "Waarom deze site\nOmdat een theorie die op formules rust, ook te bekijken moet zijn als formules. Alles op deze site is uitvoerbaar: de modules draaien echte R-code in je browser, en elk artikel komt uit een Quarto-document waarvan de berekeningen bij het renderen zijn uitgevoerd.\nReacties, tegenwerpingen en meetgegevens zijn welkom. Vooral tegenwerpingen: de drie openstaande punten in het theoriehoofdstuk zijn er niet minder van geworden sinds ik ze opschreef."
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Neem contact op",
+    "section": "",
+    "text": "Contact\n\nIk antwoord meestal binnen een paar dagen.\n\n  \n  Naam\n    \n  \n  E-mailadres\n    \n  \n  Onderwerp\n    \n      Onderzoek\n      Samenwerking\n      Intake praktijk\n      Anders\n    \n  \n  Bericht\n    \n  \n  Versturen\n\nHet formulier werkt via Netlify Forms: inzendingen komen in het Netlify-dashboard te staan, zonder eigen backend."
+  },
+  {
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html",
+    "href": "posts/2026-01-19-quarto-workflow/index.html",
+    "title": "Van .qmd naar gepubliceerd artikel",
+    "section": "",
+    "text": "Schrijven. Nieuw artikel: posts/JJJJ-MM-DD-slug/index.qmd. De YAML-kop bevat titel, description, date, categories en image. De tekst is markdown; berekeningen staan in R-chunks.\nRenderen. In RStudio: Build → Render Website, of in de terminal quarto render. Het resultaat komt in _site/ te staan, inclusief de figuren die de R-chunks hebben getekend.\nPushen. Bron én _site/ gaan samen in één commit naar GitHub.\nPubliceren. Netlify pakt _site op en zet de nieuwe versie live. Geen buildstap op de server."
+  },
+  {
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html#vier-stappen",
+    "href": "posts/2026-01-19-quarto-workflow/index.html#vier-stappen",
+    "title": "Van .qmd naar gepubliceerd artikel",
+    "section": "",
+    "text": "Schrijven. Nieuw artikel: posts/JJJJ-MM-DD-slug/index.qmd. De YAML-kop bevat titel, description, date, categories en image. De tekst is markdown; berekeningen staan in R-chunks.\nRenderen. In RStudio: Build → Render Website, of in de terminal quarto render. Het resultaat komt in _site/ te staan, inclusief de figuren die de R-chunks hebben getekend.\nPushen. Bron én _site/ gaan samen in één commit naar GitHub.\nPubliceren. Netlify pakt _site op en zet de nieuwe versie live. Geen buildstap op de server."
+  },
+  {
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html#waarom-gerenderde-html-meegaat",
+    "href": "posts/2026-01-19-quarto-workflow/index.html#waarom-gerenderde-html-meegaat",
+    "title": "Van .qmd naar gepubliceerd artikel",
+    "section": "Waarom gerenderde HTML meegaat",
+    "text": "Waarom gerenderde HTML meegaat\nOmdat de R-chunks pakketten en data nodig hebben die niet op een buildserver hoeven te staan. Wie lokaal rendert, houdt de uitvoer reproduceerbaar op één machine en houdt de deploy simpel: Netlify publiceert wat er staat.\nfreeze: auto in _quarto.yml zorgt ervoor dat een chunk alleen opnieuw draait als het .qmd-bestand veranderd is. De opgeslagen resultaten staan in _freeze/ en gaan ook mee in de commit."
+  },
+  {
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html#concept-en-publicatie",
+    "href": "posts/2026-01-19-quarto-workflow/index.html#concept-en-publicatie",
+    "title": "Van .qmd naar gepubliceerd artikel",
+    "section": "Concept en publicatie",
+    "text": "Concept en publicatie\nZet draft: true in de YAML-kop en het artikel verschijnt niet in het overzicht. Zo staan halve stukken veilig in de repository zonder dat ze live gaan.\n---\ntitle: \"Werktitel\"\ndate: 2026-09-01\ndraft: true\n---"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Downloads",
+    "section": "",
+    "text": "Publicaties\n\nDe handleiding en de suite werken offline zonder installatie.\n\n\n\nFormaat\nTitel\nInhoud\n\n\n\n\n\nPDF · 32 p.\nCalculus Companion Manual\nAfleidingen, voorbeelden en de R-bijlagen bij de RTC-modules.\nDownloaden\n\n\nHTML\nRTC Companion (compleet)\nDe hele suite in één bestand: handleiding NL en EN, rekenapp, R-omgeving.\nDownloaden\n\n\nTXT\nManual — brontekst\nDe platte tekst van de handleiding.\nDownloaden\n\n\nPNG\nPPTQ-paradox\nDezelfde metingen op een lineaire en een logaritmische schaal.\nDownloaden"
+  }
+]

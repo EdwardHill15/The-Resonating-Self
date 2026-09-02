@@ -1,0 +1,76 @@
+/*-- scss:defaults --*/
+// Total Health Design System — brand tokens
+$blue-700:   #00549c;
+$blue-900:   #00335c;
+$teal-500:   #0099c8;
+$teal-600:   #007fa8;
+$sky-050:    #f1f7fb;
+$sky-100:    #dbe9f2;
+$ink:        #1c2a33;
+$muted:      #5d7280;
+$border:     #d9e3ea;
+
+$primary:        $blue-700;
+$link-color:     $blue-700;
+$body-color:     $ink;
+$body-bg:        #ffffff;
+$font-family-sans-serif: Carlito, system-ui, -apple-system, sans-serif;
+$headings-font-family:   Oranienbaum, Georgia, serif;
+$headings-font-weight:   400;
+$border-radius:  12px;
+$navbar-bg:      rgba(255,255,255,.94);
+
+/*-- scss:rules --*/
+h1, h2, h3, h4, .navbar-brand { letter-spacing: .002em; }
+h1 { font-size: 2.7rem; line-height: 1.08; }
+h2 { font-size: 1.75rem; margin-top: 2.1rem; }
+p  { text-wrap: pretty; max-width: 70ch; }
+
+.navbar-brand { font-family: Oranienbaum, Georgia, serif; font-size: 1.35rem; }
+
+// eyebrow label, used as .eyebrow on a div
+.eyebrow {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: $teal-600; margin-bottom: .9rem;
+}
+
+// display equations get the brand tint card
+.katex-display {
+  background: $sky-050; border-radius: 10px; padding: 1.1rem 1.2rem; margin: 1.5rem 0;
+}
+
+// listing cards (blog / research)
+.quarto-listing-container-grid .card {
+  border: 1px solid $border; border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,51,92,.05), 0 8px 24px rgba(0,51,92,.06);
+  transition: box-shadow .16s ease;
+  &:hover { box-shadow: 0 2px 4px rgba(0,51,92,.07), 0 14px 32px rgba(0,51,92,.10); }
+}
+.listing-categories .listing-category {
+  border: 1px solid $border; border-radius: 999px; padding: .15rem .7rem;
+  font-size: .78rem; color: $blue-700; background: $sky-050;
+}
+
+// code + output blocks
+div.sourceCode { border-radius: 8px 8px 0 0; background: $blue-900; }
+div.sourceCode pre code { color: #e8f2f8; }
+.cell-output pre { background: $sky-050; border-radius: 0 0 8px 8px; margin-top: 0; }
+
+// hero used on index.qmd
+.hero {
+  position: relative; margin: -1.5rem -1.5rem 3rem; padding: 6rem 1.5rem 5.5rem;
+  background: linear-gradient(180deg, rgba(0,32,58,.72), rgba(0,32,58,.88)),
+              url('assets/waterfall-1.jpg') center/cover no-repeat;
+  color: #fff;
+  h1 { color: #fff; max-width: 19ch; }
+  p  { color: $sky-100; font-size: 1.18rem; max-width: 62ch; }
+  .eyebrow { color: #2bb6dd; }
+  .btn { border-radius: 999px; padding: .7rem 1.6rem; }
+}
+.hero-inner { max-width: 1120px; margin: 0 auto; }
+
+// full-bleed frame for the suite page
+.suite-frame {
+  width: 100%; height: calc(100vh - 120px); min-height: 680px;
+  border: 1px solid $border; border-radius: 12px; background: $sky-050;
+}

@@ -1,0 +1,18 @@
+---
+title: "Downloads"
+subtitle: "Handleiding, rekenapp en losse figuren"
+toc: false
+---
+
+::: {.eyebrow}
+Publicaties
+:::
+
+De handleiding en de suite werken offline zonder installatie.
+
+| Formaat | Titel | Inhoud | |
+|---|---|---|---|
+| PDF · 32 p. | Calculus Companion Manual | Afleidingen, voorbeelden en de R-bijlagen bij de RTC-modules. | [Downloaden](downloads/Calculus_Companion_Manual_RTC_EN.pdf) |
+| HTML | RTC Companion (compleet) | De hele suite in één bestand: handleiding NL en EN, rekenapp, R-omgeving. | [Downloaden](downloads/rtc-companion-compleet.html) |
+| TXT | Manual — brontekst | De platte tekst van de handleiding. | [Downloaden](downloads/manual.txt) |
+| PNG | PPTQ-paradox | Dezelfde metingen op een lineaire en een logaritmische schaal. | [Downloaden](assets/rtc-pptq-paradox.png) |

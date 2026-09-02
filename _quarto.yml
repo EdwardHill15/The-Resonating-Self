@@ -1,0 +1,60 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - "app/**"          # the Companion Suite, copied in as-is
+    - "downloads/**"
+
+website:
+  title: "The Resonating Self"
+  description: "Research and computation around the Resonance Theory of Consciousness."
+  site-url: https://the-resonating-self.netlify.app
+  favicon: assets/favicon.png
+  navbar:
+    background: light
+    left:
+      - href: index.qmd
+        text: Home
+      - href: theory.qmd
+        text: RTC
+      - href: suite.qmd
+        text: Suite
+      - href: blog.qmd
+        text: Blog
+      - href: research.qmd
+        text: Onderzoek
+      - href: publications.qmd
+        text: Publicaties
+    right:
+      - href: about.qmd
+        text: Over
+      - href: contact.qmd
+        text: Contact
+  page-footer:
+    left: "© 2026 Edward F. Hillenaar · The Resonating Self"
+    right:
+      - text: "Bron op GitHub"
+        href: https://github.com/EdwardHill15/The-Resonating-Self
+
+format:
+  html:
+    theme: [default, styles.scss]
+    mainfont: Carlito, system-ui, sans-serif
+    fontsize: 1.05rem
+    linestretch: 1.6
+    toc: true
+    toc-depth: 2
+    toc-title: "Op deze pagina"
+    html-math-method: katex
+    code-fold: false
+    code-tools: true
+    fig-width: 7
+    fig-height: 4.4
+    fig-dpi: 160
+    link-external-newwindow: true
+
+execute:
+  freeze: auto      # chunks re-run only when the .qmd changed
+  warning: false
+
+lang: nl

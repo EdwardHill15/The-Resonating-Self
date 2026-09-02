@@ -1,0 +1,21 @@
+---
+title: "De suite"
+page-layout: custom
+toc: false
+---
+
+```{=html}
+<div style="max-width:1120px;margin:0 auto 1rem;padding:1.5rem 1.5rem 0">
+  <div class="eyebrow">Rekenomgeving · WebR</div>
+  <h1 style="font-family:Oranienbaum,Georgia,serif;font-weight:400;margin:0 0 .5rem">De suite</h1>
+  <p style="color:#5d7280;margin:0 0 1rem">
+    Handleiding NL en EN, de rekenapp met acht RTC-modules, en de R-omgeving met vier
+    panelen. R draait volledig in je browser; de eerste start laadt R eenmalig.
+    <a href="app/index.html" target="_blank" rel="noopener">In een eigen tabblad openen</a>.
+  </p>
+</div>
+<div style="padding:0 1.5rem 2rem">
+  <iframe src="app/index.html" title="Companion Suite" class="suite-frame"
+          allow="clipboard-write" loading="lazy"></iframe>
+</div>
+```

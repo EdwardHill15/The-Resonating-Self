@@ -1,0 +1,44 @@
+---
+title: "Van .qmd naar gepubliceerd artikel"
+description: >
+  Hoe elk artikel op deze site ontstaat: schrijven in RStudio, renderen, pushen
+  naar GitHub, Netlify publiceert.
+date: 2026-01-19
+categories: [werkwijze, Quarto]
+image: ../../assets/holographic-field.jpg
+---
+
+## Vier stappen
+
+1. **Schrijven.** Nieuw artikel: `posts/JJJJ-MM-DD-slug/index.qmd`. De YAML-kop
+   bevat titel, `description`, `date`, `categories` en `image`. De tekst is
+   markdown; berekeningen staan in R-chunks.
+2. **Renderen.** In RStudio: **Build → Render Website**, of in de terminal
+   `quarto render`. Het resultaat komt in `_site/` te staan, inclusief de figuren
+   die de R-chunks hebben getekend.
+3. **Pushen.** Bron én `_site/` gaan samen in één commit naar GitHub.
+4. **Publiceren.** Netlify pakt `_site` op en zet de nieuwe versie live. Geen
+   buildstap op de server.
+
+## Waarom gerenderde HTML meegaat
+
+Omdat de R-chunks pakketten en data nodig hebben die niet op een buildserver
+hoeven te staan. Wie lokaal rendert, houdt de uitvoer reproduceerbaar op één
+machine en houdt de deploy simpel: Netlify publiceert wat er staat.
+
+`freeze: auto` in `_quarto.yml` zorgt ervoor dat een chunk alleen opnieuw draait
+als het `.qmd`-bestand veranderd is. De opgeslagen resultaten staan in `_freeze/`
+en gaan ook mee in de commit.
+
+## Concept en publicatie
+
+Zet `draft: true` in de YAML-kop en het artikel verschijnt niet in het overzicht.
+Zo staan halve stukken veilig in de repository zonder dat ze live gaan.
+
+```yaml
+---
+title: "Werktitel"
+date: 2026-09-01
+draft: true
+---
+```

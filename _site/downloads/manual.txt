@@ -1,0 +1,1475 @@
+Differentiation and Integration over Experiential Time
+A mathematical companion to The Resonating Self — from the difference quotient to the
+PPTQ-scaled Kuramoto model
+Edward F. Hillenaar
+September 2026
+Contents
+1 Preface: why this manual exists 4
+1.1 The three books of Steven Strogatz as reference and source of inspiration . . . . . . . . . . . 4
+1.2 How to read this manual . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+2 PART I — THE GUIDING THREAD: WITH RESPECT TO WHAT DO WE DIFFER-
+ENTIATE? 6
+2.1 The problem of the independent variable . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.1.1 What differentiation actually does . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.1.2 Why this is not enough for consciousness . . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.1.3 Three notions of time, sharply distinguished . . . . . . . . . . . . . . . . . . . . . . . . 6
+2.2 The central claim and the hard problem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+3 PART II — DIFFERENTIAL CALCULUS FROM THE GROUND UP 8
+3.1 Functions, change and slope . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.1.1 Functions . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.1.2 Average rate of change . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2 The limit . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2.1 The idea . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2.2 Formal definition (epsilon–delta) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2.3 Rules for limits . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 8
+3.2.4 A fundamental limit: lim
+ℎ→0
+sin ℎ
+ℎ = 1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.3 The derivative . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.3.1 Definition . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.3.2 The derivative from the definition: three worked cases . . . . . . . . . . . . . . . . . . 9
+3.3.3 Differentiability implies continuity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 9
+3.4 All the differentiation rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4.1 Rule 1 — The constant rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4.2 Rule 2 — The power rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4.3 Rule 3 — The constant multiple rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4.4 Rule 4 — The sum and difference rule . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4.5 Rule 5 — The product rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 10
+3.4.6 Rule 6 — The quotient rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.4.7 Rule 7 — The chain rule . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 11
+3.4.8 Rule 8 — Derivatives of the elementary functions . . . . . . . . . . . . . . . . . . . . . 12
+3.4.9 Rule 9 — Implicit differentiation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 12
+3.4.10 Rule 10 — Higher-order derivatives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.4.11 Rule 11 — Partial derivatives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+1
+
+-- 1 of 32 --
+
+3.4.12 Rule 12 — The total derivative and the multivariable chain rule . . . . . . . . . . . . 13
+3.5 Applications of the derivative . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.5.1 Tangent line and linear approximation . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.5.2 Extrema . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 13
+3.5.3 Taylor series . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 14
+4 PART III — INTEGRAL CALCULUS 15
+4.1 The definite integral . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.1.1 Idea: accumulation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.1.2 Definition via Riemann sums . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.2 The Fundamental Theorem of Calculus . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.3 The indefinite integral and standard antiderivatives . . . . . . . . . . . . . . . . . . . . . . . . 15
+4.4 Integration techniques . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.4.1 Substitution (the chain rule in reverse) . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.4.2 Integration by parts (the product rule in reverse) . . . . . . . . . . . . . . . . . . . . . 16
+4.4.3 Numerical integration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+4.5 Differential equations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.5.1 Separation of variables . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.5.2 Numerical solution: Euler’s method . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+4.5.3 Reparametrising an ODE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17
+5 PART IV — NONLINEAR DYNAMICS AND THE KURAMOTO MODEL 18
+5.1 Dynamical systems and phase space . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.2 Fixed points and stability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.3 Bifurcations . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+5.4 The logistic map and the route to chaos . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5.5 Oscillators: phase, frequency, and the phase derivative . . . . . . . . . . . . . . . . . . . . . . 19
+5.6 Two coupled oscillators . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+5.7 The Kuramoto model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+5.7.1 The equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+5.7.2 The order parameter . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+5.7.3 The mean-field rewrite . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+5.7.4 The critical coupling . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 20
+6 PART V — THE RTC REPARAMETRISATION: DIFFERENTIATING OVER THE
+PERCEPT 22
+6.1 The transformation 𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+6.1.1 Motivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+6.1.2 Epistemic status of (5.1) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+6.2 From 𝑑𝜃
+𝑑𝑡 to 𝑑𝜃
+𝑑𝑃 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 22
+6.2.1 What changes mathematically, and what does not? . . . . . . . . . . . . . . . . . . . . 23
+6.3 The Mind-Energy law 𝐸𝑚 = 1/𝜏 3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+6.3.1 Step 1 — the kinetic-energy analogy . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+6.3.2 Step 2 — the temporal velocity (definitional) . . . . . . . . . . . . . . . . . . . . . . . 23
+6.3.3 Step 3 — substitution (inverse-square) . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+6.3.4 Step 4 — the effective mass (substantive RTC postulate) . . . . . . . . . . . . . . . . 24
+6.3.5 Step 5 — combining . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+6.3.6 The scientifically defensible chain . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+6.3.7 The logarithmic form and the falsifiable exponent . . . . . . . . . . . . . . . . . . . . . 24
+6.4 The combined model: PPTQ as bridge . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+6.5 The conceptual hierarchy . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25
+7 PART VI — EPISTEMOLOGICAL ACCOUNTABILITY AND THE HARD PROB-
+LEM 26
+2
+
+-- 2 of 32 --
+
+7.1 Four levels, sharply separated . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 26
+7.2 The status of the mathematical layers (Chapter 9) . . . . . . . . . . . . . . . . . . . . . . . . 26
+7.3 Why percept differentiation addresses the hard problem . . . . . . . . . . . . . . . . . . . . . 26
+7.4 Falsifiability: the concrete criteria . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+7.5 The epistemological transition summarised . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 27
+8 PART VII — REFERENCE 28
+8.1 Appendix A — All differentiation rules in one table . . . . . . . . . . . . . . . . . . . . . . . . 28
+8.2 Appendix B — Standard integrals . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+8.3 Appendix C — List of symbols . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 28
+8.4 Appendix D — Code examples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+8.4.1 D.1 — Kuramoto (classical), R . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 29
+8.4.2 D.2 — RTC Kuramoto (percept-indexed) with dynamic PPTQ, Python . . . . . . . . 29
+8.4.3 D.3 — Mind-Energy law and log–log check, R . . . . . . . . . . . . . . . . . . . . . . . 30
+8.4.4 D.4 — Logistic map, iteration, R . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+8.5 Appendix E — Strogatz reading guide by topic . . . . . . . . . . . . . . . . . . . . . . . . . . 30
+8.6 Appendix F — Cross-references to the thesis . . . . . . . . . . . . . . . . . . . . . . . . . . . 31
+9 Closing note 32
+3
+
+-- 3 of 32 --
+
+1 Preface: why this manual exists
+This document is a self-contained mathematical companion to the doctoral thesis The Resonating Self. A
+Resonance Theory of Consciousness (RTC). In several places the thesis relies on differential and integral
+calculus and on nonlinear dynamics — most notably in Chapter 4 (the Psychophysical Time Quantum and
+Mind-Energy) and Chapter 9 (the Mathematical Formalism). For readers without an extensive mathematical
+background, and for examiners who wish to check the formal underpinnings step by step, a separate and
+thorough exposition is desirable. That exposition is given here.
+The manual carries one guiding thread that distinguishes it from any standard calculus textbook. In ordinary
+analysis we differentiate a quantity with respect to time, and by “time” we almost always mean homoge-
+neous clock time 𝑡, measured in seconds — the uniformly elapsing, directionless parameter of physics. In
+RTC the central discovery of the thesis is precisely the claim that the relevant independent variable for con-
+sciousness and human experience is not that homogeneous clock time, but dynamic experiential time 𝜏 ,
+operationalised through the percept (the perceptual succession 𝑃 ) and the Psychophysical Time Quan-
+tum (PPTQ). Consciousness and experience must be differentiated with respect to the percept, not with
+respect to the second hand.
+This manual takes the reader from the most elementary notions (change, slope, limit) to the point where this
+shift of independent variable can be made fully explicit and applied to the Kuramoto model. Along the way
+all the standard differentiation rules are covered and illustrated with numerous worked examples, followed
+by integral calculus and nonlinear dynamics.
+1.1 The three books of Steven Strogatz as reference and source of inspiration
+The applied mathematical style of the thesis — and of this manual — is deeply indebted to the work of
+Steven H. Strogatz. Three of his books are an explicit reference and source of inspiration:
+1. Nonlinear Dynamics and Chaos (1994; 2nd ed. 2015). The standard textbook on dynamical
+systems. Strogatz treats flows on the line, fixed points and stability, bifurcations (saddle-node, trans-
+critical, pitchfork, Hopf), the logistic map and the route to chaos through period doubling, and — in
+the chapter on coupled oscillators — the Kuramoto model. Part IV of this manual follows the structure
+and notation of this book. Its applied differential calculus (derivatives as velocity fields, linearisation
+through the Jacobian) is entirely in the service of the phenomenology of the system — exactly the
+attitude RTC adopts.
+2. Sync. The Emerging Science of Spontaneous Order (2003). Strogatz’s popular-science account
+of synchronisation: fireflies flashing in unison, heart cells, applauding audiences, and the mathematical
+core of these — the Kuramoto model and the order parameter. This book supplies the conceptual
+motivation for the RTC claim that coherence is a natural, unavoidable outcome of coupled resonators,
+and not something that must be imposed from outside.
+3. Infinite Powers. How Calculus Reveals the Secrets of the Universe (2019). Strogatz’s
+history and philosophy of calculus. The “Infinity Principle” (split a hard problem into infinitely many
+infinitely small, easy pieces and add them back up), the derivative as an instantaneous rate of change,
+the integral as accumulation, and the Fundamental Theorem that connects the two. Parts II and III of
+this manual follow the didactic line of this book: first understand what change is, only then calculate.
+Wherever a concept is introduced for the first time in this manual, a boxed note (“Strogatz reading guide”)
+indicates which chapter in which book contains the extended treatment.
+1.2 How to read this manual
+• Part I lays down the guiding thread: the distinction between clock time 𝑡, experiential time 𝜏 and
+percept index 𝑃 , and why this distinction bears on the hard problem of consciousness.
+• Part II is a complete course in differential calculus: limit, derivative, and all the differentiation rules
+with proofs and worked examples.
+4
+
+-- 4 of 32 --
+
+• Part III is a course in integral calculus: the definite integral, the Fundamental Theorem, integration
+techniques, and the solution of differential equations (analytic and numerical).
+• Part IV applies this to the nonlinear dynamics of Chapter 9: fixed points, bifurcations, the logistic
+map, oscillators and the Kuramoto model.
+• Part V carries out the RTC reparametrisation: the transition 𝑑𝜃
+𝑑𝑡 → 𝑑𝜃
+𝑑𝑃 through 𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 , the
+PPTQ-scaled Kuramoto model, and the derivation of the Mind-Energy law 𝐸𝑚 = 1/𝜏 3.
+• Part VI discusses the epistemological status of all this: what the formalism does and does not prove,
+and how percept differentiation contributes to the RTC treatment of the hard problem.
+• Part VII contains reference tables, a list of symbols and code examples in R and Python.
+5
+
+-- 5 of 32 --
+
+2 PART I — THE GUIDING THREAD: WITH RESPECT TO
+WHAT DO WE DIFFERENTIATE?
+2.1 The problem of the independent variable
+2.1.1 What differentiation actually does
+Differentiation is the measurement of change per unit of something else. The derivative 𝑑𝑓
+𝑑𝑥 answers the
+question: “If 𝑥 increases by a minuscule amount, how much does 𝑓 change, per unit of 𝑥?” The choice of 𝑥
+— the independent variable — is therefore not a technical detail but a substantive decision about which
+change we consider important.
+In physics that choice is almost always clock time 𝑡. The velocity of a particle is 𝑑𝑥
+𝑑𝑡 ; the acceleration is 𝑑2𝑥
+𝑑𝑡2 ;
+the phase change of an oscillator is 𝑑𝜃
+𝑑𝑡 . Clock time is thereby taken to be:
+• homogeneous: every second equals every other second;
+• directionless (in dynamics): the parameter itself contains no “now”, no flow direction;
+• external: the clock runs independently of the system being described.
+2.1.2 Why this is not enough for consciousness
+RTC claims that lived experience is not homogeneous, not directionless and not external. The experienced
+duration of an event depends on the state of consciousness: in deep meditation time “stretches”, in acute
+stress it “speeds up”, in flow it “disappears”. Two clock seconds can be phenomenologically utterly unequal.
+If we differentiate the dynamics of consciousness with respect to clock time, we average away precisely what
+we are trying to explain.
+RTC resolves this by choosing a different independent variable. Experience unfolds in discrete chunks —
+percepts — each with a characteristic duration, the PPTQ 𝜏 (order of magnitude ∼ 62 ms). The succession
+of percepts forms an ordered counting variable 𝑃 : percept 1, percept 2, percept 3, …. The central RTC claim
+is:
+The fundamental independent variable of conscious temporal dynamics is the per-
+ceptual succession 𝑃 , scaled by the PPTQ 𝜏, and not the external clock time 𝑡.
+Mathematically this is captured by the relation
+𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 (1.1)
+which says: one percept step (𝑑𝑃 = 1) corresponds to a clock duration of 𝜏(𝑃 ) seconds, and 𝜏 may itself de-
+pend on the perceptual state 𝑃 . Everything that follows in this manual is ultimately a tool for understanding,
+justifying and applying equation (1.1).
+2.1.3 Three notions of time, sharply distinguished
+Symbol Name Nature Unit Role in RTC
+𝑡 Clock time homogeneous,
+continuous,
+external
+second (s) time of 𝑀𝑝 (the
+brain domain), the
+physical
+description
+6
+
+-- 6 of 32 --
+
+Symbol Name Nature Unit Role in RTC
+𝜏 PPTQ /
+experiential time
+quantum
+state-dependent,
+“grainy”
+seconds per
+percept (s)
+duration of one
+perceptual
+moment; may vary
+with the state of
+consciousness
+𝑃 Perceptual
+succession /
+percept index
+ordered,
+dimensionless,
+counts
+— (dimensionless) the actual
+independent
+variable of
+experience in 𝑀𝑒
+The relation between 𝑡 and 𝑃 is not linear as soon as 𝜏 varies. That is precisely the mathematical content of
+the RTC discovery.
+Strogatz reading guide. The idea that the choice of independent variable determines the physics of a
+problem runs as a theme through Infinite Powers (chapters 1–3: “calculus as the language of the universe”).
+The idea that time in a dynamical system is a parameter that may be rescaled is the core of the “flows” in
+Nonlinear Dynamics and Chaos, chapter 2.
+2.2 The central claim and the hard problem
+The hard problem of consciousness (Chalmers, 1995) is the question of why and how physical processes are
+accompanied by lived experience — why “there is something it is like” to undergo a particular brain process.
+The “easy” problems (attention, integration, reporting) can be described in functional or computational
+terms; the “hard” problem seems to escape this.
+RTC does not claim that mathematics explains away the hard problem. The ontological core — that experi-
+ence is primary (Axiom I) — is a metaphysical claim, not a claim that can be proven by an equation. What
+RTC does claim, and this is where this manual becomes relevant, is the following:
+As soon as one differentiates the dynamics of consciousness with respect to the per-
+cept 𝑃 rather than with respect to clock time 𝑡, a formal framework arises in which
+the temporal organisation of experience becomes an autonomous, measurable and
+falsifiable explanatory variable. The “explanatory gap” thereby shifts from an unbridge-
+able mystery to a specific, quantitative model difference between a 𝑡-indexed and a 𝑃 -indexed
+description.
+The burden of proof that the thesis carries is therefore not “here is a proof that qualia exist”, but: “here is a
+mathematically explicit, testable formulation in which the difference between physical time and experienced
+time does the work, with concrete predictions (𝛽 = −3 in the Mind-Energy law; 𝑀𝑃 ≻ 𝑀𝑡 in model
+comparison) that can fail.” Part VI develops this argument in full. First, however, the reader must master
+the mathematics.
+7
+
+-- 7 of 32 --
+
+3 PART II — DIFFERENTIAL CALCULUS FROM THE
+GROUND UP
+3.1 Functions, change and slope
+3.1.1 Functions
+A function 𝑓 assigns to each value of an input quantity 𝑥 exactly one value 𝑓(𝑥) of an output quantity.
+Examples:
+• 𝑓(𝑡) = 3𝑡 + 2 — a straight line;
+• 𝑔(𝑡) = 𝑡2 — a parabola;
+• 𝜃(𝑡) = 𝜔𝑡 — the phase of an oscillator turning at constant angular frequency 𝜔;
+• 𝜏(𝑃 ) — the PPTQ as a function of the percept index (in RTC not a constant).
+3.1.2 Average rate of change
+The average rate of change of 𝑓 over the interval [𝑥, 𝑥 + ℎ] is
+Δ𝑓
+Δ𝑥 = 𝑓(𝑥 + ℎ) − 𝑓(𝑥)
+ℎ . (2.1)
+Geometrically this is the slope of the chord (secant) through the points (𝑥, 𝑓(𝑥)) and (𝑥 + ℎ, 𝑓(𝑥 + ℎ)).
+Worked example 2.1. Take 𝑔(𝑡) = 𝑡2, 𝑥 = 3, ℎ = 0.1:
+𝑔(3.1) − 𝑔(3)
+0.1 = 9.61 − 9
+0.1 = 0.61
+0.1 = 6.1.
+With ℎ = 0.01: 9.0601 − 9
+0.01 = 6.01. With ℎ = 0.001: 6.001. The values approach 6.
+3.2 The limit
+3.2.1 The idea
+The limit lim
+ℎ→0 𝐹 (ℎ) = 𝐿 means: by choosing ℎ sufficiently close to 0 (but not equal to 0) one can bring 𝐹 (ℎ)
+as close to 𝐿 as desired. The limit asks about the behaviour near a point, not the value at that point — and
+that is exactly what is needed, because in (2.1) substituting ℎ = 0 is forbidden (division by zero).
+3.2.2 Formal definition (epsilon–delta)
+lim
+ℎ→0 𝐹 (ℎ) = 𝐿 if and only if: for every 𝜀 > 0 there exists a 𝛿 > 0 such that 0 < |ℎ| < 𝛿 implies |𝐹 (ℎ) − 𝐿| < 𝜀.
+3.2.3 Rules for limits
+If lim 𝐹 and lim 𝐺 exist, then:
+• lim(𝐹 ± 𝐺) = lim 𝐹 ± lim 𝐺;
+• lim(𝐹 ⋅ 𝐺) = lim 𝐹 ⋅ lim 𝐺;
+• lim(𝐹 /𝐺) = lim 𝐹 / lim 𝐺 provided lim 𝐺 ≠ 0;
+• lim(𝑐 ⋅ 𝐹 ) = 𝑐 ⋅ lim 𝐹 .
+Worked example 2.2. Compute lim
+ℎ→0
+(3 + ℎ)2 − 9
+ℎ . Expand the numerator: (9 + 6ℎ + ℎ2) − 9 = 6ℎ + ℎ2. So
+6ℎ + ℎ2
+ℎ = 6 + ℎ (ℎ ≠ 0), lim
+ℎ→0(6 + ℎ) = 6.
+This confirms Worked example 2.1 exactly.
+8
+
+-- 8 of 32 --
+
+3.2.4 A fundamental limit: lim
+ℎ→0
+sin ℎ
+ℎ = 1
+(with ℎ in radians). This limit — provable geometrically via the squeeze theorem with cos ℎ ≤ sin ℎ
+ℎ ≤ 1 —
+is the engine behind the derivatives of sin and cos, and hence behind all oscillator dynamics.
+Strogatz reading guide. Infinite Powers, chapter 4 (“Putting Limits to Work”) treats precisely this limit
+and the “0/0” puzzle. The attitude “you may divide by ℎ as long as ℎ ≠ 0, and only then take the limit” is
+the core of Strogatz’s Infinity Principle.
+3.3 The derivative
+3.3.1 Definition
+The derivative of 𝑓 at 𝑥 is the limit of the chord slope as the interval shrinks to zero:
+𝑓′(𝑥) = 𝑑𝑓
+𝑑𝑥 = lim
+ℎ→0
+𝑓(𝑥 + ℎ) − 𝑓(𝑥)
+ℎ . (2.2)
+If this limit exists, 𝑓 is differentiable at 𝑥. Geometrically 𝑓′(𝑥) is the slope of the tangent line to the
+graph at (𝑥, 𝑓(𝑥)); physically it is the instantaneous rate of change.
+Notation. 𝑓′(𝑥) (Lagrange), 𝑑𝑓
+𝑑𝑥 (Leibniz),	̇	 𝑓 (Newton, for the derivative with respect to time). In this
+manual we use 𝑑𝜃
+𝑑𝑡 for the phase change with respect to clock time and 𝑑𝜃
+𝑑𝑃 for the phase change with respect
+to percept.
+3.3.2 The derivative from the definition: three worked cases
+Worked example 2.3 — 𝑓(𝑥) = 𝑥2.
+𝑓′(𝑥) = lim
+ℎ→0
+(𝑥 + ℎ)2 − 𝑥2
+ℎ = lim
+ℎ→0
+2𝑥ℎ + ℎ2
+ℎ = lim
+ℎ→0(2𝑥 + ℎ) = 2𝑥.
+Worked example 2.4 — 𝑓(𝑥) = 𝑥3. (Important for the Mind-Energy law.)
+(𝑥 + ℎ)3 = 𝑥3 + 3𝑥2ℎ + 3𝑥ℎ2 + ℎ3,
+𝑓′(𝑥) = lim
+ℎ→0
+3𝑥2ℎ + 3𝑥ℎ2 + ℎ3
+ℎ = lim
+ℎ→0(3𝑥2 + 3𝑥ℎ + ℎ2) = 3𝑥2.
+Worked example 2.5 — 𝑓(𝑥) = 1/𝑥 = 𝑥−1. (Important for 𝑣𝜏 = 1/𝜏 .)
+1
+𝑥 + ℎ − 1
+𝑥 = 𝑥 − (𝑥 + ℎ)
+𝑥(𝑥 + ℎ) = −ℎ
+𝑥(𝑥 + ℎ) ,
+𝑓′(𝑥) = lim
+ℎ→0
+−ℎ
+ℎ 𝑥(𝑥 + ℎ) = lim
+ℎ→0
+−1
+𝑥(𝑥 + ℎ) = − 1
+𝑥2 .
+3.3.3 Differentiability implies continuity
+If 𝑓 is differentiable at 𝑥, then 𝑓 is continuous there. The converse does not hold: 𝑓(𝑥) = |𝑥| is continuous
+at 0 but has a corner there and no derivative. This is relevant for RTC: at an abrupt state transition (for
+example a sudden jump in 𝜏) the percept–time relation is continuous but not necessarily differentiable; one
+then works piecewise.
+9
+
+-- 9 of 32 --
+
+3.4 All the differentiation rules
+Below are the rules one needs. Each rule is given with a brief justification and at least one worked example.
+A compact reference table appears at the end of the manual (Appendix A).
+3.4.1 Rule 1 — The constant rule
+If 𝑓(𝑥) = 𝑐 (constant), then 𝑓′(𝑥) = 0.
+Reason: 𝑓(𝑥 + ℎ) − 𝑓(𝑥) = 𝑐 − 𝑐 = 0, so the difference quotient is 0.
+Worked example. The intrinsic frequency 𝜔𝑖 of a Kuramoto oscillator is (per oscillator) constant: 𝑑𝜔𝑖
+𝑑𝑡 = 0.
+3.4.2 Rule 2 — The power rule
+For every real exponent 𝑛: if 𝑓(𝑥) = 𝑥𝑛, then
+𝑓′(𝑥) = 𝑛 𝑥𝑛−1. (2.3)
+Reason (integer 𝑛): via the binomial expansion (𝑥+ℎ)𝑛 = 𝑥𝑛+𝑛𝑥𝑛−1ℎ+(𝑛
+2)𝑥𝑛−2ℎ2+⋯; after dividing by ℎ and
+letting ℎ → 0 only 𝑛𝑥𝑛−1 remains. For rational and real 𝑛 the rule follows from the exponential/logarithmic
+rules (see Rule 8) together with the chain rule.
+Worked examples.
+𝑓(𝑥) 𝑓′(𝑥)
+𝑥5 5𝑥4
+𝑥−3 (this is 1/𝑥3) −3𝑥−4 = −3/𝑥4
+𝑥1/2 = √𝑥 1
+2 𝑥−1/2 = 1
+2√𝑥
+𝑥−1/3 (this is 𝜏 as a function of 𝐸𝑚, see Part V) − 1
+3 𝑥−4/3
+𝑥 1
+𝑥0 = 1 0
+3.4.3 Rule 3 — The constant multiple rule
+If 𝑔(𝑥) = 𝑐 𝑓(𝑥), then 𝑔′(𝑥) = 𝑐 𝑓′(𝑥).
+Worked example. 𝑑
+𝑑𝜏 ( 1
+2 𝑚 𝜏 −2) = 1
+2 𝑚 ⋅ (−2)𝜏 −3 = −𝑚 𝜏 −3. (This is the derivative of the kinetic-energy
+analogy with respect to 𝜏 ; see §12.4.)
+3.4.4 Rule 4 — The sum and difference rule
+(𝑓 ± 𝑔)′(𝑥) = 𝑓′(𝑥) ± 𝑔′(𝑥).
+Worked example. 𝑑
+𝑑𝑥 (3𝑥4 − 5𝑥2 + 7) = 12𝑥3 − 10𝑥 + 0 = 12𝑥3 − 10𝑥.
+3.4.5 Rule 5 — The product rule
+(𝑓 ⋅ 𝑔)′(𝑥) = 𝑓′(𝑥) 𝑔(𝑥) + 𝑓(𝑥) 𝑔′(𝑥). (2.4)
+Reason: write the numerator of the difference quotient as
+𝑓(𝑥 + ℎ)𝑔(𝑥 + ℎ) − 𝑓(𝑥)𝑔(𝑥) = [𝑓(𝑥 + ℎ) − 𝑓(𝑥)] 𝑔(𝑥 + ℎ)	⏟⏟⏟⏟⏟⏟⏟⏟⏟⏟⏟
+→𝑓′(𝑥)𝑔(𝑥)
++ 𝑓(𝑥) [𝑔(𝑥 + ℎ) − 𝑔(𝑥)]	⏟⏟⏟⏟⏟⏟⏟⏟⏟
+→𝑓(𝑥)𝑔′(𝑥)
+,
+10
+
+-- 10 of 32 --
+
+divide by ℎ and take the limit (using that 𝑔 is continuous, so 𝑔(𝑥 + ℎ) → 𝑔(𝑥)).
+Worked example 2.6. 𝑑
+𝑑𝑡 (𝑡2 sin 𝑡) = 2𝑡 sin 𝑡 + 𝑡2 cos 𝑡.
+Worked example 2.7 (RTC-relevant). Suppose the PPTQ increases linearly with the percept, 𝜏(𝑃 ) =
+𝜏0(1 + 𝑎𝑃 ), and the instantaneous phase change with respect to clock time 𝑑𝜃
+𝑑𝑡 = 𝜔 is constant. Then the
+phase change with respect to percept is 𝑑𝜃
+𝑑𝑃 = 𝜏(𝑃 ) 𝜔 = 𝜏0𝜔(1 + 𝑎𝑃 ), and the acceleration in percept space is
+𝑑
+𝑑𝑃 ( 𝑑𝜃
+𝑑𝑃 ) = 𝑑
+𝑑𝑃 [𝜏0𝜔 + 𝜏0𝜔𝑎𝑃 ] = 𝜏0𝜔𝑎.
+A changing PPTQ therefore generates an apparent angular acceleration in the experiential dynamics, even
+though the underlying oscillator turns perfectly uniformly in clock time. This is one of the core mechanisms
+of RTC.
+3.4.6 Rule 6 — The quotient rule
+( 𝑓
+𝑔 )
+′
+(𝑥) = 𝑓′(𝑥) 𝑔(𝑥) − 𝑓(𝑥) 𝑔′(𝑥)
+[𝑔(𝑥)]2 , 𝑔(𝑥) ≠ 0. (2.5)
+Reason: write 𝑓/𝑔 = 𝑓 ⋅ 𝑔−1 and combine the product and chain rules, or derive directly from the definition.
+Worked example 2.8. 𝑑
+𝑑𝜏 ( 1
+𝜏 3 ). Take 𝑓 = 1, 𝑔 = 𝜏 3: 𝑓′ = 0, 𝑔′ = 3𝜏 2.
+0 ⋅ 𝜏 3 − 1 ⋅ 3𝜏 2
+𝜏 6 = −3𝜏2
+𝜏 6 = − 3
+𝜏4 .
+This is the derivative of the Mind-Energy law 𝐸𝑚(𝜏) = 𝜏 −3 (identical to the power rule: −3𝜏−4). Inter-
+pretation: the shorter the PPTQ, the faster Mind-Energy rises upon further shortening — the sensitivity
+∣ 𝑑𝐸𝑚
+𝑑𝜏 ∣ = 3/𝜏 4 grows very steeply.
+Worked example 2.9. 𝑑
+𝑑𝑥 ( sin 𝑥
+𝑥 ) = 𝑥 cos 𝑥 − sin 𝑥
+𝑥2 .
+3.4.7 Rule 7 — The chain rule
+This is the most important rule for this manual, because the RTC reparametrisation is an application of it.
+If 𝑦 = 𝑓(𝑢) and 𝑢 = 𝑔(𝑥), then 𝑦 is a function of 𝑥 via the composition 𝑦 = 𝑓(𝑔(𝑥)), and
+𝑑𝑦
+𝑑𝑥 = 𝑑𝑦
+𝑑𝑢 ⋅ 𝑑𝑢
+𝑑𝑥 = 𝑓′(𝑔(𝑥)) ⋅ 𝑔′(𝑥). (2.6)
+Reason (sketch): Δ𝑦
+Δ𝑥 = Δ𝑦
+Δ𝑢 ⋅ Δ𝑢
+Δ𝑥 for Δ𝑢 ≠ 0; take the limit. The Leibniz notation makes the rule almost
+self-evident: the “𝑑𝑢’s cancel” — a formally valid intuition as long as 𝑔′(𝑥) ≠ 0.
+Worked example 2.10. 𝑑
+𝑑𝑥 sin(3𝑥). Take 𝑦 = sin 𝑢, 𝑢 = 3𝑥: 𝑑𝑦
+𝑑𝑢 = cos 𝑢, 𝑑𝑢
+𝑑𝑥 = 3. So 𝑑𝑦
+𝑑𝑥 = 3 cos(3𝑥).
+Worked example 2.11. 𝑑
+𝑑𝑡 (𝑡2 + 1)10 = 10(𝑡2 + 1)9 ⋅ 2𝑡 = 20𝑡 (𝑡2 + 1)9.
+Worked example 2.12. 𝑑
+𝑑𝑡 𝑒−𝑘𝑡 = 𝑒−𝑘𝑡 ⋅ (−𝑘) = −𝑘 𝑒−𝑘𝑡.
+11
+
+-- 11 of 32 --
+
+Worked example 2.13 — the RTC reparametrisation as a chain rule. Let 𝜃 = 𝜃(𝑡) be the phase of
+an oscillator, and let clock time depend on the percept via 𝑡 = 𝑡(𝑃 ) with 𝑑𝑡
+𝑑𝑃 = 𝜏(𝑃 ) (this is 𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 ).
+Then the phase change per percept is:
+𝑑𝜃
+𝑑𝑃 = 𝑑𝜃
+𝑑𝑡 ⋅ 𝑑𝑡
+𝑑𝑃 = 𝜏(𝑃 ) 𝑑𝜃
+𝑑𝑡 . (2.7)
+This is the full mathematical content of the transition from the classical to the RTC Kuramoto model. See
+Part V for the elaboration and the numerical worked examples.
+3.4.8 Rule 8 — Derivatives of the elementary functions
+𝑓(𝑥) 𝑓′(𝑥) Note
+sin 𝑥 cos 𝑥 𝑥 in radians; rests on
+limℎ→0 sin ℎ
+ℎ = 1
+cos 𝑥 − sin 𝑥
+tan 𝑥 sec2 𝑥 = 1/ cos2 𝑥 via quotient rule on sin / cos
+𝑒𝑥 𝑒𝑥 the function that is its own
+derivative
+𝑎𝑥 𝑎𝑥 ln 𝑎
+ln 𝑥 1/𝑥 𝑥 > 0
+log𝑎 𝑥 1/(𝑥 ln 𝑎)
+arcsin 𝑥 1/√1 − 𝑥2 relevant for phase locking, §11.2
+arctan 𝑥 1/(1 + 𝑥2)
+Derivation of (sin 𝑥)′ = cos 𝑥:
+sin(𝑥 + ℎ) − sin 𝑥
+ℎ = sin 𝑥 cos ℎ + cos 𝑥 sin ℎ − sin 𝑥
+ℎ = sin 𝑥 ⋅ cos ℎ − 1
+ℎ + cos 𝑥 ⋅ sin ℎ
+ℎ .
+With sin ℎ
+ℎ → 1 and cos ℎ − 1
+ℎ → 0 this yields cos 𝑥.
+Worked example 2.14. 𝑑
+𝑑𝑥 ln(cos 𝑥) = 1
+cos 𝑥 ⋅ (− sin 𝑥) = − tan 𝑥 (chain rule + Rule 8).
+3.4.9 Rule 9 — Implicit differentiation
+Sometimes 𝑦 is not given explicitly as 𝑦 = 𝑓(𝑥), but implicitly through an equation 𝐹 (𝑥, 𝑦) = 0. One then
+differentiates both sides with respect to 𝑥, treating 𝑦 as a function of 𝑥 (chain rule), and solves for 𝑑𝑦
+𝑑𝑥 .
+Worked example 2.15. The order-parameter relation 𝑅2 = ( 1
+𝑁 ∑ cos 𝜃𝑗)2 + ( 1
+𝑁 ∑ sin 𝜃𝑗)2. To find how
+𝑅 changes when all phases shift by 𝛿, one differentiates implicitly; the result is 𝑑𝑅
+𝑑𝛿 = 0 (a global phase shift
+does not change the coherence — the rotational invariance of the Kuramoto model).
+Worked example 2.16. From log 𝐸𝑚 = −3 log 𝜏 implicit differentiation with respect to 𝜏 gives 1
+𝐸𝑚
+𝑑𝐸𝑚
+𝑑𝜏 =
+− 3
+𝜏 , so 𝑑𝐸𝑚
+𝑑𝜏 = − 3𝐸𝑚
+𝜏 = − 3
+𝜏4 — consistent with Worked example 2.8. The quantity 𝑑 ln 𝐸𝑚
+𝑑 ln 𝜏 = −3 is the
+elasticity, and this number −3 is precisely the falsifiable prediction (see §12.5 and Part VI).
+12
+
+-- 12 of 32 --
+
+3.4.10 Rule 10 — Higher-order derivatives
+The second derivative 𝑓″(𝑥) = 𝑑
+𝑑𝑥 (𝑓′(𝑥)) = 𝑑2𝑓
+𝑑𝑥2 measures the change of the rate of change (curvature;
+physically: acceleration). Analogously 𝑓(𝑛).
+Worked example. 𝜃(𝑡) = sin(𝜔𝑡): 𝜃′(𝑡) = 𝜔 cos(𝜔𝑡), 𝜃″(𝑡) = −𝜔2 sin(𝜔𝑡) = −𝜔2𝜃. This is the harmonic-
+oscillator equation	̈	 𝜃 + 𝜔2𝜃 = 0.
+3.4.11 Rule 11 — Partial derivatives
+For a function of several variables, 𝑓(𝑥1, … , 𝑥𝑛), the partial derivative 𝜕𝑓
+𝜕𝑥𝑘
+is the derivative with respect
+to 𝑥𝑘 while the other variables are held constant.
+Worked example 2.17 — the Kuramoto coupling term. Consider, for oscillator 𝑖, the function
+𝐻𝑖(𝜃1, … , 𝜃𝑁 ) = 𝐾
+𝑁
+𝑁
+∑
+𝑗=1
+sin(𝜃𝑗 − 𝜃𝑖).
+The partial derivatives are:
+𝜕𝐻𝑖
+𝜕𝜃𝑖
+= − 𝐾
+𝑁
+𝑁
+∑
+𝑗=1
+cos(𝜃𝑗 − 𝜃𝑖), 𝜕𝐻𝑖
+𝜕𝜃𝑘
+= 𝐾
+𝑁 cos(𝜃𝑘 − 𝜃𝑖) (𝑘 ≠ 𝑖).
+These partial derivatives form the Jacobian of the Kuramoto system, which one needs to determine the
+stability of the synchronised state (§11.4).
+3.4.12 Rule 12 — The total derivative and the multivariable chain rule
+If 𝑓 = 𝑓(𝑢, 𝑣) with 𝑢 = 𝑢(𝑡), 𝑣 = 𝑣(𝑡), then
+𝑑𝑓
+𝑑𝑡 = 𝜕𝑓
+𝜕𝑢
+𝑑𝑢
+𝑑𝑡 + 𝜕𝑓
+𝜕𝑣
+𝑑𝑣
+𝑑𝑡 . (2.8)
+This is the generalisation of Rule 7 needed when 𝜏 depends both explicitly on 𝑃 and through other state
+variables — for example 𝜏 = 𝜏(𝑃 , 𝐸𝑚(𝑃 )).
+3.5 Applications of the derivative
+3.5.1 Tangent line and linear approximation
+The linear approximation (first-order Taylor) of 𝑓 around 𝑥0:
+𝑓(𝑥) ≈ 𝑓(𝑥0) + 𝑓′(𝑥0)(𝑥 − 𝑥0). (2.9)
+This is the tool with which one linearises a nonlinear system around a fixed point (§10.3). Strogatz calls this
+“the derivative as a local, linear approximation” (Infinite Powers, ch. 6).
+Worked example 2.18. √101 ≈ √100 + 1
+2√100 (1) = 10 + 0.05 = 10.05 (exact: 10.0499 …).
+3.5.2 Extrema
+At a local maximum or minimum of a differentiable function, 𝑓′(𝑥) = 0 (stationary point). The sign of 𝑓″(𝑥)
+distinguishes a maximum (𝑓″ < 0) from a minimum (𝑓″ > 0).
+Worked example 2.19. The Kuramoto coupling force on oscillator 𝑖 from one neighbour, 𝑔(𝜙) = 𝐾 sin 𝜙
+with 𝜙 = 𝜃𝑗 − 𝜃𝑖, is maximal where 𝑔′(𝜙) = 𝐾 cos 𝜙 = 0, hence at 𝜙 = 𝜋/2: a phase difference of 90∘ produces
+the strongest “pull” toward synchronisation.
+13
+
+-- 13 of 32 --
+
+3.5.3 Taylor series
+𝑓(𝑥) = 𝑓(𝑥0) + 𝑓′(𝑥0)(𝑥 − 𝑥0) + 𝑓″(𝑥0)
+2! (𝑥 − 𝑥0)2 + 𝑓‴(𝑥0)
+3! (𝑥 − 𝑥0)3 + ⋯ (2.10)
+Worked example 2.20. sin 𝜙 = 𝜙 − 𝜙3
+6 + ⋯, so for small phase differences sin 𝜙 ≈ 𝜙. This approximation
+turns the Kuramoto model in the weak-coupling limit into a linear system — exactly how Strogatz derives
+the synchronisation threshold analytically (Nonlinear Dynamics and Chaos, §8.6; Sync, ch. 2).
+Strogatz reading guide. Infinite Powers ch. 6–7 (derivative, extrema, approximations); Nonlinear Dynam-
+ics and Chaos §2.4 (linear stability analysis) and §8.6 (the Kuramoto model).
+14
+
+-- 14 of 32 --
+
+4 PART III — INTEGRAL CALCULUS
+4.1 The definite integral
+4.1.1 Idea: accumulation
+Where the derivative divides (change per unit), the integral adds up (accumulation over an interval). If
+𝑑𝜃
+𝑑𝑡 = 𝜔(𝑡) is the instantaneous angular frequency, then the total accumulated phase between 𝑡 = 𝑎 and 𝑡 = 𝑏
+is:
+𝜃(𝑏) − 𝜃(𝑎) = ∫
+𝑏
+𝑎
+𝜔(𝑡) 𝑑𝑡.
+4.1.2 Definition via Riemann sums
+Divide [𝑎, 𝑏] into 𝑛 pieces of width Δ𝑡 = (𝑏 − 𝑎)/𝑛, with sample points 𝑡∗
+𝑘. The Riemann sum is
+𝑛
+∑
+𝑘=1
+𝑓(𝑡∗
+𝑘) Δ𝑡.
+The definite integral is the limit:
+∫
+𝑏
+𝑎
+𝑓(𝑡) 𝑑𝑡 = lim
+𝑛→∞
+𝑛
+∑
+𝑘=1
+𝑓(𝑡∗
+𝑘) Δ𝑡. (3.1)
+Geometrically: the net area between the graph and the 𝑡-axis (area below the axis counts negatively).
+Strogatz reading guide. This is the Infinity Principle of Infinite Powers (ch. 1–3, 8): cut the region into
+infinitely many infinitely thin strips and add them up.
+Worked example 3.1. ∫
+3
+0
+2𝑡 𝑑𝑡. Analytically (see Fundamental Theorem): [𝑡2]3
+0 = 9. Numerically with
+𝑛 = 3 (Δ𝑡 = 1, right sample points 𝑡 = 1, 2, 3): 2(1) + 2(2) + 2(3) = 2 + 4 + 6 = 12; with 𝑛 = 6: approaches
+9; with 𝑛 → ∞: exactly 9.
+4.2 The Fundamental Theorem of Calculus
+This theorem connects differentiation and integration as inverses of each other.
+Part 1. If 𝐹 (𝑥) = ∫
+𝑥
+𝑎
+𝑓(𝑡) 𝑑𝑡, then 𝐹 ′(𝑥) = 𝑓(𝑥).
+Part 2. If 𝐹 is an antiderivative of 𝑓 (that is, 𝐹 ′ = 𝑓), then
+∫
+𝑏
+𝑎
+𝑓(𝑡) 𝑑𝑡 = 𝐹 (𝑏) − 𝐹 (𝑎). (3.2)
+In practice: to integrate, find a function whose derivative is the integrand.
+Worked example 3.2. ∫
+𝑏
+𝑎
+𝜔 𝑑𝑡 = [𝜔𝑡]𝑏
+𝑎 = 𝜔(𝑏 − 𝑎). At constant angular frequency the accumulated phase
+is simply 𝜔 ⋅ elapsed time.
+4.3 The indefinite integral and standard antiderivatives
+∫ 𝑓(𝑥) 𝑑𝑥 = 𝐹 (𝑥) + 𝐶 with 𝐹 ′ = 𝑓 and 𝐶 an arbitrary constant of integration.
+15
+
+-- 15 of 32 --
+
+𝑓(𝑥) ∫ 𝑓(𝑥) 𝑑𝑥
+𝑥𝑛 (𝑛 ≠ −1) 𝑥𝑛+1
+𝑛 + 1 + 𝐶
+𝑥−1 = 1/𝑥 ln |𝑥| + 𝐶
+𝑒𝑘𝑥 1
+𝑘 𝑒𝑘𝑥 + 𝐶
+sin(𝑘𝑥) − 1
+𝑘 cos(𝑘𝑥) + 𝐶
+cos(𝑘𝑥) 1
+𝑘 sin(𝑘𝑥) + 𝐶
+1
+1 + 𝑥2 arctan 𝑥 + 𝐶
+1
+√1 − 𝑥2 arcsin 𝑥 + 𝐶
+Worked example 3.3. ∫(12𝑡3 − 10𝑡 + 7) 𝑑𝑡 = 3𝑡4 − 5𝑡2 + 7𝑡 + 𝐶 (check by differentiating: Worked example
+2.6 style).
+4.4 Integration techniques
+4.4.1 Substitution (the chain rule in reverse)
+∫ 𝑓(𝑔(𝑥)) 𝑔′(𝑥) 𝑑𝑥 = ∫ 𝑓(𝑢) 𝑑𝑢, 𝑢 = 𝑔(𝑥), 𝑑𝑢 = 𝑔′(𝑥) 𝑑𝑥. (3.3)
+Worked example 3.4. ∫ 2𝑡 (𝑡2 + 1)10 𝑑𝑡. Take 𝑢 = 𝑡2 + 1, 𝑑𝑢 = 2𝑡 𝑑𝑡: ∫ 𝑢10 𝑑𝑢 = 𝑢11
+11 + 𝐶 = (𝑡2 + 1)11
+11 + 𝐶.
+Worked example 3.5 — the clock-time–percept-time transformation as substitution. The accu-
+mulated phase from percept 𝑃 = 0 to 𝑃 = 𝑃1 is
+𝜃(𝑃1) − 𝜃(0) = ∫
+𝑃1
+0
+𝑑𝜃
+𝑑𝑃 𝑑𝑃 = ∫
+𝑃1
+0
+𝜏(𝑃 ) 𝑑𝜃
+𝑑𝑡 𝑑𝑃 .
+With the substitution 𝑑𝑡 = 𝜏 (𝑃 ) 𝑑𝑃 this passes into ∫
+𝑡(𝑃1)
+𝑡(0)
+𝑑𝜃
+𝑑𝑡 𝑑𝑡 — the ordinary clock integral. The two
+descriptions therefore give the same total phase; they differ in how that phase is distributed over the axis.
+That difference in distribution is what RTC considers empirically testable (Part VI).
+4.4.2 Integration by parts (the product rule in reverse)
+∫ 𝑢 𝑑𝑣 = 𝑢𝑣 − ∫ 𝑣 𝑑𝑢. (3.4)
+Worked example 3.6. ∫ 𝑡 sin 𝑡 𝑑𝑡. Take 𝑢 = 𝑡 (𝑑𝑢 = 𝑑𝑡), 𝑑𝑣 = sin 𝑡 𝑑𝑡 (𝑣 = − cos 𝑡): −𝑡 cos 𝑡 + ∫ cos 𝑡 𝑑𝑡 =
+−𝑡 cos 𝑡 + sin 𝑡 + 𝐶.
+4.4.3 Numerical integration
+When no antiderivative is known: the trapezoidal rule ∫
+𝑏
+𝑎
+𝑓 ≈ Δ𝑡 [ 1
+2 𝑓0 + 𝑓1 + ⋯ + 𝑓𝑛−1 + 1
+2 𝑓𝑛], or Simp-
+son’s rule. This is also exactly how one solves differential equations numerically (§3.6).
+16
+
+-- 16 of 32 --
+
+Worked example 3.7 — proper-time analogy (from the RTC relativity module). In the RTC
+Lorentz analogy the integrated “proper time” is 𝜏𝑝 = ∫
+𝑇
+0
+√1 − 𝑣(𝑡)2 𝑑𝑡 with 𝑣(𝑡) the relative information
+speed (fraction of Ω𝑝𝑝𝑡𝑞). For 𝑣(𝑡) = 0.5 + 0.4 sin 𝑡 over [0, 10] with step Δ𝑡 = 0.1 the trapezoidal rule gives
+𝜏𝑝 ≈ 7.7 (against 𝑇 = 10 clock seconds): the subjective proper time is shorter than the clock time as the
+“speed” rises.
+4.5 Differential equations
+An ordinary differential equation (ODE) relates an unknown function to its derivatives, for example
+𝑑𝜃
+𝑑𝑡 = 𝜔 + 𝐾 sin(Ψ − 𝜃). To solve an ODE means: to find the function 𝜃(𝑡) that satisfies it.
+4.5.1 Separation of variables
+If 𝑑𝑦
+𝑑𝑥 = 𝐴(𝑥) 𝐵(𝑦), then ∫ 𝑑𝑦
+𝐵(𝑦) = ∫ 𝐴(𝑥) 𝑑𝑥.
+Worked example 3.8 — the Adler equation (two coupled oscillators). The phase difference 𝜙 =
+𝜃2 − 𝜃1 of two oscillators satisfies (see §11.2)
+𝑑𝜙
+𝑑𝑡 = Δ𝜔 − 𝐾 sin 𝜙.
+In a locked state 𝑑𝜙
+𝑑𝑡 = 0, so sin 𝜙∗ = Δ𝜔
+𝐾 . This has a solution (and hence phase locking) if and only if
+|Δ𝜔| ≤ 𝐾. This is Strogatz’s classic result on the synchronisation threshold (Nonlinear Dynamics and Chaos,
+§4.5 and §8.2; Sync, ch. 2).
+4.5.2 Numerical solution: Euler’s method
+𝜃(𝑡 + Δ𝑡) ≈ 𝜃(𝑡) + Δ𝑡 ⋅ 𝑑𝜃
+𝑑𝑡 . (3.5)
+This is nothing but the linear approximation (2.9) applied repeatedly. For better accuracy one uses Runge–
+Kutta 4 (RK4).
+Worked example 3.9 — Euler on one oscillator. 𝑑𝜃
+𝑑𝑡 = 𝜔 with 𝜔 = 2𝜋 ⋅ 10 ≈ 62.83 rad/s (a 10 Hz alpha
+oscillator), 𝜃(0) = 0, Δ𝑡 = 0.01 s. After one step: 𝜃 = 0.628 rad. After 6.2 steps (𝑡 = 0.062 s = 𝜏 ): 𝜃 ≈ 3.90
+rad ≈ 223∘. Per PPTQ window the oscillator therefore turns roughly 2
+3 of a full cycle.
+4.5.3 Reparametrising an ODE
+Given 𝑑𝜃
+𝑑𝑡 = 𝑓(𝜃) and 𝑑𝑡
+𝑑𝑃 = 𝜏 (𝑃 ), the chain rule gives directly the reparametrised ODE:
+𝑑𝜃
+𝑑𝑃 = 𝜏(𝑃 ) 𝑓(𝜃). (3.6)
+This is the formal basis of the PPTQ-scaled Kuramoto model (Part V). Note: the trajectory (the path 𝜃
+takes) remains the same set of points; only the speed at which the path is traversed changes, and with it the
+relation to the external clock.
+Strogatz reading guide. Nonlinear Dynamics and Chaos ch. 2 (flows, solutions as trajectories), appendix
+on numerical methods; Infinite Powers ch. 8–10 (integral, Fundamental Theorem, differential equations as
+“the operating system of the universe”).
+17
+
+-- 17 of 32 --
+
+5 PART IV — NONLINEAR DYNAMICS AND THE KU-
+RAMOTO MODEL
+5.1 Dynamical systems and phase space
+A dynamical system is given by a state vector x(𝑡) ∈ ℝ𝑛 and a vector field	̇	 x = F(x) that at each point
+prescribes the instantaneous speed and direction. The phase space is the space of all possible states; a
+trajectory is a solution curve.
+Examples from Chapter 9 of the thesis:
+• Logistic map (discrete): 𝑥𝑛+1 = 𝑟 𝑥𝑛(1 − 𝑥𝑛) — model for reflexive amplification and the route to
+chaos.
+• Kuramoto model (continuous, 𝑁 -dimensional):	̇	 𝜃𝑖 = 𝜔𝑖 + 𝐾
+𝑁 ∑𝑗 sin(𝜃𝑗 − 𝜃𝑖) — model for percept
+formation through synchronisation.
+• Ginzburg–Landau field (continuum field): 𝜕𝑡𝜓 = 𝜓 −(1+𝑖𝜔)|𝜓|2𝜓 +∇2𝜓 +𝜂 — heuristic description
+of the holographic field.
+5.2 Fixed points and stability
+A fixed point (equilibrium) x∗ satisfies F(x∗) = 0: the system stands still there. Stability is determined
+by linearisation: write x = x∗ + 𝛿, then	̇	 𝛿 ≈ 𝐽 (x∗) 𝛿 with 𝐽 the Jacobian (matrix of partial derivatives, Rule
+11). The signs of the real parts of the eigenvalues of 𝐽 determine whether perturbations grow (unstable) or
+decay (stable).
+Worked example 4.1 — 1D.	̇	 𝑥 = 𝑓(𝑥) = 𝑟𝑥 − 𝑥3 (pitchfork normal form). Fixed points: 𝑥∗ = 0 and
+(for 𝑟 > 0) 𝑥∗ = ±√𝑟. Linearisation: 𝑓′(𝑥) = 𝑟 − 3𝑥2. At 𝑥∗ = 0: 𝑓′(0) = 𝑟 — stable for 𝑟 < 0, unstable
+for 𝑟 > 0. At 𝑥∗ = ±√𝑟: 𝑓′(±√𝑟) = 𝑟 − 3𝑟 = −2𝑟 < 0 — stable. At 𝑟 = 0 the number and nature of the
+equilibria change: a bifurcation.
+5.3 Bifurcations
+A bifurcation is a qualitative change in the dynamics when a control parameter crosses a critical value. The
+four standard types (Strogatz, Nonlinear Dynamics and Chaos, ch. 3 and 8):
+Type Normal form What happens
+RTC interpretation (Ch.
+9/11)
+Saddle-node	̇	 𝑥 = 𝑟 + 𝑥2 two equilibria
+appear/disappear
+sudden emer-
+gence/disappearance of
+a percept state
+Transcritical	̇	 𝑥 = 𝑟𝑥 − 𝑥2 two equilibria exchange
+stability
+dominance switch
+𝑀𝑝 ↔ 𝑀𝑒
+Pitchfork	̇	 𝑥 = 𝑟𝑥 − 𝑥3 one equilibrium splits
+into three
+first bifurcation:
+emergence of bimodal
+consciousness (𝑟 ≈ 2.9)
+Hopf	̇	 𝑟 = 𝜇𝑟 − 𝑟3,	̇	 𝜑 = 𝜔 equilibrium becomes a
+limit cycle
+transition to mood
+cycles (bipolar disorder);
+parameter 𝛾 = reflexive
+gain
+Worked example 4.2 — saddle-node.	̇	 𝑥 = 𝑟 + 𝑥2. For 𝑟 < 0: 𝑥∗ = ±√−𝑟 (two equilibria, one stable,
+one unstable). For 𝑟 = 0: one (semi-stable) equilibrium. For 𝑟 > 0: no equilibria — the system “escapes”.
+The critical value is 𝑟𝑐 = 0.
+18
+
+-- 18 of 32 --
+
+5.4 The logistic map and the route to chaos
+𝑥𝑛+1 = 𝑟 𝑥𝑛(1 − 𝑥𝑛), 𝑥𝑛 ∈ [0, 1], 𝑟 ∈ [0, 4]. (4.1)
+This is equation (9.6) from the thesis. The derivative of the map is 𝑓′(𝑥) = 𝑟(1 − 2𝑥).
+Fixed point. 𝑥∗ = 𝑟𝑥∗(1 − 𝑥∗) ⇒ 𝑥∗ = 0 or 𝑥∗ = 1 − 1
+𝑟 .
+Stability of 𝑥∗ = 1 − 1/𝑟. 𝑓′(𝑥∗) = 𝑟(1 − 2(1 − 1
+𝑟 )) = 𝑟( − 1 + 2
+𝑟 ) = 2 − 𝑟. Stable as long as |2 − 𝑟| < 1,
+hence 1 < 𝑟 < 3. At 𝑟 = 3, |𝑓′| = 1: period doubling to a 2-cycle.
+Worked example 4.3 — iteration at 𝑟 = 3.2, 𝑥0 = 0.5.
+𝑛 𝑥𝑛
+0 0.5000
+1 3.2 ⋅ 0.5 ⋅ 0.5 = 0.8000
+2 3.2 ⋅ 0.8 ⋅ 0.2 = 0.5120
+3 3.2 ⋅ 0.512 ⋅ 0.488 = 0.7995
+4 0.5130
+5 0.7994
+The system settles into a 2-cycle alternating between ≈ 0.513 and ≈ 0.799. The (formerly stable) fixed
+point 𝑥∗ = 1 − 1/3.2 = 0.6875 is now unstable (𝑓′(𝑥∗) = 2 − 3.2 = −1.2, |−1.2| > 1).
+The period-doubling cascade. Further increase of 𝑟 gives 4-, 8-, 16-cycles over ever shorter parameter in-
+tervals, with the universal Feigenbaum constant 𝛿 ≈ 4.669 as the convergence ratio. At 𝑟∞ ≈ 3.5699 chaos
+begins: sensitive dependence on initial conditions. This is Phase III in the thesis (“chaotic de-resonance”,
+𝑟 > 3.57).
+Strogatz reading guide. Nonlinear Dynamics and Chaos ch. 10 (“One-Dimensional Maps”) treats the
+logistic map, the cascade and Feigenbaum universality in full.
+5.5 Oscillators: phase, frequency, and the phase derivative
+An oscillator is a system that runs through a cycle. Its state is summarised by a single angle, the phase
+𝜃 ∈ [0, 2𝜋). The angular frequency is the phase derivative:
+𝜔 = 𝑑𝜃
+𝑑𝑡 .
+A uniform oscillator has 𝑑𝜃
+𝑑𝑡 = 𝜔 constant, so 𝜃(𝑡) = 𝜃0 + 𝜔𝑡 (integration: Worked example 3.2). The period
+is 𝑇 = 2𝜋/𝜔; the ordinary frequency 𝑓 = 𝜔/2𝜋 in Hz.
+Worked example 4.4. A gamma oscillator of 40 Hz: 𝜔 = 2𝜋 ⋅ 40 ≈ 251.3 rad/s, 𝑇 = 25 ms. Within one
+PPTQ window of 62 ms it completes 62/25 ≈ 2.5 cycles.
+5.6 Two coupled oscillators
+Let 𝜃1, 𝜃2 be two oscillators with intrinsic frequencies 𝜔1, 𝜔2, sinusoidally coupled with strength 𝐾:
+̇
+𝜃1 = 𝜔1 + 𝐾 sin(𝜃2 − 𝜃1),̇ 𝜃2 = 𝜔2 + 𝐾 sin(𝜃1 − 𝜃2).
+Define the phase difference 𝜙 = 𝜃2 − 𝜃1. Then (sum and difference rule, plus sin(−𝜙) = − sin 𝜙):
+̇
+𝜙 =̇ 𝜃2 −̇ 𝜃1 = (𝜔2 − 𝜔1) − 2𝐾 sin 𝜙 = Δ𝜔 − 2𝐾 sin 𝜙. (4.2)
+19
+
+-- 19 of 32 --
+
+This is the Adler equation. Phase locking (̇ 𝜙 = 0) requires sin 𝜙∗ = Δ𝜔
+2𝐾 , solvable if and only if |Δ𝜔| ≤ 2𝐾.
+Worked example 4.5. 𝜔1 = 2𝜋(10), 𝜔2 = 2𝜋(11) rad/s, so Δ𝜔 = 2𝜋 ≈ 6.28 rad/s. Locking requires
+𝐾 ≥ Δ𝜔/2 ≈ 3.14 rad/s. At 𝐾 = 4: sin 𝜙∗ = 6.28/8 = 0.785, 𝜙∗ = arcsin(0.785) ≈ 0.903 rad ≈ 51.7∘ — the
+oscillators turn locked, with the faster one 51.7∘ ahead.
+5.7 The Kuramoto model
+5.7.1 The equation
+For 𝑁 oscillators with frequencies 𝜔𝑖 drawn from a distribution 𝑔(𝜔), each coupled to all the others:
+𝑑𝜃𝑖
+𝑑𝑡 = 𝜔𝑖 + 𝐾
+𝑁
+𝑁
+∑
+𝑗=1
+sin(𝜃𝑗 − 𝜃𝑖), 𝑖 = 1, … , 𝑁 . (4.3)
+This is equation (9.3) from the thesis (without the noise term 𝜉𝑖). The factor 1/𝑁 makes the coupling
+intensive (independent of the system size).
+5.7.2 The order parameter
+Define the complex number
+𝑅 𝑒𝑖Ψ = 1
+𝑁
+𝑁
+∑
+𝑗=1
+𝑒𝑖𝜃𝑗 . (4.4)
+Here 𝑅 ∈ [0, 1] is the coherence (0 = fully incoherent, 1 = perfect synchronisation) and Ψ the mean phase.
+This is equation (9.4). Geometrically: place each oscillator as a unit vector on the unit circle; 𝑅 is the length
+of their average (“the centre of mass”).
+5.7.3 The mean-field rewrite
+Multiply (4.4) by 𝑒−𝑖𝜃𝑖 and take the imaginary part:
+1
+𝑁
+𝑁
+∑
+𝑗=1
+sin(𝜃𝑗 − 𝜃𝑖) = 𝑅 sin(Ψ − 𝜃𝑖).
+Substitution into (4.3) gives the elegant mean-field form:
+𝑑𝜃𝑖
+𝑑𝑡 = 𝜔𝑖 + 𝐾𝑅 sin(Ψ − 𝜃𝑖). (4.5)
+Each oscillator feels the population only through the mean field (𝑅, Ψ). The effective coupling is 𝐾𝑅: the
+more coherent the population, the more strongly it pulls each oscillator toward itself — a positive feedback
+that makes synchronisation self-reinforcing.
+5.7.4 The critical coupling
+For a symmetric, unimodal 𝑔(𝜔) with peak at 𝜔0, the self-consistency analysis (Strogatz, 2000) shows that
+there is a threshold:
+𝐾𝑐 = 2
+𝜋 𝑔(𝜔0) . (4.6)
+For 𝐾 < 𝐾𝑐: 𝑅 = 0 (incoherence). For 𝐾 > 𝐾𝑐: 𝑅 grows continuously from 0 as 𝑅 ∝ √𝐾 − 𝐾𝑐 —
+a second-order phase transition. In the thesis 𝐾𝑐 ≈ 1.3 is used (Figure 15), with the percept threshold
+𝑅𝑐 ≈ 0.6.
+Worked example 4.6 — Euler simulation of (4.3), outline. Take 𝑁 = 50, 𝜔𝑖 from a normal distribution
+(sd = 0.5), Δ𝑡 = 0.01. Per step: (1) compute 𝑅, Ψ from (4.4); (2) update each 𝜃𝑖 with 𝜃𝑖 += Δ𝑡 [𝜔𝑖 +
+20
+
+-- 20 of 32 --
+
+𝐾𝑅 sin(Ψ − 𝜃𝑖)]. At 𝐾 = 0.8, 𝑅 stays ≈ 0.15 (noise around zero); at 𝐾 = 2.0, 𝑅 rises within a few hundred
+steps to ≈ 0.8. This reproduces Figure 15 of the thesis. Full R and Python code is in Appendix D.
+Strogatz reading guide. Sync ch. 1–3 (the story, the fireflies, the order parameter); Nonlinear Dynamics
+and Chaos §8.6 (2nd ed.: full mathematical treatment of (4.3)–(4.6)); Strogatz (2000), Physica D 143, 1–20
+(“From Kuramoto to Crawford”) — the review article the thesis cites.
+21
+
+-- 21 of 32 --
+
+6 PART V — THE RTC REPARAMETRISATION: DIFFEREN-
+TIATING OVER THE PERCEPT
+Now all the threads come together. This part carries out, step by step, the transition from the classical,
+clock-indexed Kuramoto model to the PPTQ-scaled, percept-indexed RTC model, and in addition derives
+the Mind-Energy law 𝐸𝑚 = 1/𝜏 3 in full.
+6.1 The transformation 𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃
+6.1.1 Motivation
+In the classical model 𝑡 (seconds) is the independent variable. RTC claims: conscious experience unfolds in
+percepts, discrete integration windows. Number them 𝑃 = 1, 2, 3, … Each percept spans a clock duration
+equal to the PPTQ 𝜏 of that moment. The infinitesimal version of this is:
+𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 (5.1)
+𝜏(𝑃 ) is dynamic: it depends on the state of consciousness, which itself evolves with 𝑃 . The empirically
+expected ordering is
+𝜏meditation > 𝜏waking > 𝜏stress. (5.2)
+6.1.2 Epistemic status of (5.1)
+As the project notes emphasise: (5.1) is not a pure mathematical identity unless 𝑃 is explicitly defined as a
+dimensionless percept-count variable. We do so here: 𝑃 counts percepts, [𝑃 ] = 1, and 𝜏 carries the unit
+second. Under that definition (5.1) is a modelling assumption with content: it claims that the natural “tick”
+of conscious dynamics is the percept, not the second. Precisely because it is an assumption with content, it
+is testable (Part VI).
+6.2 From 𝑑𝜃
+𝑑𝑡 to 𝑑𝜃
+𝑑𝑃
+Apply the chain rule (Rule 7, equation 2.7):
+𝑑𝜃𝑖
+𝑑𝑃 = 𝑑𝜃𝑖
+𝑑𝑡 ⋅ 𝑑𝑡
+𝑑𝑃 = 𝜏(𝑃 ) 𝑑𝜃𝑖
+𝑑𝑡 . (5.3)
+Substitute the classical Kuramoto right-hand side (4.3):
+𝑑𝜃𝑖
+𝑑𝑃 = 𝜏(𝑃 ) [𝜔𝑖 + 𝐾
+𝑁
+𝑁
+∑
+𝑗=1
+sin (𝜃𝑗(𝑃 ) − 𝜃𝑖(𝑃 ))] . (5.4)
+This is the RTC Kuramoto model — equation (9.x) in the revised Chapter 9, §9.4. In mean-field form:
+𝑑𝜃𝑖
+𝑑𝑃 = 𝜏(𝑃 )[𝜔𝑖 + 𝐾 𝑅(𝑃 ) sin(Ψ(𝑃 ) − 𝜃𝑖)], (5.5)
+with the percept-indexed order parameter
+𝑅(𝑃 ) 𝑒𝑖Ψ(𝑃 ) = 1
+𝑁
+𝑁
+∑
+𝑗=1
+𝑒𝑖𝜃𝑗(𝑃 ). (5.6)
+22
+
+-- 22 of 32 --
+
+6.2.1 What changes mathematically, and what does not?
+• The set of trajectories in phase space remains identical: (5.4) traverses the same curves as (4.3),
+because the factor 𝜏(𝑃 ) > 0 rescales only the speed, not the direction of the vector field (§3.6).
+• The relation to the external clock does change: where 𝜏 is large (meditation), less perceptual
+change happens per clock second; where 𝜏 is small (stress), more.
+• The coherence build-up per percept becomes: 𝑑𝑅
+𝑑𝑃 = 𝜏(𝑃 )⋅ 𝑑𝑅
+𝑑𝑡 . At short 𝜏 the system accumulates
+less coherence per percept — a concrete prediction about how percept formation degrades under stress.
+Worked example 5.1 — one oscillator, constant 𝜏 . 𝑑𝜃
+𝑑𝑡 = 𝜔 = 2𝜋(10) rad/s, 𝜏 = 0.062 s. Then
+𝑑𝜃
+𝑑𝑃 = 𝜏𝜔 = 0.062 ⋅ 62.83 ≈ 3.90 rad per percept. Integrating over 𝑃 (Worked example 3.2 style): 𝜃(𝑃 ) =
+3.90 𝑃 . After 10 percepts: 𝜃 = 39.0 rad ≈ 6.2 full revolutions. In clock time: 10 percepts = 0.62 s, and
+𝜔𝑡 = 62.83 ⋅ 0.62 = 38.96 rad — consistent (the small difference is rounding).
+Worked example 5.2 — dynamic 𝜏(𝑃 ). Let 𝜏(𝑃 ) = 0.062 (1 − 0.3 𝑒−𝑃 /5) model the PPTQ recovering
+from a shortened (stress) initial state 𝜏(0) = 0.0434 s toward 0.062 s. With 𝜔 = 62.83 rad/s:
+𝑃 𝜏(𝑃 ) (s) 𝑑𝜃/𝑑𝑃 = 𝜏𝜔 (rad)
+0 0.0434 2.73
+2 0.0495 3.11
+5 0.0552 3.47
+10 0.0595 3.74
+∞ 0.0620 3.95
+The accumulated phase after 𝑃1 percepts is 𝜃(𝑃1) = ∫
+𝑃1
+0
+𝜏(𝑃 ) 𝜔 𝑑𝑃 = 𝜔[0.062 𝑃 + 0.062 ⋅ 0.3 ⋅ 5 𝑒−𝑃 /5]𝑃1
+0
+(standard integral ∫ 𝑒−𝑃 /5𝑑𝑃 = −5𝑒−𝑃 /5). For 𝑃1 = 10: 𝜃(10) = 62.83 (0.062 ⋅ 10 + 0.093(𝑒−2 − 1)) =
+62.83 (0.620 − 0.0804) = 62.83 ⋅ 0.5396 ≈ 33.9 rad. Note that this is less than the 39.0 rad from Worked
+example 5.1: the shortened PPTQ in the initial state “costs” accumulated phase.
+6.3 The Mind-Energy law 𝐸𝑚 = 1/𝜏 3
+6.3.1 Step 1 — the kinetic-energy analogy
+The thesis (§4.11) postulates a PPTQ-dependent Mind-Energy by analogy with the classical (Newtonian)
+kinetic energy:
+𝑀𝐸 = 1
+2 𝑚 𝑣2
+𝜏 , (5.7)
+where 𝑣𝜏 is a temporal velocity associated with the PPTQ.
+6.3.2 Step 2 — the temporal velocity (definitional)
+The natural RTC temporal velocity is the reciprocal PPTQ:
+𝑣𝜏 = 1
+𝜏 = 𝜏 −1. (5.8)
+Interpretation: 𝜏 is the duration of one psychophysical cycle, so 1/𝜏 is the cycle frequency — the shorter the
+PPTQ, the faster the conscious “refresh”. This is a definition, not an assumption.
+6.3.3 Step 3 — substitution (inverse-square)
+Substituting (5.8) into (5.7):
+𝑀𝐸 = 1
+2 𝑚 ( 1
+𝜏 )
+2
+= 𝑚
+2𝜏2 ∝ 𝜏 −2. (5.9)
+23
+
+-- 23 of 32 --
+
+At this point we have an inverse-square law, not yet the inverse-cubic one.
+6.3.4 Step 4 — the effective mass (substantive RTC postulate)
+To obtain the inverse-cubic law, the effective psychophysical mass must also scale inversely with the PPTQ:
+𝑚𝜏 ∝ 1
+𝜏 = 𝜏 −1. (5.10)
+This is not a consequence of classical mechanics; it is a substantive RTC assumption that requires independent
+theoretical justification and empirical testing. Honestly naming which part is inherited analogy and which
+part is new physics/metaphysics strengthens the argument.
+6.3.5 Step 5 — combining
+𝐸𝑚 ∝ 𝑚𝜏 𝑣2
+𝜏 ∝ 𝜏 −1 ⋅ 𝜏 −2 = 𝜏 −3.
+𝐸𝑚 = 1
+𝜏 3 (5.11)
+(with the factor 1
+2 absorbed into the normalisation of the Mind-Energy unit). The inverse-cubic law therefore
+arises from two independent temporal scalings: one in the velocity (𝜏 −2) and one in the mass (𝜏 −1).
+6.3.6 The scientifically defensible chain
+kinetic-energy analogy → 𝑣𝜏 = 𝜏 −1 → 𝑚𝜏 ∝ 𝜏 −1 → 𝐸𝑚 ∝ 𝜏 −3,
+with the crucial caveat that 𝑚𝜏 ∝ 𝜏 −1 is an additional postulate. Note: 1
+2 𝑚𝑣2 is the Newtonian low-
+velocity expression, not the relativistic 𝐸 = 𝛾𝑚𝑐2. The thesis therefore speaks of a kinetic-energy analogy or
+relativistically inspired analogy, not of a derivation from special relativity.
+6.3.7 The logarithmic form and the falsifiable exponent
+Take the logarithm of (5.11):
+ln 𝐸𝑚 = −3 ln 𝜏. (5.12)
+A log–log regression of independently measured 𝐸𝑚 against independently measured 𝜏 must yield a slope
+𝛽 = −3.
+An estimated 𝛽 ≈ −2 would indicate an incorrect mass postulate (only the velocity scaling survives); 𝛽 ≈ −1
+or 𝛽 > 0 would refute the law. This is the direct statistical test criterion (see §12.5 and Part VI).
+Worked example 5.3 — numerical values of 𝐸𝑚. With 𝐸𝑚 = 1/𝜏 3 (𝜏 in seconds):
+State 𝜏 𝐸𝑚 = 𝜏 −3 ln 𝜏 ln 𝐸𝑚
+Deep meditation 0.100 s 1.00 × 103 −2.303 6.908
+Relaxed waking 0.080 s 1.95 × 103 −2.526 7.577
+Normal waking 0.062 s 4.20 × 103 −2.781 8.342
+Heightened
+alertness
+0.050 s 8.00 × 103 −2.996 8.987
+Acute stress 0.042 s 1.35 × 104 −3.170 9.510
+Check of the slope between the first and last rows: 9.510 − 6.908
+−3.170 − (−2.303) = 2.602
+−0.867 = −3.00. Exactly 𝛽 = −3,
+as (5.12) requires.
+24
+
+-- 24 of 32 --
+
+Worked example 5.4 — the sensitivity 𝑑𝐸𝑚/𝑑𝜏 . From Worked example 2.8: 𝑑𝐸𝑚
+𝑑𝜏 = − 3
+𝜏 4 . At 𝜏 = 0.062:
+−3/(0.062)4 = −3/1.478 × 10−5 ≈ −2.03 × 105 (per second). At 𝜏 = 0.042: −3/(0.042)4 ≈ −9.64 × 105. A
+shortening of the PPTQ by 1 ms near the stress state raises 𝐸𝑚 almost five times as strongly as the same
+shortening near the waking state — the law predicts a strongly nonlinear escalation of Mind-Energy with
+increasing arousal.
+6.4 The combined model: PPTQ as bridge
+From (5.11) it follows that 𝜏 = 𝐸−1/3
+𝑚 (power-rule inverse; see Rule 2). Substitution into (5.4) gives an RTC
+Kuramoto model in which Mind-Energy explicitly scales the dynamics:
+𝑑𝜃𝑖
+𝑑𝑃 = 1
+𝐸1/3
+𝑚
+[𝜔𝑖 + 𝐾
+𝑁
+𝑁
+∑
+𝑗=1
+sin(𝜃𝑗 − 𝜃𝑖)] . (5.13)
+Herewith the PPTQ 𝜏 becomes the formal bridge between the Mind-Energy formulation and the resonance
+dynamics: one quantity (𝜏, or equivalently 𝐸𝑚) determines both the energy level of the mind and the rate
+at which percepts are formed.
+Worked example 5.5. At 𝐸𝑚 = 4.20 × 103 (normal waking), 𝐸1/3
+𝑚 = 16.13, so 1/𝐸1/3
+𝑚 = 0.062 = 𝜏 —
+consistent. At 𝐸𝑚 = 1.35×104 (stress), 𝐸1/3
+𝑚 = 23.8, 1/𝐸1/3
+𝑚 = 0.042 = 𝜏 . The prefactor in (5.13) is therefore
+literally the PPTQ, and a higher Mind-Energy compresses the phase change per percept.
+6.5 The conceptual hierarchy
+Resonance → PPTQ (𝜏) → perceptual succession (𝑃 ) → phase dynamics (𝜃𝑖) → conscious experience.
+The corresponding mathematical structure is the pair
+𝐸𝑚 = 𝜏 −3 and 𝑑𝜃𝑖
+𝑑𝑃 = 𝜏(𝑃 ) [𝜔𝑖 + 𝐾
+𝑁 ∑
+𝑗
+sin(𝜃𝑗 − 𝜃𝑖)] .
+25
+
+-- 25 of 32 --
+
+7 PART VI — EPISTEMOLOGICAL ACCOUNTABILITY AND
+THE HARD PROBLEM
+7.1 Four levels, sharply separated
+RTC distinguishes four levels, and the strength of the formalism depends on not conflating them:
+1. Ontological level. Experience is primary (Axiom I); temporal organisation is constitutive of experi-
+ence. This is a metaphysical commitment; no experiment establishes it directly.
+2. Formal level. 𝜏 becomes a formal variable; the relations 𝐸𝑚 ∝ 𝜏 −3 and 𝑑𝜃𝑖
+𝑑𝑃 ∝ 𝜏 impose structure.
+3. Operational level. 𝜏 is defined as “the characteristic temporal interval over which successive
+perceptual states are integrated into a unitary experiential event”, and estimated psychophysi-
+cally (temporal-order judgments, simultaneity judgments, temporal numerosity, backward masking,
+temporal-integration paradigms).
+4. Empirical level. Only here does the theory become vulnerable to refutation.
+The formalism does not prove the axioms. It converts them into a structured set of empirical consequences.
+7.2 The status of the mathematical layers (Chapter 9)
+Layer Status Function
+Ginzburg–Landau field theory heuristic holographic field, phase
+transitions
+Kuramoto synchronisation formal + computational percept formation, coherence
+Bayesian inference formal perceptual updating
+Nonlinear dynamics heuristic + computational attractor landscapes, bifurcations,
+psychopathology
+Formal = deductive proof from accepted premises; computational = simulation validation; heuristic = struc-
+tural analogy without literal physical identification. This modesty forestalls the classic error — mistaking
+analogy for proof — that has discredited many a formalisation in consciousness studies.
+7.3 Why percept differentiation addresses the hard problem
+The argument, explicit and step by step:
+1. The explanatory gap, in its usual formulation, is bound to clock time. Standard theories
+describe neural processes as 𝑑(⋅)
+𝑑𝑡 — evolving in homogeneous external time. In that framework there is
+no place for the lived temporal structure; it is averaged away. The “what it is like to experience” then
+has no formal carrier.
+2. RTC introduces a second, psychophysically defined temporal variable. Through 𝑑(⋅)
+𝑑𝑃 with
+𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 , the temporal organisation of experience acquires its own explicit formal carrier — 𝜏 (𝑃 )
+— that is empirically distinguishable from 𝑡.
+3. The shift makes the gap testable instead of mysterious. The question “how does experience
+relate to physics?” is reformulated as: “Does a 𝑃 -indexed (PPTQ-scaled) description explain the
+dynamics of conscious states better than a purely 𝑡-indexed description, after correcting for arousal,
+sensory input and overall neural power?” Formally: compare model 𝑀𝑃 (equation 5.4) with model 𝑀𝑡
+(equation 4.3) in out-of-sample prediction. RTC predicts 𝑀𝑃 ≻ 𝑀𝑡.
+4. If 𝑀𝑃 ≻ 𝑀𝑡 holds up robustly, then the temporal organisation of experience is an au-
+tonomous explanatory variable — not reducible to clock physics. That is the “mathematical
+26
+
+-- 26 of 32 --
+
+burden of proof” the thesis carries: not a proof that qualia exist, but an explicit, falsifiable formalism
+in which the distinction between physical time and experienced time does the explanatory work.
+5. What it does not claim. It does not demonstrate that consciousness is identical to PPTQ, nor
+that resonance is ontologically fundamental. It opens a route by which those ontological claims acquire
+empirical consequences.
+7.4 Falsifiability: the concrete criteria
+• Mind-Energy law. ln 𝐸𝑚 = 𝛼 − 3 ln 𝜏 + 𝜖. Test 𝐻0 ∶ 𝛽 ≠ −3 against 𝐻1 ∶ 𝛽 = −3. A Bayesian model
+comparison of 𝑀1 ∶ 𝛽 = −3 against an unconstrained power-law model 𝑀2 ∶ 𝐸𝑚 = 𝑎𝜏 𝛽 prevents an
+arbitrary power law from counting as “support”.
+• PPTQ-Kuramoto hypothesis. If clock-indexed dynamics consistently give better predictions of
+perceptual and conscious-state transitions than PPTQ-indexed dynamics, the RTC modification loses
+its justification.
+• Avoiding circularity. 𝜏 must be estimated psychophysically, while Mind-Energy and neural synchro-
+nisation are measured independently (EEG/MEG). Otherwise the test is not independent.
+7.5 The epistemological transition summarised
+metaphysical axiom → mathematical formalisation → operational definition → empirical prediction → falsifiable test.
+Without this chain, RTC remains an ontological interpretation of consciousness. With it, RTC becomes
+a candidate scientific theory whose central claims can be confronted with data, compared with competing
+models, and rejected if its quantitative predictions fail.
+27
+
+-- 27 of 32 --
+
+8 PART VII — REFERENCE
+8.1 Appendix A — All differentiation rules in one table
+# Rule Formula
+1 Constant (𝑐)′ = 0
+2 Power (𝑥𝑛)′ = 𝑛𝑥𝑛−1
+3 Constant multiple (𝑐 𝑓)′ = 𝑐 𝑓′
+4 Sum / difference (𝑓 ± 𝑔)′ = 𝑓′ ± 𝑔′
+5 Product (𝑓𝑔)′ = 𝑓′𝑔 + 𝑓𝑔′
+6 Quotient (𝑓/𝑔)′ = 𝑓′𝑔 − 𝑓𝑔′
+𝑔2
+7 Chain 𝑑𝑦
+𝑑𝑥 = 𝑑𝑦
+𝑑𝑢
+𝑑𝑢
+𝑑𝑥
+8a Sine (sin 𝑥)′ = cos 𝑥
+8b Cosine (cos 𝑥)′ = − sin 𝑥
+8c Tangent (tan 𝑥)′ = sec2 𝑥
+8d Exponential (𝑒𝑥)′ = 𝑒𝑥; (𝑎𝑥)′ = 𝑎𝑥 ln 𝑎
+8e Logarithm (ln 𝑥)′ = 1/𝑥
+8f Inverse trig (arcsin 𝑥)′ = 1
+√1 − 𝑥2 ;
+(arctan 𝑥)′ = 1
+1 + 𝑥2
+9 Implicit differentiate 𝐹 (𝑥, 𝑦) = 0, solve for
+𝑦′
+10 Higher order 𝑓″ = (𝑓′)′, etc.
+11 Partial 𝜕𝑓/𝜕𝑥𝑘: other variables constant
+12 Total (several vars.) 𝑑𝑓
+𝑑𝑡 = ∑𝑘
+𝜕𝑓
+𝜕𝑥𝑘
+𝑑𝑥𝑘
+𝑑𝑡
+8.2 Appendix B — Standard integrals
+𝑓(𝑥) ∫ 𝑓 𝑑𝑥 𝑓(𝑥) ∫ 𝑓 𝑑𝑥
+𝑥𝑛 (𝑛 ≠ −1) 𝑥𝑛+1
+𝑛 + 1 + 𝐶 sin(𝑘𝑥) − 1
+𝑘 cos(𝑘𝑥) + 𝐶
+1/𝑥 ln|𝑥| + 𝐶 cos(𝑘𝑥) 1
+𝑘 sin(𝑘𝑥) + 𝐶
+𝑒𝑘𝑥 1
+𝑘 𝑒𝑘𝑥 + 𝐶 1
+1 + 𝑥2 arctan 𝑥 + 𝐶
+ln 𝑥 𝑥 ln 𝑥 − 𝑥 + 𝐶 1
+√1 − 𝑥2 arcsin 𝑥 + 𝐶
+Techniques: substitution (∫ 𝑓(𝑔)𝑔′ 𝑑𝑥 = ∫ 𝑓(𝑢) 𝑑𝑢); integration by parts (∫ 𝑢 𝑑𝑣 = 𝑢𝑣 − ∫ 𝑣 𝑑𝑢); numerical
+(trapezoidal, Simpson, RK4).
+8.3 Appendix C — List of symbols
+Symbol Meaning Unit
+𝑡 homogeneous clock time s
+𝜏 , 𝜏 (𝑃 ) PPTQ / experiential time
+quantum
+s
+28
+
+-- 28 of 32 --
+
+Symbol Meaning Unit
+𝑃 perceptual succession / percept
+index
+— (dimensionless)
+𝜃𝑖 phase of oscillator 𝑖 rad
+𝜔𝑖 intrinsic angular frequency of
+oscillator 𝑖
+rad/s
+𝐾 coupling strength rad/s
+𝐾𝑐 critical coupling strength rad/s
+𝑁 number of oscillators —
+𝑅, 𝑅(𝑃 ) Kuramoto order parameter
+(coherence)
+∈ [0, 1]
+Ψ collective / mean phase rad
+𝑅𝑐 percept threshold (≈ 0.6) —
+𝐸𝑚, 𝑀𝐸 Mind-Energy normalised unit
+𝑣𝜏 temporal velocity = 1/𝜏 s−1
+𝑚𝜏 effective psychophysical mass
+∝ 1/𝜏
+—
+𝑟 control parameter of the logistic
+map (reflexive amplification)
+—
+𝛽 log–log regression slope (𝐸𝑚
+vs. 𝜏 ); RTC prediction −3
+—
+𝜓(𝑥, 𝑡) Ginzburg–Landau
+order-parameter field
+—
+𝐽 Jacobian matrix —
+8.4 Appendix D — Code examples
+8.4.1 D.1 — Kuramoto (classical), R
+kuramoto <- function(N = 50, K = 2.0, dt = 0.01, steps = 2000, sd_omega = 0.5) {
+omega <- rnorm(N, 0, sd_omega)
+theta <- runif(N, 0, 2 * pi)
+R_hist <- numeric(steps)
+for (s in seq_len(steps)) {
+z <- mean(exp(1i * theta)) # complex order parameter
+R <- Mod(z); Psi <- Arg(z)
+dtheta <- omega + K * R * sin(Psi - theta) # mean-field form
+theta <- theta + dt * dtheta
+R_hist[s] <- R
+}
+R_hist
+}
+plot(kuramoto(K = 2.0), type = "l", ylim = c(0, 1),
+xlab = "iteration", ylab = "order parameter R")
+8.4.2 D.2 — RTC Kuramoto (percept-indexed) with dynamic PPTQ, Python
+import numpy as np
+def tau_of_P(P):
+# PPTQ recovers from 43 ms (stress) toward 62 ms (waking)
+return 0.062 * (1 - 0.3 * np.exp(-P / 5.0))
+def rtc_kuramoto(N=50, K=2.0, dP=0.05, steps=4000, sd_omega=0.5, seed=0):
+29
+
+-- 29 of 32 --
+
+rng = np.random.default_rng(seed)
+omega = rng.normal(0.0, sd_omega, N)
+theta = rng.uniform(0, 2*np.pi, N)
+R_hist, P = [], 0.0
+for _ in range(steps):
+z = np.mean(np.exp(1j * theta))
+R, Psi = np.abs(z), np.angle(z)
+tau = tau_of_P(P)
+dtheta = tau * (omega + K * R * np.sin(Psi - theta)) # equation (5.5)
+theta += dP * dtheta
+P += dP
+R_hist.append(R)
+return np.array(R_hist)
+8.4.3 D.3 — Mind-Energy law and log–log check, R
+tau <- c(0.100, 0.080, 0.062, 0.050, 0.042) # PPTQ per state (s)
+Em <- 1 / tau^3 # equation (5.11)
+fit <- lm(log(Em) ~ log(tau))
+coef(fit)[["log(tau)"]] # expected: -3
+8.4.4 D.4 — Logistic map, iteration, R
+logistic_iter <- function(r, x0 = 0.5, n = 40) {
+x <- numeric(n + 1); x[1] <- x0
+for (i in seq_len(n)) x[i + 1] <- r * x[i] * (1 - x[i])
+x
+}
+tail(logistic_iter(r = 3.2), 6) # settles into a 2-cycle ~0.513 / ~0.799
+8.5 Appendix E — Strogatz reading guide by topic
+Topic in this manual Infinite Powers
+Nonlinear Dynamics and
+Chaos Sync
+Limit, 0/0, derivative ch. 4–6 §2.1–2.2 —
+Integral, Fundamental
+Theorem
+ch. 8–10 Appendix —
+Differential equations ch. 10–11 ch. 2 —
+Fixed points, linear
+stability
+ch. 6 §2.4, ch. 5–6 —
+Bifurcations
+(saddle-node, pitchfork,
+Hopf)
+— ch. 3, 8 ch. 5
+Logistic map, period
+doubling, chaos
+ch. 12 ch. 10 ch. 5
+Phase, oscillators, phase
+response
+— ch. 4, 7 ch. 1–3
+Two coupled oscillators,
+Adler equation
+— §4.5, §8.2 ch. 2
+Kuramoto model, order
+parameter, 𝐾𝑐
+— §8.6 ch. 1–3
+Synchronisation as a
+universal phenomenon
+— ch. 8 whole book
+30
+
+-- 30 of 32 --
+
+8.6 Appendix F — Cross-references to the thesis
+Quantity / equation Location in The Resonating Self
+Axiom II (PPTQ) Chapter 4
+𝑣𝜏 = 𝑑𝑃 /𝑑𝑡; 𝑀𝐸 = 1
+2 𝑚𝑣2
+𝜏 §4.9.1, §4.11 (revised equations 4.3–4.5)
+Derivation 𝐸𝑚 ∝ 𝜏 −3; 𝐸𝑚 = 1/𝜏 3 §4.11 (revised equations 4.6–4.7); Chapter 9 §9.4
+(equations 9.7–9.12)
+Ginzburg–Landau functional and evolution Chapter 9 §9.2 (equations 9.1–9.2)
+Kuramoto model; order parameter Chapter 9 §9.3 (equations 9.3–9.4)
+𝜏 -reparametrised Kuramoto (𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 ) Chapter 9 §9.4 (new in the revision of 30 Aug 2026)
+Bayesian resonance engine; Fokker–Planck Chapter 9 §9.5 (equation 9.13)
+Logistic map; three phases; bifurcations Chapter 9 §9.6 (equation 9.14); Figures 15–16
+Core theorems (Synchrony, Criticality, Resonant
+Identity)
+Chapter 9 §9.7
+Falsifiability, 𝛽 = −3, model comparison 𝑀𝑃 vs. 𝑀𝑡 Chapter 14 (Empirical Testability)
+31
+
+-- 31 of 32 --
+
+9 Closing note
+This manual has sought to demonstrate one thing: that the mathematical core of The Resonating Self — the
+differentiation of conscious dynamics with respect to the percept rather than with respect to clock time
+— can be built up entirely from the standard tools of calculus, with no mathematical tricks and no hidden
+assumptions. The chain rule (Rule 7) supplies the transition 𝑑𝜃
+𝑑𝑡 → 𝑑𝜃
+𝑑𝑃 ; the relation 𝑑𝑡 = 𝜏(𝑃 ) 𝑑𝑃 is an
+explicit, testable modelling assumption; the power rule (Rule 2) supplies the Mind-Energy law 𝐸𝑚 = 𝜏 −3
+with its falsifiable exponent 𝛽 = −3.
+What remains is not a proof that the hard problem has been solved in the sense that the mystery has vanished.
+What remains is a formalism in which the distinction between physical and experienced time performs the
+explanatory work, with predictions that can fail. In the spirit of Strogatz: calculus does not reveal why there
+is experience, but it does give us the language to say precisely what changes, with respect to what, and how
+fast — and that is the precondition for any science of consciousness worthy of the name.
+32
+
+-- 32 of 32 --
+

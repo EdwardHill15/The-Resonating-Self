@@ -1,0 +1,27 @@
+---
+title: "Artikelen en notities"
+subtitle: "Onderzoek, essays en korte notities"
+listing:
+  id: posts
+  contents: posts
+  type: grid
+  grid-columns: 3
+  sort: "date desc"
+  categories: true
+  fields: [image, date, title, description, categories, reading-time]
+  image-placeholder: assets/holographic-field.jpg
+  feed: true
+page-layout: full
+toc: false
+---
+
+::: {.eyebrow}
+Blog
+:::
+
+Elk stuk is een Quarto-document waarvan de berekeningen bij het renderen echt
+zijn uitgevoerd. De bron van elk artikel staat in
+[de repository](https://github.com/EdwardHill15/The-Resonating-Self/tree/main/posts).
+
+:::{#posts}
+:::

@@ -1,0 +1,38 @@
+---
+title: "Neem contact op"
+subtitle: "Onderzoek, samenwerking of een intake voor de praktijk"
+toc: false
+---
+
+::: {.eyebrow}
+Contact
+:::
+
+Ik antwoord meestal binnen een paar dagen.
+
+```{=html}
+<form name="contact" method="POST" data-netlify="true" style="max-width:520px;display:flex;flex-direction:column;gap:1rem">
+  <input type="hidden" name="form-name" value="contact">
+  <label>Naam
+    <input name="naam" required class="form-control">
+  </label>
+  <label>E-mailadres
+    <input name="email" type="email" required class="form-control">
+  </label>
+  <label>Onderwerp
+    <select name="onderwerp" class="form-select">
+      <option>Onderzoek</option>
+      <option>Samenwerking</option>
+      <option>Intake praktijk</option>
+      <option>Anders</option>
+    </select>
+  </label>
+  <label>Bericht
+    <textarea name="bericht" rows="6" required class="form-control"></textarea>
+  </label>
+  <button type="submit" class="btn btn-primary" style="border-radius:999px;align-self:start;padding:.6rem 1.6rem">Versturen</button>
+</form>
+```
+
+Het formulier werkt via Netlify Forms: inzendingen komen in het Netlify-dashboard
+te staan, zonder eigen backend.
