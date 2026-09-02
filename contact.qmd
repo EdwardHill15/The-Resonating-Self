@@ -12,7 +12,7 @@ Ik antwoord meestal binnen een paar dagen. Liever direct mailen? Dat kan naar
 [totalegezondheidbv@gmail.com](mailto:totalegezondheidbv@gmail.com).
 
 ```{=html}
-<form name="contact" method="POST" data-netlify="true" style="max-width:520px;display:flex;flex-direction:column;gap:1rem">
+<form name="contact" method="POST" data-netlify="true" action="/bedankt" style="max-width:520px;display:flex;flex-direction:column;gap:1rem">
   <input type="hidden" name="form-name" value="contact">
   <label>Naam
     <input name="naam" required class="form-control">

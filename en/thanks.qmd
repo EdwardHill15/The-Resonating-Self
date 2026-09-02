@@ -1,0 +1,14 @@
+---
+title: "Message sent"
+lang: en
+toc: false
+---
+
+::: {.eyebrow}
+Contact
+:::
+
+Thank you. Your message has arrived and has been forwarded to
+totalegezondheidbv@gmail.com. I usually reply within a few days.
+
+[Back to the homepage](index.qmd){.btn .btn-primary}

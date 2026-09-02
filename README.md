@@ -101,6 +101,16 @@ compileert en relatieve paden daar breken. Wie de vormgeving aanpast, doet dat
 dus in `brand.css`; de fonts (Carlito, Oranienbaum) staan in `assets/fonts/` en
 gaan mee in de commit.
 
+## Formulieren aanzetten
+
+Netlify detecteert formulieren niet automatisch bij nieuwe sites. Eenmalig:
+*Site configuration → Forms → Form detection → **Enable***, en daarna één keer
+opnieuw deployen — detectie gebeurt tijdens de deploy. Onder **Forms** horen dan
+`contact` en `contact-en` te staan. Zolang dit uit staat, geeft het versturen
+van het formulier een 404.
+
+Na verzending komt de bezoeker op `bedankt.qmd` (NL) of `en/thanks.qmd` (EN).
+
 ## Meldingen bij een nieuw bericht
 
 De functie `netlify/functions/submission-created.mjs` wordt door Netlify

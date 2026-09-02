@@ -55,7 +55,7 @@ format:
     toc-title: "Op deze pagina"
     html-math-method: katex
     code-fold: false
-    code-tools: true
+    code-tools: false   # per artikel aangezet in posts/_metadata.yml
     fig-width: 7
     fig-height: 4.4
     fig-dpi: 160

@@ -1,0 +1,13 @@
+---
+title: "Bericht verstuurd"
+toc: false
+---
+
+::: {.eyebrow}
+Contact
+:::
+
+Dank je. Je bericht is binnengekomen en doorgestuurd naar
+totalegezondheidbv@gmail.com. Ik antwoord meestal binnen een paar dagen.
+
+[Terug naar de homepage](index.qmd){.btn .btn-primary}
