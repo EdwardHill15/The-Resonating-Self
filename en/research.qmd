@@ -5,7 +5,7 @@ lang: en
 toc: false
 listing:
   id: research-en
-  contents: "/en/posts/*/index.qmd"
+  contents: "posts/*/index.qmd"
   type: table
   sort: "date desc"
   categories: false

@@ -15,15 +15,23 @@
   },
   {
     "listing": "/en/blog.html",
-    "items": []
+    "items": [
+      "/en/posts/2026-07-14-mind-energy/index.html",
+      "/en/posts/2026-01-19-quarto-workflow/index.html"
+    ]
   },
   {
     "listing": "/en/index.html",
-    "items": []
+    "items": [
+      "/en/posts/2026-07-14-mind-energy/index.html",
+      "/en/posts/2026-01-19-quarto-workflow/index.html"
+    ]
   },
   {
     "listing": "/en/research.html",
-    "items": []
+    "items": [
+      "/en/posts/2026-07-14-mind-energy/index.html"
+    ]
   },
   {
     "listing": "/index.html",
