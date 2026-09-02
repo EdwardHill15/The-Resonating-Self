@@ -81,9 +81,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -241,60 +241,20 @@ window.Quarto = {
 <p>Only the pieces carrying the <strong>RTC</strong> category. Essays and notes sit in the <a href="../en/blog.html">blog</a>.</p>
 <div id="listing-research-en" class="quarto-listing quarto-listing-container-table">
 <div class="listing-actions-group">
-   <div class="input-group input-group-sm quarto-listing-sort">
-    <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
-    <select id="listing-research-en-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-research-en'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
-      <option value="" disabled="" selected="" hidden="">Order By</option>
-      <option value="index" data-direction="asc">Default</option>
-      <option value="listing-date-sort" data-direction="asc">
-        Year - Oldest
-      </option>
-      <option value="listing-date-sort" data-direction="desc">
-        Year - Newest
-      </option>
-      <option value="listing-title-sort" data-direction="asc">
-        Title
-      </option>
-    </select>
-  </div>
     <div class="input-group input-group-sm quarto-listing-filter">
       <span class="input-group-text"><i class="bi bi-search"></i></span>
       <input type="text" class="search form-control" placeholder="Filter">
     </div>
 </div>
-<table class="quarto-listing-table table">
+<table class="quarto-listing-table table caption-top">
 <thead>
-<tr>
-
-<th>
-<a class="sort" data-sort="listing-date-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Year</a>
-</th>
-
-<th>
-<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
-</th>
-
-<th>
-Summary
-</th>
-
+<tr class="header">
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Title</th>
+<th data-quarto-table-cell-role="th">Summary</th>
 </tr>
 </thead>
 <tbody class="list">
-
-<tr data-index="0" data-categories="UlRDJTJDTWluZC1FbmVyZ3klMkNtYXRoZW1hdGljcw==" data-listing-date-sort="1783980000000" data-listing-file-modified-sort="1788346774216" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="The Mind-Energy law and the third power" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">Jul 14, 2026</span>
-</td>
-<td>
-<a href="../en/posts/2026-07-14-mind-energy/index.html" class="title listing-title">The Mind-Energy law and the third power</a>
-</td>
-<td>
-<span class="listing-description">Why mental energy scales as 1/τ³, and what a log-log check across five states shows. </span>
-</td>
-
-</tr>
-
 </tbody>
 </table>
 <div class="listing-no-matching d-none">No matching items</div>

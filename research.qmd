@@ -3,7 +3,7 @@ title: "Onderzoekslijn"
 subtitle: "De stukken waarin de theorie wordt opgebouwd of getoetst"
 listing:
   id: research
-  contents: posts/*/index.qmd
+  contents: "/posts/*/index.qmd"
   type: table
   sort: "date desc"
   categories: false

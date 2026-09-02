@@ -3,7 +3,7 @@ title: "Artikelen en notities"
 subtitle: "Onderzoek, essays en korte notities"
 listing:
   id: posts
-  contents: posts/*/index.qmd
+  contents: "/posts/*/index.qmd"
   type: grid
   grid-columns: 3
   sort: "date desc"

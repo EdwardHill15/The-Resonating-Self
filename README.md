@@ -64,8 +64,11 @@ git rm -r --cached posts en/posts
 git add posts en/posts
 ```
 
-De listings matchen sinds v7 expliciet op `posts/*/index.qmd`, dus losse HTML
-wordt niet meer meegeteld. `.gitignore` houdt hem bovendien uit de repository.
+De listings zijn aan de projectroot geankerd — `/posts/*/index.qmd` voor de
+Nederlandse pagina's, `/en/posts/*/index.qmd` voor de Engelse. Daardoor kan de
+Nederlandse blog geen Engelse posts oppakken en omgekeerd, en wordt losse HTML
+naast een `.qmd` niet meegeteld. `.gitignore` houdt die bovendien uit de
+repository.
 
 Als het klaar is: haal `draft: true` uit de kop, dan:
 

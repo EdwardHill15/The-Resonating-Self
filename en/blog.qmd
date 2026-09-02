@@ -6,7 +6,7 @@ page-layout: full
 toc: false
 listing:
   id: posts-en
-  contents: posts/*/index.qmd
+  contents: "/en/posts/*/index.qmd"
   type: grid
   grid-columns: 3
   sort: "date desc"
