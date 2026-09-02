@@ -101,6 +101,31 @@ compileert en relatieve paden daar breken. Wie de vormgeving aanpast, doet dat
 dus in `brand.css`; de fonts (Carlito, Oranienbaum) staan in `assets/fonts/` en
 gaan mee in de commit.
 
+## Meldingen bij een nieuw bericht
+
+De functie `netlify/functions/submission-created.mjs` wordt door Netlify
+automatisch aangeroepen zodra iemand een formulier verstuurt. Hij mailt de
+inhoud van de inzending naar **total-health@kpnmail.nl** via Resend.
+
+Zet hiervoor in Netlify → *Site configuration → Environment variables*:
+
+| Variabele | Waarde |
+|---|---|
+| `RESEND_API_KEY` | API-key van [resend.com](https://resend.com) (gratis tot 3000 mails/maand) |
+| `MAIL_FROM` | een verifieerd afzenderadres, bv. `site@jouwdomein.nl` |
+| `MAIL_TO` | `total-health@kpnmail.nl` (staat al als standaard in de code) |
+
+Ontbreken de eerste twee, dan doet de functie niets en breekt er niets: de
+inzending staat altijd in het dashboard onder **Forms**.
+
+Bij Resend moet je het afzenderadres eenmalig verifiëren. Heb je geen eigen
+domein, gebruik dan `onboarding@resend.dev` als `MAIL_FROM` om te testen.
+
+Zonder Resend-account kan het ook helemaal zonder code:
+*Site configuration → Forms → Form notifications → Add notification → Email*,
+en vul `total-health@kpnmail.nl` in. Doe dat voor **beide** formulieren,
+`contact` en `contact-en`.
+
 ## De suite bijwerken
 
 `app/index.html` is één zelfstandig bestand: handleiding NL en EN, de rekenapp met

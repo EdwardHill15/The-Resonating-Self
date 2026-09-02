@@ -9,7 +9,8 @@ toc: false
 Contact
 :::
 
-I usually reply within a few days.
+I usually reply within a few days. Prefer email? Write to
+[total-health@kpnmail.nl](mailto:total-health@kpnmail.nl).
 
 ```{=html}
 <form name="contact-en" method="POST" data-netlify="true" style="max-width:520px;display:flex;flex-direction:column;gap:1rem">
@@ -35,5 +36,5 @@ I usually reply within a few days.
 </form>
 ```
 
-The form runs on Netlify Forms: submissions land in the Netlify dashboard, with
-no backend of your own.
+The form runs on Netlify Forms. Every submission lands in the Netlify dashboard,
+and is forwarded by email to total-health@kpnmail.nl.

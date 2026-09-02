@@ -8,7 +8,8 @@ toc: false
 Contact
 :::
 
-Ik antwoord meestal binnen een paar dagen.
+Ik antwoord meestal binnen een paar dagen. Liever direct mailen? Dat kan naar
+[total-health@kpnmail.nl](mailto:total-health@kpnmail.nl).
 
 ```{=html}
 <form name="contact" method="POST" data-netlify="true" style="max-width:520px;display:flex;flex-direction:column;gap:1rem">
@@ -34,5 +35,6 @@ Ik antwoord meestal binnen een paar dagen.
 </form>
 ```
 
-Het formulier werkt via Netlify Forms: inzendingen komen in het Netlify-dashboard
-te staan, zonder eigen backend.
+Het formulier werkt via Netlify Forms. Elke inzending komt in het
+Netlify-dashboard te staan en wordt per e-mail doorgestuurd naar
+total-health@kpnmail.nl.

@@ -1,95 +1,52 @@
 ---
-title: "The Resonating Self"
-page-layout: full
-toc: false
-lang: en
-listing:
-  id: recent-en
-  contents: posts
-  type: grid
-  grid-columns: 3
-  max-items: 3
-  sort: "date desc"
-  categories: false
-  fields: [image, date, title, description, reading-time]
+title: "The Mind-Energy law and the third power"
+description: >
+  Why mental energy scales as 1/τ³, and what a log-log check across five states
+  shows.
+date: 2026-07-14
+categories: [RTC, Mind-Energy, mathematics]
+image: ../../../assets/rtc-pptq-paradox.png
 ---
 
-::: {.hero}
-::: {.hero-inner}
-::: {.eyebrow}
-Resonance Theory of Consciousness
-:::
+## The law
 
-# Consciousness as resonance, computed in the browser
-
-Research, essays and a complete computing environment around the Resonance
-Theory of Consciousness. Every formula on this site is runnable: open the suite,
-run the R code and download the result.
-
-[Open the suite](suite.qmd){.btn .btn-primary}
-[Read the theory](theory.qmd){.btn .btn-outline-light}
-:::
-:::
-
-## What is here
-
-::: {layout-ncol=3}
-::: {.card .p-4}
-#### The suite
-
-Eight RTC modules, the full manual in Dutch and English, and an R environment
-with four panes, package management and Quarto preview.
-
-[Go to the suite →](suite.qmd)
-:::
-
-::: {.card .p-4}
-#### RTC in brief
-
-From the specious present to the Mind-Energy law: the assumptions, the formulas
-and what remains open.
-
-[Read the theory →](theory.qmd)
-:::
-
-::: {.card .p-4}
-#### Everything from .qmd
-
-Articles are written in RStudio as Quarto documents, rendered locally and
-published to Netlify through GitHub.
-
-[See the workflow →](posts/2026-01-19-quarto-workflow/index.qmd)
-:::
-:::
-
-## The threshold that sets everything
-
-The perceptual time threshold $\tau$ is the shortest duration within which two
-stimuli are still experienced as one moment. In RTC that threshold is not a
-by-product of perception but the base unit of the model.
+The Mind-Energy law states that mental energy scales inversely with the third
+power of the perceptual time threshold:
 
 $$E_m = \frac{1}{\tau^3}$$
 
-The same five measurements produce a paradox on a linear scale, and a straight
-line with slope $-3$ on a log-log scale.
+The threshold $\tau$ is the shortest interval within which two stimuli are still
+experienced as one moment. The exponent 3 is not a free parameter: it follows
+from the assumption that the perceptual field can divide along three independent
+directions, and that energy per direction runs linearly with the sampling rate
+$1/\tau$.
+
+## A check across five states
 
 ```{r}
-#| label: fig-mind-energy-en
-#| fig-cap: "Mind-Energy law: log-log check across five perceptual states."
+#| label: fit-en
 tau <- c(0.100, 0.080, 0.062, 0.050, 0.042)
 Em  <- 1 / tau^3
 fit <- lm(log(Em) ~ log(tau))
+summary(fit)
+```
 
+The slope comes out at `r round(coef(fit)[["log(tau)"]], 3)`; deviations larger than
+0.1 in practice point to a measurement error in $\tau$, not an error in the law.
+
+```{r}
+#| label: fig-loglog-en
+#| fig-cap: "Log-log check: five states, slope −3."
 plot(log(tau), log(Em), pch = 19, col = "#0099c8",
      xlab = "ln tau", ylab = "ln Em")
 abline(fit, col = "#00549c")
 ```
 
-The slope comes out at `r round(coef(fit)[["log(tau)"]], 3)`, as the law predicts.
+The full calculation ships as a module in [the suite](../../suite.qmd). Run it
+there and download the table as CSV.
 
-## Recent
+## What it does not say
 
-:::{#recent-en}
-:::
-
-[All articles →](blog.qmd)
+The law describes a scaling relation, not an absolute quantity. Without a
+calibrated unit for $E_m$ only the ratio between two states carries meaning —
+which is exactly what the log-log form makes measurable.
