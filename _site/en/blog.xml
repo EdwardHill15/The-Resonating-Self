@@ -41,7 +41,7 @@
 </section>
 <section id="mathematical-model" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Mathematical Model</h1>
-<div id="bcd800bb" class="cell" data-execution_count="1">
+<div id="aad73fff" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show R/Python code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -100,7 +100,7 @@ Mind-Energy = 3641.3290851160673</code></pre>
 <section id="resonance-function" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Resonance Function</h1>
 <p>RTC assumes that resonance unfolds continuously.</p>
-<div id="2c0c7d46" class="cell" data-execution_count="2">
+<div id="d2222a11" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Show R/Python code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
@@ -184,7 +184,7 @@ font-style: inherit;">True</span>)</span>
 <section id="constructed-temporality" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Constructed Temporality</h1>
 <p>Perception is assumed to arise through sampling of continuous experience.</p>
-<div id="0a2e4062" class="cell" data-execution_count="3">
+<div id="39048f91" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Show R/Python code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">sample_times<span class="op" style="color: #5E5E5E;
@@ -260,7 +260,7 @@ font-style: inherit;">True</span>)</span>
 </section>
 <section id="mind-energy-curve" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Mind-Energy Curve</h1>
-<div id="1eb289fb" class="cell" data-execution_count="4">
+<div id="49980472" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Show R/Python code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">pptq<span class="op" style="color: #5E5E5E;
@@ -332,7 +332,7 @@ font-style: inherit;">True</span>)</span>
 </section>
 <section id="rtc-state-space" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> RTC State Space</h1>
-<div id="b505e5c8" class="cell" data-execution_count="5">
+<div id="0a6b22f3" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Show R/Python code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">states<span class="op" style="color: #5E5E5E;
