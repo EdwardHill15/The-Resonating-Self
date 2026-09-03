@@ -1,9 +1,9 @@
 /* Afspraakwidget: type kiezen, vorm kiezen, Cal.com-agenda tonen, en bij een
    betaalde afspraak doorsturen naar iDEAL via de Netlify-functie.
 
-   De agenda zelf is de embed van Cal.com; die kent de vrije momenten en zet de
-   afspraak in de gekoppelde Google- of Outlook-agenda. Bij beeldbellen voegt
-   Cal.com de Google Meet- of Zoom-link toe aan de uitnodiging.
+   De agenda is de boekingspagina van Cal.com in een iframe; die kent de vrije
+   momenten en zet de afspraak in de gekoppelde Google- of Outlook-agenda. Bij
+   beeldbellen voegt Cal.com de Google Meet- of Zoom-link toe aan de uitnodiging.
 
    CAL_USER is je Cal.com-gebruikersnaam; de slugs hieronder moeten exact
    overeenkomen met de event types die je in Cal.com hebt aangemaakt.         */
@@ -16,33 +16,6 @@
     session:  { slug: "sessie-60",        pay: true  },
     callback: { slug: "terugbelverzoek",  pay: false }
   };
-
-  // Officiële Cal.com-loader. Zet window.Cal klaar als wachtrij, zodat
-  // aanroepen vóór het laden van embed.js alsnog worden uitgevoerd.
-  (function (C, A, L) {
-    var p = function (a, ar) { a.q.push(ar); };
-    var d = C.document;
-    C.Cal = C.Cal || function () {
-      var cal = C.Cal, ar = arguments;
-      if (!cal.loaded) {
-        cal.ns = {}; cal.q = cal.q || [];
-        d.head.appendChild(d.createElement("script")).src = A;
-        cal.loaded = true;
-      }
-      if (ar[0] === L) {
-        var api = function () { p(api, arguments); };
-        var ns = ar[1];
-        api.q = api.q || [];
-        if (typeof ns === "string") {
-          cal.ns[ns] = cal.ns[ns] || api;
-          p(cal.ns[ns], ar);
-          p(cal, ["initNamespace", ns]);
-        } else { p(cal, ar); }
-        return;
-      }
-      p(cal, ar);
-    };
-  })(window, "https://app.cal.com/embed/embed.js", "init");
 
   function ready(fn) {
     if (document.readyState !== "loading") fn();
@@ -68,35 +41,30 @@
       if (steps[i].getAttribute("data-step") !== "1") show(steps[i], false);
     }
 
-    window.Cal("init", { origin: "https://app.cal.com" });
-    window.Cal("ui", {
-      theme: "light",
-      cssVarsPerTheme: { light: { "cal-brand": "#00549C" } },
-      hideEventTypeDetails: false,
-      layout: "month_view"
-    });
-
     function mountCal(slug) {
       if (!calBox) return;
       calBox.innerHTML = "";
-      var holder = document.createElement("div");
-      holder.style.minHeight = "640px";
-      holder.style.width = "100%";
-      calBox.appendChild(holder);
-      // eigen namespace per type, anders hergebruikt Cal de eerste agenda
-      var ns = slug.replace(/[^a-z0-9]/gi, "");
-      window.Cal("init", ns, { origin: "https://app.cal.com" });
-      window.Cal.ns[ns]("inline", {
-        elementOrSelector: holder,
-        calLink: CAL_USER + "/" + slug,
-        config: { layout: "month_view", theme: "light" }
-      });
-      window.Cal.ns[ns]("ui", {
-        theme: "light",
-        cssVarsPerTheme: { light: { "cal-brand": "#00549C" } },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
+
+      var url = "https://cal.com/" + CAL_USER + "/" + slug +
+                "?embed=true&layout=month_view&theme=light";
+
+      var frame = document.createElement("iframe");
+      frame.src = url;
+      frame.title = "Agenda";
+      frame.loading = "lazy";
+      frame.setAttribute("allow", "camera; microphone; clipboard-write");
+      frame.style.width = "100%";
+      frame.style.minHeight = "660px";
+      frame.style.border = "0";
+      frame.style.display = "block";
+      calBox.appendChild(frame);
+
+      var alt = document.createElement("p");
+      alt.className = "bk-note";
+      alt.innerHTML = 'Agenda niet zichtbaar? <a href="https://cal.com/' +
+        CAL_USER + "/" + slug + '" target="_blank" rel="noopener">' +
+        'Open de agenda in een nieuw tabblad</a>.';
+      calBox.appendChild(alt);
     }
 
     var typeBtns = root.querySelectorAll("[data-type]");
