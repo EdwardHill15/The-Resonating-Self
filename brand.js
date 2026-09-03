@@ -70,7 +70,9 @@
       if (EN_LABEL[txt]) a.textContent = EN_LABEL[txt];
       var href = a.getAttribute("href");
       if (href && !/^https?:/.test(href) && !/(^|\/)en\//.test(href)) {
-        a.setAttribute("href", href.replace(/^(\.\/)?/, "").replace(/^\//, ""));
+        // relatief maken binnen /en/ EN de Engelse bestandsnaam gebruiken
+        a.setAttribute("href", swapName(
+          href.replace(/^(\.\/)?/, "").replace(/^\//, ""), PAGE_MAP));
       }
     });
     document.documentElement.setAttribute("lang", "en");
