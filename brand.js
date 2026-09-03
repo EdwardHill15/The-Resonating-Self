@@ -5,7 +5,7 @@
 
 (function () {
   var EN_LABEL = {
-    "Home": "Home", "RTC": "RTC", "Therapy": "Therapy", "Suite": "Suite", "Blog": "Blog",
+    "Home": "Home", "RTC": "RTC", "Therapie": "Therapy", "Suite": "Suite", "Blog": "Blog",
     "Afspraak": "Booking",
     "MBMR — bewegingstherapie": "MBMR — movement therapy",
     "STM — hersynchroniserende methode": "STM — re-synchronising method",

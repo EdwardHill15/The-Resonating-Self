@@ -17,6 +17,23 @@
     callback: { slug: "terugbelverzoek",  pay: false }
   };
 
+  var IS_EN = /(^|\/)en\//.test(window.location.pathname) || /\/en$/.test(window.location.pathname);
+  var T = IS_EN ? {
+    altAsk: "Calendar not showing?", altLink: "Open the calendar in a new tab",
+    needFields: "Please fill in your name and a valid email address.",
+    creating: "Creating payment…",
+    notConfigured: "The payment link is not set up yet. Get in touch and we will send an invoice.",
+    failed: "Something went wrong creating the payment. Please try again or get in touch.",
+    offline: "No connection to the payment service. Please try again later."
+  } : {
+    altAsk: "Agenda niet zichtbaar?", altLink: "Open de agenda in een nieuw tabblad",
+    needFields: "Vul je naam en een geldig e-mailadres in.",
+    creating: "Betaling wordt aangemaakt…",
+    notConfigured: "De betaalkoppeling is nog niet ingesteld. Neem contact op, dan sturen we een factuur.",
+    failed: "Er ging iets mis bij het aanmaken van de betaling. Probeer het opnieuw of neem contact op.",
+    offline: "Geen verbinding met de betaaldienst. Probeer het later opnieuw."
+  };
+
   function ready(fn) {
     if (document.readyState !== "loading") fn();
     else document.addEventListener("DOMContentLoaded", fn);
@@ -46,7 +63,8 @@
       calBox.innerHTML = "";
 
       var url = "https://cal.com/" + CAL_USER + "/" + slug +
-                "?embed=true&layout=month_view&theme=light";
+                "?embed=true&layout=month_view&theme=light" +
+                (IS_EN ? "" : "&locale=nl");
 
       var frame = document.createElement("iframe");
       frame.src = url;
@@ -61,9 +79,9 @@
 
       var alt = document.createElement("p");
       alt.className = "bk-note";
-      alt.innerHTML = 'Agenda niet zichtbaar? <a href="https://cal.com/' +
+      alt.innerHTML = T.altAsk + ' <a href="https://cal.com/' +
         CAL_USER + "/" + slug + '" target="_blank" rel="noopener">' +
-        'Open de agenda in een nieuw tabblad</a>.';
+        T.altLink + "</a>.";
       calBox.appendChild(alt);
     }
 
@@ -118,29 +136,29 @@
         var status = root.querySelector("[data-pay-status]");
 
         if (!name.trim() || !/.+@.+\..+/.test(email)) {
-          if (status) status.textContent = "Vul je naam en een geldig e-mailadres in.";
+          if (status) status.textContent = T.needFields;
           return;
         }
         payBtn.disabled = true;
-        if (status) status.textContent = "Betaling wordt aangemaakt…";
+        if (status) status.textContent = T.creating;
 
         fetch("/.netlify/functions/create-payment", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             type: chosen, name: name, email: email,
-            phone: q("[name='bk-phone']"), note: q("[name='bk-note']"), mode: mode
+            phone: q("[name='bk-phone']"), note: q("[name='bk-note']"), mode: mode,
+            lang: IS_EN ? "en" : "nl"
           })
         }).then(function (r) { return r.json(); }).then(function (data) {
           if (data.checkoutUrl) { window.location.href = data.checkoutUrl; return; }
           if (status) {
             status.textContent = data.error === "MOLLIE_API_KEY ontbreekt"
-              ? "De betaalkoppeling is nog niet ingesteld. Neem contact op, dan sturen we een factuur."
-              : "Er ging iets mis bij het aanmaken van de betaling. Probeer het opnieuw of neem contact op.";
+              ? T.notConfigured : T.failed;
           }
           payBtn.disabled = false;
         }).catch(function () {
-          if (status) status.textContent = "Geen verbinding met de betaaldienst. Probeer het later opnieuw.";
+          if (status) status.textContent = T.offline;
           payBtn.disabled = false;
         });
       });

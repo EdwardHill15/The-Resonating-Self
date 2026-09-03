@@ -24,7 +24,7 @@ website:
         text: Home
       - href: theory.qmd
         text: RTC
-      - text: Therapy
+      - text: Therapie
         menu:
           - href: therapy.qmd
             text: "MBMR — bewegingstherapie"

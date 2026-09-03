@@ -6,7 +6,7 @@
    geen losse koppelingen per bank nodig.
 
    Aanroep vanuit de site (POST, JSON):
-     { type: "intake" | "session", name, email, day, slot, mode, note }
+     { type: "intake" | "session", name, email, phone, mode, note, lang }
 
    Antwoord: { checkoutUrl } — daar naartoe navigeren.
 
@@ -35,6 +35,9 @@ export default async (req) => {
   }
 
   const site = process.env.SITE_URL || "https://the-resonating-self.netlify.app";
+  const en = body.lang === "en";
+  const done = en ? "/en/payment-received" : "/betaling-gelukt";
+  const back = en ? "/en/booking" : "/afspraak";
   const when = [body.day, body.slot].filter(Boolean).join(" ");
   const description = [price.label, when, body.mode].filter(Boolean).join(" · ").slice(0, 255);
 
@@ -48,11 +51,11 @@ export default async (req) => {
       body: JSON.stringify({
         amount: { currency: "EUR", value: price.amount },
         description,
-        redirectUrl: `${site}/betaling-gelukt`,
-        cancelUrl: `${site}/afspraak`,
+        redirectUrl: `${site}${done}`,
+        cancelUrl: `${site}${back}`,
         webhookUrl: `${site}/.netlify/functions/payment-webhook`,
         method: "ideal",
-        locale: "nl_NL",
+        locale: en ? "en_US" : "nl_NL",
         metadata: {
           type: body.type,
           name: String(body.name || "").slice(0, 120),
