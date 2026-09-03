@@ -1,0 +1,20 @@
+---
+title: "Payment received"
+lang: en
+toc: false
+---
+
+::: {.eyebrow}
+Appointment
+:::
+
+Thank you. Your payment has been received and the appointment is confirmed.
+
+You will receive a confirmation by email within a few minutes. For a video
+conversation the meeting link is in the calendar invitation; for a phone
+conversation I will call you at the agreed time.
+
+You can move or cancel free of charge up to 24 hours before the appointment. Send
+a message to [totalegezondheidbv@gmail.com](mailto:totalegezondheidbv@gmail.com).
+
+[Back to the homepage](index.qmd){.btn .btn-primary}

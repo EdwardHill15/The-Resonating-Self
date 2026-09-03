@@ -1,0 +1,93 @@
+---
+title: "Schedule a conversation"
+subtitle: "Introduction, intake or follow-up session — by phone, by video, or at the practice"
+lang: en
+toc: false
+page-layout: article
+include-in-header:
+  - text: |
+      <script defer src="/booking.js"></script>
+---
+
+::: {.eyebrow}
+Book an appointment
+:::
+
+Choose a type of conversation, a moment that suits you, and how we speak: by
+phone, by video, or at the practice in Zwaag. The twenty-minute introduction is
+free and without obligation.
+
+```{=html}
+<div id="booking">
+
+  <div data-step="1">
+    <div class="bk-steplabel">1 · Type of conversation</div>
+    <div class="bk-types">
+      <button type="button" class="bk-type" data-type="intro" data-modes="By phone|Video call">
+        <span class="bk-type-head"><span class="bk-type-name">Introduction</span><span class="bk-price bk-free">free</span></span>
+        <span class="bk-dur">20 minutes</span>
+        <span class="bk-body">A short conversation to see whether the method suits you and whether it feels right. By phone or video. No obligation, no cost.</span>
+      </button>
+      <button type="button" class="bk-type" data-type="intake" data-modes="At the practice in Zwaag|Video call|By phone">
+        <span class="bk-type-head"><span class="bk-type-name">Intake conversation</span><span class="bk-price">€ 100</span></span>
+        <span class="bk-dur">60 minutes</span>
+        <span class="bk-body">The first of two intake conversations: introduction, complaints, background and what you are asking for. The psychodiagnostic assessment follows after this.</span>
+      </button>
+      <button type="button" class="bk-type" data-type="session" data-modes="At the practice in Zwaag|Video call|By phone">
+        <span class="bk-type-head"><span class="bk-type-name">Follow-up session</span><span class="bk-price">€ 100</span></span>
+        <span class="bk-dur">60 minutes</span>
+        <span class="bk-body">A regular session within an ongoing programme, following the fixed session format. For clients who have already started.</span>
+      </button>
+      <button type="button" class="bk-type" data-type="callback" data-modes="I will be called back">
+        <span class="bk-type-head"><span class="bk-type-name">Call-back request</span><span class="bk-price bk-free">free</span></span>
+        <span class="bk-dur">no fixed time</span>
+        <span class="bk-body">If none of the moments suit, or you would rather be called back when it works for you, leave your number and a preferred time of day.</span>
+      </button>
+    </div>
+    <p class="bk-note">For those who cannot afford the standard rate, the income-dependent rate applies. Choose the introduction in that case; we agree the rate together before anything is paid.</p>
+  </div>
+
+  <div data-step="2">
+    <div class="bk-steplabel">2 · How shall we speak?</div>
+    <div class="bk-modes" data-mode-box></div>
+    <p class="bk-note">For a video call you receive the meeting link in the calendar invitation, along with the confirmation email.</p>
+  </div>
+
+  <div data-step="3">
+    <div class="bk-steplabel">3 · Date and time</div>
+    <div class="bk-cal" data-cal-box>
+      <p class="bk-note">Choose a type of conversation first; the free moments then appear here.</p>
+    </div>
+  </div>
+
+  <div data-step="4" data-pay-box>
+    <div class="bk-steplabel">4 · Details and payment</div>
+    <div class="bk-pay">
+      <h3>Payment in advance via iDEAL</h3>
+      <p>You complete the booking at your own bank. iDEAL works with every Dutch bank:</p>
+      <div class="bk-banks">
+        <span>ING</span><span>Rabobank</span><span>ABN AMRO</span><span>SNS</span><span>ASN</span><span>bunq</span><span>Knab</span><span>Regiobank</span><span>Revolut</span><span>Triodos</span><span>Van Lanschot</span>
+      </div>
+      <div class="bk-fields">
+        <label>Name<input name="bk-name" class="form-control" autocomplete="name"></label>
+        <label>Email address<input name="bk-email" type="email" class="form-control" autocomplete="email"></label>
+        <label>Phone number<input name="bk-phone" type="tel" class="form-control" autocomplete="tel"></label>
+        <label>What is it about?<textarea name="bk-note" rows="3" class="form-control"></textarea>
+          <span class="bk-hint">Briefly, and without medical or sensitive details — we discuss those in the conversation.</span></label>
+      </div>
+      <div class="bk-payrow">
+        <button type="button" class="btn btn-primary" data-pay-btn>Complete and pay with iDEAL</button>
+        <span class="bk-hint" data-pay-status>Free to move or cancel up to 24 hours before the appointment.</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="bk-note" data-free-note style="display:none">No payment is needed for this conversation. You receive a confirmation straight away with the meeting link or the phone number.</p>
+</div>
+```
+
+::: {.callout-important}
+In acute distress or with thoughts of suicide this is not the place. Call your GP
+or the out-of-hours GP service, call 112, or call 113 Suicide Prevention
+(0800-0113, free, day and night).
+:::

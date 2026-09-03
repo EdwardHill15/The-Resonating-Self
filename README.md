@@ -16,6 +16,11 @@ brand.css                      webfonts + brand-styling (hero, kaarten, code)
 brand.js                       NL | EN-schakelaar in de navigatiebalk
 index.qmd                      homepage
 theory.qmd                     RTC-theorie
+therapy.qmd                    MBMR — bilaterale bewegingstherapie
+stm.qmd                        STM — (Her-)Synchroniserende Therapie Methode
+afspraak.qmd                   agenda + beeldbellen + iDEAL-betaling
+betaling-gelukt.qmd            landingspagina na een geslaagde betaling
+booking.js                     de afspraakwidget (Cal.com-embed + Mollie)
 suite.qmd                      de Companion Suite, in een iframe
 blog.qmd                       overzicht van alle posts (grid, 3 kolommen)
 research.qmd                   overzicht, alleen categorie "RTC"
@@ -126,6 +131,71 @@ opnieuw deployen — detectie gebeurt tijdens de deploy. Onder **Forms** horen d
 van het formulier een 404.
 
 Na verzending komt de bezoeker op `bedankt.qmd` (NL) of `en/thanks.qmd` (EN).
+
+## Afspraken, beeldbellen en betalen
+
+De pagina `afspraak.qmd` (Engels: `en/booking.qmd`) bevat vier afspraaktypen,
+een agenda en de iDEAL-betaling. Drie diensten moeten eenmalig worden ingesteld.
+
+### 1. Cal.com — de agenda
+
+1. Maak een gratis account op [cal.com](https://cal.com) en koppel je Google- of
+   Outlook-agenda; Cal.com leest daaruit je vrije momenten.
+2. Maak vier event types aan met precies deze URL-slugs:
+
+   | Slug | Duur | Prijs |
+   |---|---|---|
+   | `kennismaking-20` | 20 min | gratis |
+   | `intake-60` | 60 min | € 100 (betaling loopt via de site) |
+   | `sessie-60` | 60 min | € 100 (betaling loopt via de site) |
+   | `terugbelverzoek` | 15 min | gratis |
+
+3. Zet bij elk type onder *Location* je videodienst: **Google Meet** of **Zoom**.
+   Cal.com maakt dan per boeking een gesprekslink en zet die in de
+   agenda-uitnodiging en de bevestigingsmail. Voor een telefonisch gesprek kies je
+   *Attendee phone number*.
+4. Vul je gebruikersnaam bovenaan `booking.js` in:
+   `var CAL_USER = "jouw-cal-naam";`
+
+### 2. Mollie — iDEAL
+
+iDEAL is één betaalmethode die alle Nederlandse banken afhandelt (ING, Rabobank,
+ABN AMRO, SNS, ASN, bunq, Knab, Regiobank, Revolut, Triodos, Van Lanschot). De
+cliënt kiest zijn bank op de betaalpagina van Mollie; losse koppelingen per bank
+bestaan niet en zijn ook niet nodig.
+
+1. Maak een account op [mollie.com](https://www.mollie.com/nl) en zet iDEAL aan.
+   Geen abonnement; ongeveer € 0,29 per transactie.
+2. Zet in Netlify → *Site configuration → Environment variables*:
+
+   | Variabele | Waarde |
+   |---|---|
+   | `MOLLIE_API_KEY` | `test_...` om te proberen, `live_...` zodra het werkt |
+   | `SITE_URL` | `https://the-resonating-self.netlify.app` |
+
+3. Test eerst met de testsleutel: je doorloopt dan de hele flow zonder dat er
+   geld wordt overgemaakt.
+
+Zonder `MOLLIE_API_KEY` blijft de pagina werken; de betaalknop meldt dan netjes
+dat de koppeling nog niet is ingesteld.
+
+### 3. Wat er automatisch gebeurt
+
+- `netlify/functions/create-payment.mjs` maakt de iDEAL-betaling en stuurt de
+  cliënt naar zijn bank.
+- `netlify/functions/payment-webhook.mjs` wordt door Mollie aangeroepen zodra er
+  betaald is, controleert de status bij Mollie zelf, en mailt de afspraakgegevens
+  naar de praktijk (via dezelfde Resend-koppeling als het contactformulier).
+- Na betaling landt de cliënt op `betaling-gelukt.qmd`.
+
+### AVG bij een psychologiepraktijk
+
+Cal.com en Mollie verwerken persoonsgegevens namens jou; sluit bij beide een
+verwerkersovereenkomst (Cal.com: *Settings → Legal*; Mollie: standaard in de
+voorwaarden). Google Meet vraagt om een Google Workspace-abonnement met
+verwerkersovereenkomst als je er klinische gesprekken via voert — een gratis
+Gmail-account biedt die niet. Het formulier vraagt uitdrukkelijk géén medische
+details; dat is bewust.
 
 ## Meldingen bij een nieuw bericht
 

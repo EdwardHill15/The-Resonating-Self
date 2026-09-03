@@ -1,0 +1,19 @@
+---
+title: "Betaling ontvangen"
+toc: false
+---
+
+::: {.eyebrow}
+Afspraak
+:::
+
+Dank je. Je betaling is ontvangen en de afspraak staat vast.
+
+Je krijgt binnen enkele minuten een bevestiging per e-mail. Bij een videogesprek
+staat de gesprekslink in de agenda-uitnodiging; bij een telefonisch gesprek bel
+ik je op het afgesproken tijdstip.
+
+Tot 24 uur voor de afspraak kun je kosteloos verzetten of afzeggen. Stuur daarvoor
+een bericht naar [totalegezondheidbv@gmail.com](mailto:totalegezondheidbv@gmail.com).
+
+[Terug naar de homepage](index.qmd){.btn .btn-primary}

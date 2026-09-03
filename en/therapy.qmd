@@ -1,0 +1,96 @@
+---
+title: "Mindful Body Movement Reprocessing"
+subtitle: "MBMR — bilateral movement therapy for traumatic memories"
+lang: en
+toc-title: "On this page"
+---
+
+::: {.eyebrow}
+Therapy
+:::
+
+Two methods: **MBMR** (this page) and the broader
+[(Re-)Synchronising Therapy Method (STM)](stm.qmd), in which MBMR forms the
+physical backbone.
+
+![](../assets/therapy/river-forest.jpg){.therapy-hero fig-alt=""}
+
+## What MBMR is
+
+A specific model of bilateral movement therapy for traumatic memories, whose
+central mechanism is the alternation of states of consciousness across two
+modalities: 1. Time ('present', 'past', 'future') and 2. Object of attention
+('internal stimulus', 'external stimulus', 'stimulus-free').
+
+## The two modalities
+
+The alternation runs along two axes. Each session moves the client's attention
+through the nine combinations these axes span together.
+
+::: {layout-ncol=2}
+::: {.card .p-4}
+#### 1 · Time
+
+- present
+- past
+- future
+:::
+
+::: {.card .p-4}
+#### 2 · Object of attention
+
+- internal stimulus
+- external stimulus
+- stimulus-free
+:::
+:::
+
+## Who it is for
+
+The method is used for:
+
+- Trauma / PTSD
+- Anxiety and panic
+- Burn-out and overstrain
+- Depressive complaints
+- Grief and loss
+- Chronic stress
+- Physical tension complaints
+- Personal development (no complaint)
+
+## Practical
+
+A 60-minute intake, in which psychodiagnostic assessment establishes the
+'avidya' and 'dukkha' values using the assessment I developed. A movement therapy
+programme follows — for example Mindful Running Therapy (MHT) — running eight
+weeks, twice a week, with 90-minute sessions in a fixed format of my own design.
+
+| | |
+|---|---|
+| Intake | 60 minutes, with psychodiagnostic assessment |
+| Programme | 8 weeks, 2 sessions per week |
+| Session length | 90 minutes, fixed format |
+| Example | Mindful Running Therapy (MHT) |
+
+::: {layout-ncol=2}
+![](../assets/therapy/bridge-crossing.jpg){fig-alt=""}
+
+![](../assets/therapy/runner-sunrise.jpg){fig-alt=""}
+:::
+
+## In preparation
+
+Three parts of this page follow once the accompanying text is ready.
+
+**Phases of a session** — the fixed format of the 90-minute session, phase by phase.
+
+**Grounding and EMDR** — where MBMR comes from, and how the method differs from EMDR.
+
+**Relation to RTC** — how the method connects to the ontology of the Resonating
+Self from the thesis. For now, see [the theory page](theory.qmd).
+
+## Book an intake
+
+A programme starts with a 60-minute intake. Get in touch to schedule one.
+
+[To the contact form](contact.qmd){.btn .btn-primary}

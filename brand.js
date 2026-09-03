@@ -5,7 +5,10 @@
 
 (function () {
   var EN_LABEL = {
-    "Home": "Home", "RTC": "RTC", "Suite": "Suite", "Blog": "Blog",
+    "Home": "Home", "RTC": "RTC", "Therapy": "Therapy", "Suite": "Suite", "Blog": "Blog",
+    "Afspraak": "Booking",
+    "MBMR — bewegingstherapie": "MBMR — movement therapy",
+    "STM — hersynchroniserende methode": "STM — re-synchronising method",
     "Onderzoek": "Research", "Publicaties": "Publications",
     "Over": "About", "Contact": "Contact"
   };
@@ -21,6 +24,17 @@
     else document.addEventListener("DOMContentLoaded", fn);
   }
 
+  // Nederlandse bestandsnaam -> Engelse tegenhanger (waar die verschilt)
+  var PAGE_MAP = { "afspraak": "booking", "betaling-gelukt": "payment-received", "bedankt": "thanks" };
+  var PAGE_MAP_BACK = {};
+  for (var k in PAGE_MAP) PAGE_MAP_BACK[PAGE_MAP[k]] = k;
+
+  function swapName(p, map) {
+    return p.replace(/([^\/]+?)(\.html)?$/, function (m, base, ext) {
+      return (map[base] || base) + (ext || "");
+    });
+  }
+
   ready(function () {
     var path = window.location.pathname;
     var isEn = /(^|\/)en\//.test(path) || /\/en$/.test(path);
@@ -28,11 +42,11 @@
     // counterpart URL
     var nlPath, enPath;
     if (isEn) {
-      nlPath = path.replace(/(^|\/)en\//, "$1").replace(/\/en$/, "/");
+      nlPath = swapName(path.replace(/(^|\/)en\//, "$1").replace(/\/en$/, "/"), PAGE_MAP_BACK);
       enPath = path;
     } else {
       nlPath = path;
-      enPath = path.replace(/^\//, "/en/");
+      enPath = swapName(path.replace(/^\//, "/en/"), PAGE_MAP);
       if (enPath === "/en/") enPath = "/en/index.html";
     }
 
@@ -51,7 +65,7 @@
     if (!isEn) return;
 
     // inside /en/: relabel the navbar and repoint it at the English pages
-    document.querySelectorAll(".navbar .nav-link").forEach(function (a) {
+    document.querySelectorAll(".navbar .nav-link, .navbar .dropdown-item").forEach(function (a) {
       var txt = a.textContent.trim();
       if (EN_LABEL[txt]) a.textContent = EN_LABEL[txt];
       var href = a.getAttribute("href");

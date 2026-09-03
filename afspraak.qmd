@@ -1,0 +1,92 @@
+---
+title: "Plan een gesprek"
+subtitle: "Kennismaking, intake of vervolgsessie — telefonisch, via beeldbellen of op de praktijk"
+toc: false
+page-layout: article
+include-in-header:
+  - text: |
+      <script defer src="/booking.js"></script>
+---
+
+::: {.eyebrow}
+Afspraak maken
+:::
+
+Kies een type gesprek, een moment dat past en de manier waarop we spreken:
+telefonisch, via beeldbellen of op de praktijk in Zwaag. De kennismaking van
+twintig minuten is gratis en zonder verplichting.
+
+```{=html}
+<div id="booking">
+
+  <div data-step="1">
+    <div class="bk-steplabel">1 · Type gesprek</div>
+    <div class="bk-types">
+      <button type="button" class="bk-type" data-type="intro" data-modes="Telefonisch|Beeldbellen">
+        <span class="bk-type-head"><span class="bk-type-name">Kennismaking</span><span class="bk-price bk-free">gratis</span></span>
+        <span class="bk-dur">20 minuten</span>
+        <span class="bk-body">Een kort gesprek om te kijken of de methode bij je past en of het klikt. Telefonisch of via beeldbellen. Geen verplichting, geen kosten.</span>
+      </button>
+      <button type="button" class="bk-type" data-type="intake" data-modes="Op de praktijk in Zwaag|Beeldbellen|Telefonisch">
+        <span class="bk-type-head"><span class="bk-type-name">Intakegesprek</span><span class="bk-price">€ 100</span></span>
+        <span class="bk-dur">60 minuten</span>
+        <span class="bk-body">Het eerste van twee intakegesprekken: kennismaking, klachten, achtergrond en hulpvraag. Hierna volgt het psychodiagnostisch onderzoek.</span>
+      </button>
+      <button type="button" class="bk-type" data-type="session" data-modes="Op de praktijk in Zwaag|Beeldbellen|Telefonisch">
+        <span class="bk-type-head"><span class="bk-type-name">Vervolgsessie</span><span class="bk-price">€ 100</span></span>
+        <span class="bk-dur">60 minuten</span>
+        <span class="bk-body">Een reguliere sessie binnen een lopend traject, volgens het vaste sessieformat. Voor cliënten die al zijn gestart.</span>
+      </button>
+      <button type="button" class="bk-type" data-type="callback" data-modes="Ik word teruggebeld">
+        <span class="bk-type-head"><span class="bk-type-name">Terugbelverzoek</span><span class="bk-price bk-free">gratis</span></span>
+        <span class="bk-dur">geen vaste tijd</span>
+        <span class="bk-body">Past geen van de momenten, of bel je liever terug wanneer het schikt? Laat je nummer achter en een voorkeursmoment op de dag.</span>
+      </button>
+    </div>
+    <p class="bk-note">Voor wie het standaardtarief niet kan opbrengen geldt het inkomensafhankelijke tarief. Kies dan de kennismaking; we spreken het tarief samen af voordat er iets betaald wordt.</p>
+  </div>
+
+  <div data-step="2">
+    <div class="bk-steplabel">2 · Hoe spreken we?</div>
+    <div class="bk-modes" data-mode-box></div>
+    <p class="bk-note">Bij beeldbellen ontvang je de gesprekslink in de agenda-uitnodiging, samen met de bevestigingsmail.</p>
+  </div>
+
+  <div data-step="3">
+    <div class="bk-steplabel">3 · Datum en tijd</div>
+    <div class="bk-cal" data-cal-box>
+      <p class="bk-note">Kies eerst een type gesprek; daarna verschijnen hier de vrije momenten.</p>
+    </div>
+  </div>
+
+  <div data-step="4" data-pay-box>
+    <div class="bk-steplabel">4 · Gegevens en betaling</div>
+    <div class="bk-pay">
+      <h3>Betaling vooraf via iDEAL</h3>
+      <p>Je rondt de boeking af bij je eigen bank. iDEAL werkt met alle Nederlandse banken:</p>
+      <div class="bk-banks">
+        <span>ING</span><span>Rabobank</span><span>ABN AMRO</span><span>SNS</span><span>ASN</span><span>bunq</span><span>Knab</span><span>Regiobank</span><span>Revolut</span><span>Triodos</span><span>Van Lanschot</span>
+      </div>
+      <div class="bk-fields">
+        <label>Naam<input name="bk-name" class="form-control" autocomplete="name"></label>
+        <label>E-mailadres<input name="bk-email" type="email" class="form-control" autocomplete="email"></label>
+        <label>Telefoonnummer<input name="bk-phone" type="tel" class="form-control" autocomplete="tel"></label>
+        <label>Waar gaat het over?<textarea name="bk-note" rows="3" class="form-control"></textarea>
+          <span class="bk-hint">Kort en zonder medische of gevoelige details — die bespreken we in het gesprek.</span></label>
+      </div>
+      <div class="bk-payrow">
+        <button type="button" class="btn btn-primary" data-pay-btn>Afronden en betalen met iDEAL</button>
+        <span class="bk-hint" data-pay-status>Tot 24 uur voor de afspraak kosteloos verzetten of afzeggen.</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="bk-note" data-free-note style="display:none">Voor dit gesprek is geen betaling nodig. Je ontvangt direct een bevestiging met de gesprekslink of het telefoonnummer.</p>
+</div>
+```
+
+::: {.callout-important}
+Bij acute nood of gedachten aan zelfdoding is dit niet de plek. Bel je huisarts
+of de huisartsenpost, bel 112, of bel 113 Zelfmoordpreventie (0800-0113, gratis,
+dag en nacht).
+:::

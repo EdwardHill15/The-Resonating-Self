@@ -12,6 +12,10 @@ Contact
 I usually reply within a few days. Prefer email? Write to
 [totalegezondheidbv@gmail.com](mailto:totalegezondheidbv@gmail.com).
 
+Would you rather fix a moment straight away — by phone, by video, or at the
+practice? Pick a free slot via [Schedule a conversation](booking.qmd). The
+twenty-minute introduction is free.
+
 ```{=html}
 <form name="contact-en" method="POST" data-netlify="true" action="/en/thanks" style="max-width:520px;display:flex;flex-direction:column;gap:1rem">
   <input type="hidden" name="form-name" value="contact-en">

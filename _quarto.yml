@@ -6,6 +6,7 @@ project:
     - "downloads/**"
     - "brand.css"
     - "brand.js"
+    - "booking.js"
 
 website:
   title: "The Resonating Self"
@@ -15,11 +16,22 @@ website:
   navbar:
     background: light
     collapse-below: lg
+    logo: assets/total-health-logo.jpg
+    logo-alt: "Total Health"
+    logo-href: index.qmd
     left:
       - href: index.qmd
         text: Home
       - href: theory.qmd
         text: RTC
+      - text: Therapy
+        menu:
+          - href: therapy.qmd
+            text: "MBMR — bewegingstherapie"
+          - href: stm.qmd
+            text: "STM — hersynchroniserende methode"
+      - href: afspraak.qmd
+        text: Afspraak
       - href: suite.qmd
         text: Suite
       - href: blog.qmd

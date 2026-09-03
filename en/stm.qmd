@@ -1,0 +1,248 @@
+---
+title: "The (Re-)Synchronising Therapy Method"
+subtitle: "STM — an integrative method grounded in the Resonance Theory of Consciousness"
+lang: en
+toc-title: "On this page"
+---
+
+::: {.eyebrow}
+Therapy
+:::
+
+Two methods: **STM** (this page) and its movement core
+[MBMR](therapy.qmd), which forms the physical backbone within STM.
+
+![](../assets/therapy/waterfall-jungle.jpg){.therapy-hero fig-alt=""}
+
+## What the (Re-)Synchronising Therapy Method is
+
+The (Re-)Synchronising Therapy Method, STM for short, is a form of psychological
+and philosophical guidance for adults who are stuck with anxiety, low mood,
+stress, tension, difficult experiences from the past, physical complaints without
+a clear medical cause, or questions about identity and meaning.
+
+The core idea is simple. Your inner life resembles music: all kinds of processes
+in your body and mind play together. When they are well attuned, your experience
+feels whole, coherent and alive. With complaints that attunement is disturbed;
+you fall out of time, as it were. STM helps you restore that inner attunement, so
+that you feel more whole, present and resilient again. Hence the word
+"re-synchronising": coming back into sync.
+
+STM is not a separate new technique. It is a way of working that brings proven
+forms of therapy together (talking therapy, explanation and insight, movement and
+body work, mindfulness, hypnotherapy, EMDR and short-term depth psychology) and
+determines per person which of these, and in what order, help most.
+
+The method is based on the [Resonance Theory of Consciousness](theory.qmd) (RTC),
+the research on which the practitioner is writing his thesis.
+
+STM is offered by an academically trained psychologist working independently and
+autonomously. Read more under [About](about.qmd).
+
+## The idea behind it, simply put
+
+**Two ways of experiencing.** You can relate to your experience in two ways. The
+first is direct experiencing: feeling what is here now, in your body and around
+you, without immediately judging it. The second is thinking about it: naming,
+judging, explaining, comparing, giving yourself a label. Both are needed. But
+with complaints, thinking often takes over. You spend a lot of time "in your
+head", you ruminate, you lose contact with direct feeling.
+
+Old contemplative traditions have words for this. Avidya means "not-seeing":
+losing contact with how your experience actually is. Dukkha means "suffering" or
+"inner fragmentation": what follows from it. In this method we call the personal
+form this takes in you the pathologos: the particular structure of your being
+stuck. The psychological assessment at the start maps that structure.
+
+**Rhythm and time.** Your experience has a rhythm. Under stress and anxiety that
+rhythm speeds up; everything fragments, you feel rushed, you jump from one thing
+to the next, you become exhausted. In low mood it slows down instead; everything
+feels sluggish, flat and empty. STM helps bring your rhythm back to a more
+comfortable pace, mainly through movement, breath and attention.
+
+**Becoming whole again.** Recovery does not mean you will never feel anything
+again, or that you will always be calm. It means you can move fluidly between
+states again, that you have a stable sense of "now" that can also carry difficult
+things, and that you are no longer stuck in the same groove.
+
+## Who it is for, and when it is not
+
+::: {layout-ncol=2}
+::: {.card .p-4}
+#### Suited to
+
+Anxiety and panic, low mood and depressive complaints, chronic stress and
+overstrain, the aftermath of difficult or overwhelming experiences, physical
+complaints in which tension plays a part, rumination and worry, feelings of
+estrangement or emptiness, and questions about who you are and what matters.
+:::
+
+::: {.card .p-4}
+#### Not suited, or other care first
+
+An acute crisis or strong thoughts of suicide, psychosis or untreated bipolar
+disorder, a severe addiction that needs attention first, or a physical condition
+that rules out exertion (in which case we adapt the movement component or refer
+you). In those cases we look together at what you need now and refer you on where
+appropriate. STM is not a crisis service.
+:::
+:::
+
+## What a programme looks like
+
+**1. Introduction and intake (two 60-minute sessions).** In the first
+conversation we get acquainted and you map out your complaints, your background
+and what you are asking for. In the second we discuss the questionnaire results,
+I explain the model, and together we formulate your pathologos and your goals.
+After that we make practical arrangements.
+
+**2. Questionnaires.** At the start you complete three scientifically grounded
+questionnaires: the NVM (on personality characteristics), the SCL-90 (on
+complaints) and the UCL (on how you handle problems). They help us clarify the
+nature and severity of your complaints and track your progress. We repeat the
+complaints list a few times during the programme and at the end. A score is a
+snapshot and a tool, not a stamp. Your data is treated confidentially in line
+with privacy legislation.
+
+**3. The treatment, in phases.**
+
+- **Phase 1: calm and solid ground.** First we make sure you stand more firmly:
+  explanation, breathing, grounding exercises, attention to sleep and lifestyle,
+  and where needed a plan for difficult moments.
+- **Phase 2: movement and presence.** We work with mindful movement and walking
+  or running with attention, with breath and with mindfulness. This brings your
+  rhythm back and strengthens contact with your body and the present moment.
+- **Phase 3: loosening what is stuck.** Now we address the core: with talking
+  therapy and short-term depth psychology we look at recurring patterns; with
+  EMDR we process circumscribed difficult memories; with hypnotherapy and
+  exercises we loosen stuck reactions.
+- **Phase 4: anchoring.** We make sure what you have achieved lasts: freer
+  movement, meaning and values, relapse prevention, and a calm tapering off with
+  one or two follow-up appointments.
+
+The phases do not run strictly one after another; we step back when needed and go
+at your pace.
+
+**4. A 60-minute session, step by step.**
+
+| | |
+|---|---|
+| ± 5 min | briefly arriving and looking back on the past week |
+| ± 5 min | setting the focus for today together |
+| ± 5 min | a short exercise with breath, attention or body awareness to settle and make contact |
+| ± 30 min | the actual work with one or two suitable techniques |
+| ± 8 min | pausing at what it brought you and anchoring that |
+| ± 5 min | taking home an exercise or assignment |
+| ± 2 min | closing with a short check |
+
+## The techniques we can use
+
+We choose together what suits you. Possible are:
+
+- **Talking therapy.** Exploratory conversations in which you come to understand
+  yourself and your history better and start to recognise recurring patterns.
+- **Explanation and insight (psycho-education).** Clear explanation about your
+  complaints and about what helps, so that you gain more grip yourself.
+- **Movement and body work ([MBMR](therapy.qmd)).** Walking or running with
+  attention, rhythmic exercises and breath work, to restore your inner rhythm and
+  strengthen contact with your body. This is a method of the practitioner's own
+  research.
+- **Mindfulness.** Training non-judgemental attention for the present moment;
+  helps especially with rumination, stress and preventing relapse.
+- **Hypnotherapy.** Working with a calm, inwardly directed state of attention to
+  loosen stuck reactions and strengthen your inner resources. Always with your
+  consent and under your direction.
+- **EMDR.** A proven method for letting difficult memories lose their charge, in
+  which you hold the memory while following eye movements or taps.
+- **Short-term psychodynamic therapy.** A focused, time-limited form of depth
+  psychology around a core theme.
+
+## What can you expect as a result?
+
+In the practitioner's practice, people who completed a full programme showed
+broad relief of complaints: not only less of one complaint, but less anxiety, low
+mood, physical tension, irritability and sleep problems at the same time. That
+fits the idea behind the method: when the underlying coherence recovers, much
+improves at once.
+
+At the same time we are honest: there are no guarantees. How much you gain also
+depends on your situation and on what you practise yourself between sessions. STM
+does not replace your GP, a psychiatrist or medication; where needed we work
+together with them. The integral framework of STM rests on a worked-out theory
+and on practice-based research, but as a whole it has not yet been tested in
+large comparative studies. The individual techniques we use have been.
+
+## Practical
+
+| | |
+|---|---|
+| Cost | the standard rate is 100 euro per 60-minute session |
+| Adjusted rate | if you cannot afford the standard rate, there is room for an adjusted, income-dependent rate. In a short conversation we look together at your income situation and agree a lower amount on a graduated scale: the lower the income, the lower the rate. That keeps the guidance accessible on a tighter budget. You simply raise it at the introductory meeting; there is no separate application or complicated procedure. |
+| Frequency | usually weekly or fortnightly |
+| Duration | generally two intake conversations, then around twelve to twenty sessions, and one or two follow-up appointments. This differs per person. |
+| Cancelling | at least 24 hours in advance please; otherwise costs may be charged (exact terms are in the treatment agreement) |
+| Reimbursement | STM is uninsured care; health insurers generally do not reimburse this guidance. Please note that you pay for the sessions yourself. |
+| Location | at the practice in Zwaag; part of it can be online by arrangement |
+| Applying | through the [registration form](contact.qmd) on this website. You fill in your name, contact details and a short description of what you are asking for. Do not put medical or sensitive details in the form; we discuss those in the first conversation. After you apply we get in touch within a few working days for an introduction. |
+
+### Example of the income-dependent rate
+
+The amounts below are indicative and serve as an example; we agree the exact rate
+together at the introductory meeting. You do not need to bring proof of income;
+we work from an honest conversation and trust.
+
+| Rate | Approximate income (gross per year, household) | Per session |
+|---|---|---|
+| Standard | above 45,000 euro, or your employer or an agency pays | 100 euro |
+| Reduced | 32,000 to 45,000 euro | 75 euro |
+| Strongly reduced | 22,000 to 32,000 euro | 55 euro |
+| Minimum | below 22,000 euro, benefits, or student without income | 40 euro |
+
+If your income changes during the programme, we adjust the rate. If you live
+alone, the same amounts apply to your own income.
+
+## About the practitioner
+
+Edward F. Hillenaar is an academically trained psychologist and philosopher. He
+connects scientific psychology with philosophy and contemplative traditions and,
+on the basis of his research — the Resonance Theory of Consciousness — developed
+the MBMR and STM methods. He is working towards completing his thesis.
+
+He works independently and autonomously, with his own integrative therapy method
+grounded in his theory of consciousness. What that way of working involves and
+whether it suits you, we discuss openly at the introductory meeting, so that you
+can make an informed choice.
+
+## Frequently asked questions
+
+**Do I have to believe in something "spiritual"?** No. The method uses concepts
+from philosophy and from contemplative traditions, but the treatment itself
+consists of ordinary, recognisable psychological techniques.
+
+**Do I have to be able to run for the movement part?** No. We start with walking
+and build up at your pace. With physical limitations we adapt it.
+
+**Is hypnotherapy safe? Will I lose control?** No. You remain conscious and in
+charge throughout. Hypnosis is a form of concentrated attention; you do nothing
+you do not want to do.
+
+**Can I stop whenever I want?** Yes. You set the pace yourself and can always
+discuss or end the programme.
+
+**Does this also work alongside medication or treatment with a psychiatrist?**
+Yes, that can go well together. With your consent we coordinate with your GP or
+psychiatrist.
+
+**How does the practitioner work?** As an academically trained psychologist,
+independently and autonomously, with his own integrative therapy method grounded
+in his research into consciousness. What that means precisely and whether it
+suits you, we discuss openly at the introductory meeting.
+
+## Important
+
+::: {.callout-important}
+STM is not a crisis service and is not available for emergencies. In acute
+distress or with thoughts of suicide: call your GP or the out-of-hours GP
+service, call 112, or call 113 Suicide Prevention (0800-0113, free, day and
+night).
+:::
