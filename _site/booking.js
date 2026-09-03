@@ -5,39 +5,44 @@
    afspraak in de gekoppelde Google- of Outlook-agenda. Bij beeldbellen voegt
    Cal.com de Google Meet- of Zoom-link toe aan de uitnodiging.
 
-   Vul CAL_USER met je Cal.com-gebruikersnaam en de event-slugs met de
-   afspraaktypen die je daar aanmaakt.                                        */
+   CAL_USER is je Cal.com-gebruikersnaam; de slugs hieronder moeten exact
+   overeenkomen met de event types die je in Cal.com hebt aangemaakt.         */
 
 (function () {
-  var CAL_USER = "edward-hillenaar-pjpiso";   // <- je Cal.com-gebruikersnaam
+  var CAL_USER = "edward-hillenaar-pjpiso";
   var TYPES = {
-    intro:    { slug: "kennismaking-20",  cents: 0,     pay: false },
-    intake:   { slug: "intake-60",        cents: 10000, pay: true  },
-    session:  { slug: "sessie-60",        cents: 10000, pay: true  },
-    callback: { slug: "terugbelverzoek",  cents: 0,     pay: false }
+    intro:    { slug: "kennismaking-20",  pay: false },
+    intake:   { slug: "intake-60",        pay: true  },
+    session:  { slug: "sessie-60",        pay: true  },
+    callback: { slug: "terugbelverzoek",  pay: false }
   };
 
-  function loadCal() {
-    if (window.Cal) return;
-    var s = document.createElement("script");
-    s.src = "https://app.cal.com/embed/embed.js";
-    s.async = true;
-    document.head.appendChild(s);
-    (function (C, A, L) {
-      var p = function (a, ar) { a.q.push(ar); };
-      var d = C.document;
-      C.Cal = C.Cal || function () {
-        var cal = C.Cal, ar = arguments;
-        if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; cal.loaded = true; }
-        if (ar[0] === L) {
-          var api = function () { p(api, arguments); };
-          api.q = api.q || [];
-          cal.ns[ar[1]] = api; p(api, ar); return;
-        }
-        p(cal, ar);
-      };
-    })(window, "https://app.cal.com/embed/embed.js", "init");
-  }
+  // Officiële Cal.com-loader. Zet window.Cal klaar als wachtrij, zodat
+  // aanroepen vóór het laden van embed.js alsnog worden uitgevoerd.
+  (function (C, A, L) {
+    var p = function (a, ar) { a.q.push(ar); };
+    var d = C.document;
+    C.Cal = C.Cal || function () {
+      var cal = C.Cal, ar = arguments;
+      if (!cal.loaded) {
+        cal.ns = {}; cal.q = cal.q || [];
+        d.head.appendChild(d.createElement("script")).src = A;
+        cal.loaded = true;
+      }
+      if (ar[0] === L) {
+        var api = function () { p(api, arguments); };
+        var ns = ar[1];
+        api.q = api.q || [];
+        if (typeof ns === "string") {
+          cal.ns[ns] = cal.ns[ns] || api;
+          p(cal.ns[ns], ar);
+          p(cal, ["initNamespace", ns]);
+        } else { p(cal, ar); }
+        return;
+      }
+      p(cal, ar);
+    };
+  })(window, "https://app.cal.com/embed/embed.js", "init");
 
   function ready(fn) {
     if (document.readyState !== "loading") fn();
@@ -47,7 +52,6 @@
   ready(function () {
     var root = document.getElementById("booking");
     if (!root) return;
-    loadCal();
 
     var chosen = null;
     var mode = "";
@@ -55,74 +59,94 @@
     var payBox = root.querySelector("[data-pay-box]");
     var modeBox = root.querySelector("[data-mode-box]");
     var steps = root.querySelectorAll("[data-step]");
+    var freeNotes = root.querySelectorAll("[data-free-note]");
 
     function show(el, on) { if (el) el.style.display = on ? "" : "none"; }
 
-    steps.forEach(function (s) { if (s.dataset.step !== "1") show(s, false); });
+    // alleen stap 1 zichtbaar tot er een type gekozen is
+    for (var i = 0; i < steps.length; i++) {
+      if (steps[i].getAttribute("data-step") !== "1") show(steps[i], false);
+    }
 
-    root.querySelectorAll("[data-type]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        root.querySelectorAll("[data-type]").forEach(function (b) { b.classList.remove("chosen"); });
-        btn.classList.add("chosen");
-        chosen = btn.dataset.type;
-        var cfg = TYPES[chosen];
-        mode = "";
-
-        // vormen die bij dit type horen
-        if (modeBox) {
-          modeBox.innerHTML = "";
-          (btn.dataset.modes || "").split("|").filter(Boolean).forEach(function (m, i) {
-            var b = document.createElement("button");
-            b.type = "button"; b.className = "mode-btn" + (i === 0 ? " chosen" : "");
-            b.textContent = m;
-            b.addEventListener("click", function () {
-              modeBox.querySelectorAll(".mode-btn").forEach(function (x) { x.classList.remove("chosen"); });
-              b.classList.add("chosen"); mode = m;
-            });
-            modeBox.appendChild(b);
-            if (i === 0) mode = m;
-          });
-        }
-
-        steps.forEach(function (s) { show(s, true); });
-        show(payBox, cfg.pay);
-        root.querySelectorAll("[data-free-note]").forEach(function (n) { show(n, !cfg.pay); });
-
-        // Cal.com-agenda voor dit type
-        if (calBox) {
-          calBox.innerHTML = "";
-          var holder = document.createElement("div");
-          holder.style.minHeight = "620px";
-          calBox.appendChild(holder);
-          if (window.Cal) {
-            window.Cal("init", { origin: "https://app.cal.com" });
-            window.Cal("inline", {
-              elementOrSelector: holder,
-              calLink: CAL_USER + "/" + cfg.slug,
-              config: { layout: "month_view", theme: "light" }
-            });
-            window.Cal("ui", {
-              theme: "light",
-              styles: { branding: { brandColor: "#00549C" } },
-              hideEventTypeDetails: false
-            });
-          } else {
-            holder.innerHTML = '<p style="color:#5d7280">De agenda wordt geladen…</p>';
-          }
-        }
-        var next = root.querySelector("[data-step='2']");
-        if (next) next.scrollIntoView ? null : null;
-      });
+    window.Cal("init", { origin: "https://app.cal.com" });
+    window.Cal("ui", {
+      theme: "light",
+      cssVarsPerTheme: { light: { "cal-brand": "#00549C" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
     });
+
+    function mountCal(slug) {
+      if (!calBox) return;
+      calBox.innerHTML = "";
+      var holder = document.createElement("div");
+      holder.style.minHeight = "640px";
+      holder.style.width = "100%";
+      calBox.appendChild(holder);
+      // eigen namespace per type, anders hergebruikt Cal de eerste agenda
+      var ns = slug.replace(/[^a-z0-9]/gi, "");
+      window.Cal("init", ns, { origin: "https://app.cal.com" });
+      window.Cal.ns[ns]("inline", {
+        elementOrSelector: holder,
+        calLink: CAL_USER + "/" + slug,
+        config: { layout: "month_view", theme: "light" }
+      });
+      window.Cal.ns[ns]("ui", {
+        theme: "light",
+        cssVarsPerTheme: { light: { "cal-brand": "#00549C" } },
+        hideEventTypeDetails: false,
+        layout: "month_view"
+      });
+    }
+
+    var typeBtns = root.querySelectorAll("[data-type]");
+    for (var j = 0; j < typeBtns.length; j++) {
+      (function (btn) {
+        btn.addEventListener("click", function () {
+          for (var k = 0; k < typeBtns.length; k++) typeBtns[k].classList.remove("chosen");
+          btn.classList.add("chosen");
+          chosen = btn.getAttribute("data-type");
+          var cfg = TYPES[chosen];
+          if (!cfg) return;
+          mode = "";
+
+          if (modeBox) {
+            modeBox.innerHTML = "";
+            var modes = (btn.getAttribute("data-modes") || "").split("|");
+            for (var m = 0; m < modes.length; m++) {
+              if (!modes[m]) continue;
+              (function (label, first) {
+                var b = document.createElement("button");
+                b.type = "button";
+                b.className = "mode-btn" + (first ? " chosen" : "");
+                b.textContent = label;
+                b.addEventListener("click", function () {
+                  var all = modeBox.querySelectorAll(".mode-btn");
+                  for (var x = 0; x < all.length; x++) all[x].classList.remove("chosen");
+                  b.classList.add("chosen");
+                  mode = label;
+                });
+                modeBox.appendChild(b);
+                if (first) mode = label;
+              })(modes[m], m === 0);
+            }
+          }
+
+          for (var s = 0; s < steps.length; s++) show(steps[s], true);
+          show(payBox, cfg.pay);
+          for (var n = 0; n < freeNotes.length; n++) show(freeNotes[n], !cfg.pay);
+
+          mountCal(cfg.slug);
+        });
+      })(typeBtns[j]);
+    }
 
     var payBtn = root.querySelector("[data-pay-btn]");
     if (payBtn) {
-      payBtn.addEventListener("click", async function () {
-        if (!chosen || !TYPES[chosen].pay) return;
-        var name = (root.querySelector("[name='bk-name']") || {}).value || "";
-        var email = (root.querySelector("[name='bk-email']") || {}).value || "";
-        var phone = (root.querySelector("[name='bk-phone']") || {}).value || "";
-        var note = (root.querySelector("[name='bk-note']") || {}).value || "";
+      payBtn.addEventListener("click", function () {
+        if (!chosen || !TYPES[chosen] || !TYPES[chosen].pay) return;
+        var q = function (sel) { var e = root.querySelector(sel); return e ? e.value : ""; };
+        var name = q("[name='bk-name']"), email = q("[name='bk-email']");
         var status = root.querySelector("[data-pay-status]");
 
         if (!name.trim() || !/.+@.+\..+/.test(email)) {
@@ -131,21 +155,26 @@
         }
         payBtn.disabled = true;
         if (status) status.textContent = "Betaling wordt aangemaakt…";
-        try {
-          var res = await fetch("/.netlify/functions/create-payment", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ type: chosen, name: name, email: email, phone: phone, note: note, mode: mode })
-          });
-          var data = await res.json();
+
+        fetch("/.netlify/functions/create-payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            type: chosen, name: name, email: email,
+            phone: q("[name='bk-phone']"), note: q("[name='bk-note']"), mode: mode
+          })
+        }).then(function (r) { return r.json(); }).then(function (data) {
           if (data.checkoutUrl) { window.location.href = data.checkoutUrl; return; }
-          if (status) status.textContent = data.error === "MOLLIE_API_KEY ontbreekt"
-            ? "De betaalkoppeling is nog niet ingesteld. Neem contact op, dan sturen we een factuur."
-            : "Er ging iets mis bij het aanmaken van de betaling. Probeer het opnieuw of neem contact op.";
-        } catch (e) {
+          if (status) {
+            status.textContent = data.error === "MOLLIE_API_KEY ontbreekt"
+              ? "De betaalkoppeling is nog niet ingesteld. Neem contact op, dan sturen we een factuur."
+              : "Er ging iets mis bij het aanmaken van de betaling. Probeer het opnieuw of neem contact op.";
+          }
+          payBtn.disabled = false;
+        }).catch(function () {
           if (status) status.textContent = "Geen verbinding met de betaaldienst. Probeer het later opnieuw.";
-        }
-        payBtn.disabled = false;
+          payBtn.disabled = false;
+        });
       });
     }
   });
