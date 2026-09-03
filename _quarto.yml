@@ -59,6 +59,7 @@ format:
     include-in-header:
       - text: |
           <script defer src="/brand.js"></script>
+          <script defer src="/booking.js"></script>
     mainfont: Carlito, Calibri, Arial, sans-serif
     fontsize: 1.05rem
     linestretch: 1.6

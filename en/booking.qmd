@@ -4,9 +4,6 @@ subtitle: "Introduction, intake or follow-up session — by phone, by video, or 
 lang: en
 toc: false
 page-layout: article
-include-in-header:
-  - text: |
-      <script defer src="/booking.js"></script>
 ---
 
 ::: {.eyebrow}

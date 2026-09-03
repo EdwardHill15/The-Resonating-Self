@@ -3,9 +3,6 @@ title: "Plan een gesprek"
 subtitle: "Kennismaking, intake of vervolgsessie — telefonisch, via beeldbellen of op de praktijk"
 toc: false
 page-layout: article
-include-in-header:
-  - text: |
-      <script defer src="/booking.js"></script>
 ---
 
 ::: {.eyebrow}
