@@ -12,7 +12,7 @@
   var CAL_USER = "edward-hillenaar-pjpiso";
   var TYPES = {
     intro:    { slug: "kennismaking-20",  pay: false },
-    intake:   { slug: "intake-60",        pay: true  },
+    intake:   { slug: "intake60",         pay: true  },
     session:  { slug: "sessie-60",        pay: true  },
     callback: { slug: "terugbelverzoek",  pay: false }
   };
