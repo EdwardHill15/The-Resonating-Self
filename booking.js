@@ -9,7 +9,7 @@
    afspraaktypen die je daar aanmaakt.                                        */
 
 (function () {
-  var CAL_USER = "edward-hillenaar";      // <- je Cal.com-gebruikersnaam
+  var CAL_USER = "edward-hillenaar-pjpiso";   // <- je Cal.com-gebruikersnaam
   var TYPES = {
     intro:    { slug: "kennismaking-20",  cents: 0,     pay: false },
     intake:   { slug: "intake-60",        cents: 10000, pay: true  },
