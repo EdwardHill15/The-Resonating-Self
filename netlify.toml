@@ -13,11 +13,13 @@
   node_bundler = "esbuild"
 
 # De MMPI-2 Casusanalyse-app zelf staat NIET in _site (dus nooit als los,
-# publiek bestand bereikbaar). included_files bundelt het wachtwoord-
-# beveiligd bij deze functie; zie netlify/functions/psychodiag-app.mjs en
-# README.md ("Psychodiagnostiek (afgeschermd)").
+# publiek bestand bereikbaar). Het bestand staat naast de functie in
+# netlify/functions/psychodiag-app/ en wordt zo automatisch meegebundeld;
+# included_files hieronder is daar een extra vangnet bovenop. Zie
+# netlify/functions/psychodiag-app/psychodiag-app.mjs en README.md
+# ("Psychodiagnostiek (afgeschermd)").
 [functions."psychodiag-app"]
-  included_files = ["netlify/protected/psychodiagnostiek.html"]
+  included_files = ["netlify/functions/psychodiag-app/psychodiagnostiek.html"]
 
 # Geen catch-all redirect: Netlify serveert 404.html automatisch wanneer een
 # pad niet bestaat. Een regel 'from = "/*"' kan bestaande pagina's afvangen.

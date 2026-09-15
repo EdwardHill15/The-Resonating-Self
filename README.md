@@ -29,7 +29,7 @@ blog.qmd                       overzicht van alle posts (grid, 3 kolommen)
 research.qmd                   overzicht, alleen categorie "RTC"
 publications.qmd               downloads
 about.qmd  contact.qmd         over / contactformulier (Netlify Forms)
-netlify/protected/             app-bestanden die NIET in _site komen (zie "Psychodiagnostiek")
+netlify/functions/psychodiag-app/   functie + app-bestand, NIET in _site (zie "Psychodiagnostiek")
 posts/
   _metadata.yml                geldt voor alle posts
   _template.qmd                startpunt voor een nieuw artikel
@@ -212,15 +212,19 @@ inlogscherm.
 
 ### Hoe de afscherming werkt
 
-- Het bestand `netlify/protected/psychodiagnostiek.html` (de app zelf) staat
-  **niet** in `_site` en wordt dus nooit als los, publiek bestand geserveerd.
-  Het gaat wel gewoon mee in de git-commit; de bescherming zit 'm niet in
-  geheimhouding van het bestand, maar in hoe het wordt uitgeleverd.
+- Het bestand `netlify/functions/psychodiag-app/psychodiagnostiek.html` (de
+  app zelf) staat **niet** in `_site` en wordt dus nooit als los, publiek
+  bestand geserveerd. Het gaat wel gewoon mee in de git-commit; de bescherming
+  zit 'm niet in geheimhouding van het bestand, maar in hoe het wordt
+  uitgeleverd.
 - Elk verzoek naar `/app/psychodiagnostiek/…` wordt door `netlify.toml`
-  doorgestuurd naar de functie `netlify/functions/psychodiag-app.mjs`. Die
-  functie bundelt het app-bestand via `included_files` en levert het pas uit
-  na een geslaagde login; zonder geldig sessiecookie krijgt iedereen alleen
-  het inlogscherm.
+  doorgestuurd naar de functie
+  `netlify/functions/psychodiag-app/psychodiag-app.mjs`. Doordat het
+  app-bestand in dezelfde map staat, bundelt Netlify het automatisch mee met
+  die functie (het "één map per functie"-patroon); `included_files` in
+  netlify.toml is daar nog een extra vangnet bovenop. De functie levert het
+  bestand pas uit na een geslaagde login; zonder geldig sessiecookie krijgt
+  iedereen alleen het inlogscherm.
 - Een geslaagde login zet een ondertekend cookie (HttpOnly, Secure, 8 uur
   geldig, alleen voor het pad `/app/psychodiagnostiek`). Wordt het cookie
   aangepast of is het verlopen, dan verschijnt opnieuw het inlogscherm.

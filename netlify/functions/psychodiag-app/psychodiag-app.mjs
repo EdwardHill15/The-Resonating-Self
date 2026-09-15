@@ -1,9 +1,12 @@
 /* Beveiligde toegang tot de MMPI-2 Casusanalyse-app (Psychodiagnostiek).
 
-   Het bestand netlify/protected/psychodiagnostiek.html staat NIET in _site en
-   wordt dus nooit als los, publiek bestand door Netlify geserveerd. Deze
-   functie is de enige manier om er bij te komen: ze bundelt het bestand via
-   included_files (zie netlify.toml), en levert het pas uit nadat het juiste
+   Het bestand psychodiagnostiek.html staat in deze map, naast deze functie
+   (netlify/functions/psychodiag-app/), NIET in _site: het wordt dus nooit als
+   los, publiek bestand door Netlify geserveerd. Omdat het in dezelfde map
+   staat als de functie, neemt Netlify het automatisch mee in de bundel van
+   deze functie (het "één map per functie"-patroon); included_files in
+   netlify.toml is daar bovenop een extra vangnet. Deze functie is de enige
+   manier om bij het bestand te komen: ze levert het pas uit nadat het juiste
    wachtwoord is ingevoerd. Een geslaagde login zet een ondertekend, verlopend
    cookie; zonder geldig cookie krijgt iedere bezoeker alleen het inlogscherm
    te zien: nooit de inhoud van de app, en dus nooit cliëntgegevens.
@@ -20,18 +23,75 @@
    Zonder deze twee variabelen weigert de functie de app te tonen; bij twijfel
    dicht, nooit open.                                                        */
 
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const COOKIE_NAME = "pd_session";
 const COOKIE_PATH = "/app/psychodiagnostiek";
 const SESSION_SECONDS = 8 * 60 * 60; // 8 uur
 
-const PROTECTED_FILE = path.join(
-  process.cwd(),
-  "netlify/protected/psychodiagnostiek.html"
-);
+/* HERE/psychodiagnostiek.html (naast deze functie) is de verwachte locatie,
+   dankzij het "één map per functie"-patroon. De overige kandidaten zijn een
+   vangnet voor het geval een Netlify-runtime/bundler-versie het toch anders
+   neerzet: in plaats van dat te gokken proberen we een rij plausibele
+   locaties en gebruiken de eerste die bestaat. Vindt geen enkele kandidaat
+   het bestand, dan loggen we cwd + een mapoverzicht (alleen in de Netlify
+   function logs, nooit in de HTTP-respons) zodat dat in één keer te zien is
+   zonder opnieuw te hoeven raden. */
+const HERE = path.dirname(fileURLToPath(import.meta.url)); // .../netlify/functions/psychodiag-app
+const BASES = [HERE, process.cwd(), path.join(HERE, ".."), path.join(HERE, "..", "..")];
+const SUFFIXES = [
+  "psychodiagnostiek.html",
+  "netlify/functions/psychodiag-app/psychodiagnostiek.html",
+  "netlify/protected/psychodiagnostiek.html",
+  "protected/psychodiagnostiek.html"
+];
+
+let resolvedPath = null;
+let resolveAttempted = false;
+
+function resolveProtectedFile() {
+  if (resolvedPath) return resolvedPath;
+  if (resolveAttempted) return null;
+  resolveAttempted = true;
+
+  const tried = [];
+  for (const base of BASES) {
+    for (const suffix of SUFFIXES) {
+      const candidate = path.join(base, suffix);
+      tried.push(candidate);
+      if (existsSync(candidate)) {
+        resolvedPath = candidate;
+        return resolvedPath;
+      }
+    }
+  }
+
+  console.error("psychodiag-app: psychodiagnostiek.html nergens gevonden.");
+  console.error("psychodiag-app: geprobeerde paden:\n" + tried.join("\n"));
+  for (const dir of [process.cwd(), HERE]) {
+    try {
+      console.error(`psychodiag-app: inhoud van ${dir}:`, readdirSync(dir));
+    } catch (e) {
+      console.error(`psychodiag-app: kon ${dir} niet lezen:`, e.message);
+    }
+  }
+  return null;
+}
+
+function serverErrorPage() {
+  return `<!doctype html><html lang="nl"><head><meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow"><title>Psychodiagnostiek</title>
+<style>body{font-family:Calibri,Arial,sans-serif;color:#1c2a33;max-width:34rem;margin:4rem auto;padding:0 1.5rem;line-height:1.6}</style>
+</head><body>
+<h1>Er ging iets mis</h1>
+<p>De app kon niet worden geladen (bestand niet gevonden op de server). Er zijn
+geen cliëntgegevens getoond. Bekijk de function logs van "psychodiag-app" in
+Netlify voor details, of neem contact op met de beheerder.</p>
+</body></html>`;
+}
 
 function b64url(input) {
   return Buffer.from(input).toString("base64url");
@@ -134,6 +194,17 @@ function loginPage({ error = false } = {}) {
 </body></html>`;
 }
 
+function loadApp() {
+  const file = resolveProtectedFile();
+  if (!file) return null;
+  try {
+    return readFileSync(file, "utf8");
+  } catch (e) {
+    console.error("psychodiag-app: gevonden op", file, "maar lezen mislukte:", e.message);
+    return null;
+  }
+}
+
 function notConfiguredPage() {
   return `<!doctype html><html lang="nl"><head><meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow"><title>Psychodiagnostiek</title>
@@ -170,15 +241,18 @@ export default async (req) => {
 
     if (!ok) return htmlResponse(loginPage({ error: true }), { status: 401 });
 
+    const app = loadApp();
+    if (!app) return htmlResponse(serverErrorPage(), { status: 500 });
+
     const token = makeToken(secret);
     const cookie = `${COOKIE_NAME}=${encodeURIComponent(token)}; Path=${COOKIE_PATH}; Max-Age=${SESSION_SECONDS}; HttpOnly; Secure; SameSite=Lax`;
-    const app = readFileSync(PROTECTED_FILE, "utf8");
     return htmlResponse(app, { setCookie: cookie });
   }
 
   const cookieToken = readCookie(req, COOKIE_NAME);
   if (verifyToken(cookieToken, secret)) {
-    const app = readFileSync(PROTECTED_FILE, "utf8");
+    const app = loadApp();
+    if (!app) return htmlResponse(serverErrorPage(), { status: 500 });
     return htmlResponse(app);
   }
 
