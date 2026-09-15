@@ -57,16 +57,17 @@ p,li{text-wrap:pretty}
 .hero{
   position:relative;color:#fff;
   margin:0 calc(50% - 50vw) 3.5rem;padding:6rem 1.5rem 5.5rem;width:100vw;
-  background:linear-gradient(180deg,rgba(0,32,58,.72),rgba(0,32,58,.88)),
+  background:linear-gradient(180deg,rgba(0,32,58,.34),rgba(0,32,58,.58)),
              url("assets/hero-photo.jpg?v=2") center/cover no-repeat;
 }
 .hero-inner{max-width:var(--content-max);margin:0 auto}
-.hero h1{color:#fff;font-size:3.2rem;line-height:1.06;max-width:19ch;margin:0 0 1.1rem}
-.hero p{color:var(--sky-100);font-size:1.18rem;line-height:1.55;max-width:62ch;margin:0 0 1.7rem}
-.hero .eyebrow{color:var(--teal-400)}
+.hero h1{color:#fff;font-size:3.2rem;line-height:1.06;max-width:19ch;margin:0 0 1.1rem;text-shadow:0 2px 16px rgba(0,18,36,.65),0 1px 3px rgba(0,18,36,.75)}
+.hero p{color:var(--sky-100);font-size:1.18rem;line-height:1.55;max-width:62ch;margin:0 0 1.7rem;text-shadow:0 1px 10px rgba(0,18,36,.6),0 1px 2px rgba(0,18,36,.7)}
+.hero .eyebrow{color:var(--teal-400);text-shadow:0 1px 8px rgba(0,18,36,.7)}
 .hero .btn{border-radius:999px;padding:.72rem 1.65rem;font-size:1rem;margin-right:.6rem}
 .hero .btn-primary{background:var(--teal-500);border-color:var(--teal-500)}
 .hero .btn-primary:hover{background:var(--teal-600);border-color:var(--teal-600)}
+.hero .btn-outline-light{color:#fff;border-color:rgba(255,255,255,.85);background:rgba(0,20,38,.22)}
 .hero .btn-outline-light:hover{background:rgba(255,255,255,.12);color:#fff}
 
 /* eyebrow label */
