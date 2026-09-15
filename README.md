@@ -126,6 +126,25 @@ compileert en relatieve paden daar breken. Wie de vormgeving aanpast, doet dat
 dus in `brand.css`; de fonts (Carlito, Oranienbaum) staan in `assets/fonts/` en
 gaan mee in de commit.
 
+### De herofoto vervangen
+
+`netlify.toml` geeft alles onder `/assets/*` een cache van een heel jaar
+("immutable"), voor snelle laadtijden. Vervang je `assets/hero-photo.jpg` door
+een nieuwe foto met dezelfde bestandsnaam, dan blijven browsers en Netlify's
+eigen CDN bij bezoekers die de site al kenden gewoon de oude foto tonen: die
+hebben de oude inhoud onder die naam al als "nooit meer wijzigend" in cache
+staan. Verhoog daarom bij elke nieuwe herofoto het versienummer achter de
+bestandsnaam in `brand.css`:
+
+```css
+url("assets/hero-photo.jpg?v=3") center/cover no-repeat;
+```
+
+Elk nieuw versienummer is voor elke cache een nooit eerder geziene URL, dus
+wordt de nieuwe foto meteen bij iedereen opgehaald. Het bestand zelf mag
+gewoon `hero-photo.jpg` blijven heten; alleen het getal achter `?v=` hoeft
+omhoog.
+
 ## Formulieren aanzetten
 
 Netlify detecteert formulieren niet automatisch bij nieuwe sites. Eenmalig:
