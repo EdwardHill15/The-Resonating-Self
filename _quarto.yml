@@ -4,6 +4,7 @@ project:
   resources:
     - "app/**"          # the Companion Suite, copied in as-is
     - "downloads/**"
+    - "assets/**"       # ook bestanden die alleen vanuit brand.css (url()) worden aangeroepen
     - "brand.css"
     - "brand.js"
     - "booking.js"
