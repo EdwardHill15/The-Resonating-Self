@@ -1,0 +1,48 @@
+/*-- scss:defaults --*/
+// Total Health Design System: dark mode Bootstrap variable overrides.
+// Mirrors styles.scss; brand.css carries the matching custom-property values
+// under body.quarto-dark. Everything that needs @font-face or url() still
+// lives only in brand.css, for the same reason as in styles.scss.
+
+$blue-700:   #4da6e0;
+$blue-900:   #0d3a63;
+$teal-500:   #22a8d1;
+$teal-600:   #4fc2e8;
+$sky-050:    #18262f;
+$sky-100:    #dbe9f2;
+$ink:        #e6edf2;
+$muted:      #93a6b1;
+$border:     #2a3944;
+
+$primary:                 $blue-700;
+$secondary:               $teal-500;
+$link-color:              $blue-700;
+$link-hover-color:        $teal-600;
+$body-color:              $ink;
+$body-bg:                 #0b1318;
+$font-family-sans-serif:  Carlito, Calibri, Arial, sans-serif;
+$headings-font-family:    Oranienbaum, Georgia, "Times New Roman", serif;
+$headings-font-weight:    400;
+$headings-color:          $ink;
+$border-radius:           12px;
+$border-color:            $border;
+$navbar-light-color:              $ink;
+$navbar-light-hover-color:        $blue-700;
+$navbar-light-active-color:       $blue-700;
+$navbar-light-brand-color:        $blue-700;
+$navbar-light-brand-hover-color:  $ink;
+$footer-bg:               $blue-900;
+$footer-fg:               $sky-100;
+$code-block-bg:           $blue-900;
+$code-color:              $blue-700;
+$table-border-color:      $border;
+$input-border-color:      $border;
+$input-border-radius:     10px;
+$btn-border-radius:       999px;
+$h1-font-size:            2.7rem;
+$h2-font-size:            1.8rem;
+$h3-font-size:            1.4rem;
+
+/*-- scss:rules --*/
+h2 { margin-top: 2.1rem; }
+.form-control, .form-select { border-radius: 10px; }

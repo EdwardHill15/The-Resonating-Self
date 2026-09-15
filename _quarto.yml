@@ -57,7 +57,9 @@ website:
 
 format:
   html:
-    theme: [default, styles.scss]
+    theme:
+      light: [default, styles.scss]
+      dark: [default, styles-dark.scss]
     css: brand.css
     include-in-header:
       - text: |

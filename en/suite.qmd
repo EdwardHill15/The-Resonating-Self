@@ -9,7 +9,7 @@ lang: en
 <div style="max-width:1120px;margin:0 auto 1rem;padding:1.5rem 1.5rem 0">
   <div class="eyebrow">Computing environment · WebR</div>
   <h1 style="margin:0 0 .5rem">The suite</h1>
-  <p style="color:#5d7280;margin:0 0 1rem">
+  <p style="color:var(--muted);margin:0 0 1rem">
     Manual in Dutch and English, the calculator with eight RTC modules, and the R
     environment with four panes. R runs entirely in your browser; the first start
     loads R once.
