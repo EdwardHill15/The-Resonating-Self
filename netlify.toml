@@ -12,6 +12,13 @@
 [functions]
   node_bundler = "esbuild"
 
+# De MMPI-2 Casusanalyse-app zelf staat NIET in _site (dus nooit als los,
+# publiek bestand bereikbaar). included_files bundelt het wachtwoord-
+# beveiligd bij deze functie; zie netlify/functions/psychodiag-app.mjs en
+# README.md ("Psychodiagnostiek (afgeschermd)").
+[functions."psychodiag-app"]
+  included_files = ["netlify/protected/psychodiagnostiek.html"]
+
 # Geen catch-all redirect: Netlify serveert 404.html automatisch wanneer een
 # pad niet bestaat. Een regel 'from = "/*"' kan bestaande pagina's afvangen.
 
@@ -20,6 +27,21 @@
   from = "/suite/app"
   to = "/app/index.html"
   status = 301
+
+# Psychodiagnostiek: elk verzoek onder dit pad gaat naar de beveiligde functie
+# in plaats van naar een los bestand. De iframe op psychodiagnostiek.qmd wijst
+# hiernaar; zonder geldig sessiecookie levert de functie alleen een inlogscherm.
+[[redirects]]
+  from = "/app/psychodiagnostiek"
+  to = "/.netlify/functions/psychodiag-app"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/app/psychodiagnostiek/*"
+  to = "/.netlify/functions/psychodiag-app"
+  status = 200
+  force = true
 
 # Elke pagina ook bereikbaar met een afsluitende schuine streep.
 # status 200 = rewrite: de URL in de adresbalk blijft staan.

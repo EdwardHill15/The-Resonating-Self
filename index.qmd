@@ -1,5 +1,5 @@
 ---
-title: "The Resonating Self"
+title: "Totale Gezondheid"
 page-layout: full
 toc: false
 listing:
@@ -16,16 +16,17 @@ listing:
 ::: {.hero}
 ::: {.hero-inner}
 ::: {.eyebrow}
-Resonance Theory of Consciousness
+Praktijk voor psychologische begeleiding
 :::
 
-# Bewustzijn als resonantie, doorgerekend in de browser
+# Totale Gezondheid
 
-Onderzoek, essays en een volledige rekenomgeving rond de Resonance Theory of
-Consciousness. Elke formule op deze site is uitvoerbaar: open de suite, draai de
-R-code en download de uitkomst.
+Psychologische begeleiding, psychodiagnostiek en bewegingstherapie op
+grondslag van *The Resonating Self*: mijn ontologie en toegepaste theorie van
+bewustzijn als resonantie. Elke formule erachter is uitvoerbaar: open de suite,
+draai de R-code en download de uitkomst.
 
-[Open de suite](suite.qmd){.btn .btn-primary}
+[Maak een afspraak](afspraak.qmd){.btn .btn-primary}
 [Lees de theorie](theory.qmd){.btn .btn-outline-light}
 :::
 :::
@@ -34,38 +35,39 @@ R-code en download de uitkomst.
 
 ::: {layout-ncol=3}
 ::: {.card .p-4}
-#### De suite
+#### Therapie
 
-Acht RTC-modules, de volledige handleiding in NL en EN, en een R-omgeving met
-vier panelen, pakketbeheer en Quarto-preview.
+MBMR, bilaterale bewegingstherapie, en de bredere (Her-)Synchroniserende
+Therapie Methode (STM): voor angst, trauma, burn-out en meer.
+
+[Naar therapie →](therapy.qmd)
+:::
+
+::: {.card .p-4}
+#### Psychodiagnostiek
+
+Avidya en dukkha in kaart via de NVM, de SCL-90 en de UCL: het uitgangspunt
+van elk traject.
+
+[Naar psychodiagnostiek →](psychodiagnostiek.qmd)
+:::
+
+::: {.card .p-4}
+#### The Resonating Self
+
+De ontologie en toegepaste theorie achter de praktijk: acht RTC-modules, de
+volledige handleiding, en een R-omgeving in de browser.
 
 [Naar de suite →](suite.qmd)
 :::
-
-::: {.card .p-4}
-#### RTC in kort bestek
-
-Van het schijnbare nu naar de Mind-Energy-wet: de aannames, de formules en wat
-er nog openstaat.
-
-[Lees de theorie →](theory.qmd)
 :::
 
-::: {.card .p-4}
-#### Alles uit .qmd
+## The Resonating Self: de theorie achter de praktijk
 
-Artikelen worden in RStudio als Quarto-document geschreven, lokaal gerenderd en
-via GitHub naar Netlify gepubliceerd.
-
-[Bekijk de werkwijze →](posts/2026-01-19-quarto-workflow/index.qmd)
-:::
-:::
-
-## De drempel die alles bepaalt
-
-De perceptuele tijdsdrempel $\tau$ is de kleinste duur waarbinnen twee prikkels nog
-als één moment worden ervaren. In RTC is die drempel geen bijproduct van
-waarneming maar de basiseenheid van het model.
+Totale Gezondheid werkt vanuit *The Resonating Self*, mijn ontologie van
+bewustzijn als resonantie. De perceptuele tijdsdrempel $\tau$ is de kleinste
+duur waarbinnen twee prikkels nog als één moment worden ervaren. In RTC is die
+drempel geen bijproduct van waarneming maar de basiseenheid van het model.
 
 $$E_m = \frac{1}{\tau^3}$$
 

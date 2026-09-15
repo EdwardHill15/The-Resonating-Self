@@ -1,0 +1,41 @@
+---
+title: "Psychodiagnostiek"
+subtitle: "Avidya en dukkha in kaart: de NVM/SCL-90/UCL-analyse achter elk traject"
+page-layout: custom
+toc: false
+include-in-header:
+  text: |
+    <meta name="robots" content="noindex, nofollow">
+---
+
+```{=html}
+<div style="max-width:1120px;margin:0 auto 1rem;padding:1.5rem 1.5rem 0">
+  <div class="eyebrow">Psychodiagnostiek</div>
+  <h1 style="font-family:Oranienbaum,Georgia,serif;font-weight:400;margin:0 0 .5rem">Psychodiagnostiek</h1>
+  <p style="color:#5d7280;margin:0 0 1rem;max-width:70ch">
+    Elk traject begint met psychodiagnostisch onderzoek: de NVM, de SCL-90 en de
+    UCL, samen vertaald naar de aard en het niveau van <em>avidya</em> en
+    <em>dukkha</em> voor deze cliënt, het uitgangspunt voor MBMR en de
+    (Her-)Synchroniserende Therapie Methode. De MMPI-2 Casusanalyse hieronder is
+    het instrument waarmee ik die vertaalslag maak.
+  </p>
+  <div style="background:#f1f7fb;border:1px solid #d9e3ea;border-left:4px solid #00549c;
+              border-radius:10px;padding:1rem 1.25rem;max-width:70ch;margin:0 0 1.5rem">
+    <strong style="color:#00335c">Alleen voor de behandelaar.</strong>
+    <span style="color:#1c2a33">
+      Deze omgeving bevat cliëntgegevens en is met een wachtwoord afgeschermd.
+      Bezoekers van de site zien hieronder uitsluitend een inlogscherm, nooit de
+      inhoud: er zijn geen cliëntgegevens zichtbaar of bereikbaar zonder dat
+      wachtwoord.
+    </span>
+  </div>
+</div>
+<div style="padding:0 1.5rem 2rem">
+  <iframe src="/app/psychodiagnostiek/" title="Psychodiagnostiek: MMPI-2 Casusanalyse (afgeschermd)"
+          class="suite-frame" loading="lazy"></iframe>
+  <p style="color:#5d7280;font-size:.85rem;margin-top:.6rem">
+    <a href="/app/psychodiagnostiek/" target="_blank" rel="noopener">In een eigen tabblad openen</a>,
+    ook daar wordt eerst om het wachtwoord gevraagd.
+  </p>
+</div>
+```

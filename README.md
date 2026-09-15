@@ -1,10 +1,12 @@
-# The Resonating Self
+# Totale Gezondheid (The Resonating Self)
 
-Website rond de Resonance Theory of Consciousness: theorie, artikelen en de
+Website van de praktijk Totale Gezondheid: psychologische begeleiding,
+psychodiagnostiek en bewegingstherapie op grondslag van The Resonating Self,
+de Resonance Theory of Consciousness. Bevat de theorie, artikelen en de
 Companion Suite (rekenapp, handleiding NL/EN, R-omgeving in de browser).
 
 - **Schrijven** in RStudio, als Quarto-documenten (`.qmd`)
-- **Beheer** in GitHub — `EdwardHill15/The-Resonating-Self`
+- **Beheer** in GitHub, repository `EdwardHill15/The-Resonating-Self`
 - **Publicatie** via Netlify, die de lokaal gerenderde map `_site` oppakt
 
 ## Mapindeling
@@ -14,10 +16,11 @@ _quarto.yml                    projectconfiguratie + navigatie
 styles.scss                    Bootstrap-variabelen (kleuren, radii, fonts)
 brand.css                      webfonts + brand-styling (hero, kaarten, code)
 brand.js                       NL | EN-schakelaar in de navigatiebalk
-index.qmd                      homepage
+index.qmd                      homepage: Totale Gezondheid, met The Resonating Self als theorie
 theory.qmd                     RTC-theorie
 therapy.qmd                    MBMR — bilaterale bewegingstherapie
 stm.qmd                        STM — (Her-)Synchroniserende Therapie Methode
+psychodiagnostiek.qmd          MMPI-2 Casusanalyse in een iframe, afgeschermd (zie hieronder)
 afspraak.qmd                   agenda + beeldbellen + iDEAL-betaling
 betaling-gelukt.qmd            landingspagina na een geslaagde betaling
 booking.js                     de afspraakwidget (Cal.com-embed + Mollie)
@@ -26,6 +29,7 @@ blog.qmd                       overzicht van alle posts (grid, 3 kolommen)
 research.qmd                   overzicht, alleen categorie "RTC"
 publications.qmd               downloads
 about.qmd  contact.qmd         over / contactformulier (Netlify Forms)
+netlify/protected/             app-bestanden die NIET in _site komen (zie "Psychodiagnostiek")
 posts/
   _metadata.yml                geldt voor alle posts
   _template.qmd                startpunt voor een nieuw artikel
@@ -196,6 +200,51 @@ voorwaarden). Google Meet vraagt om een Google Workspace-abonnement met
 verwerkersovereenkomst als je er klinische gesprekken via voert — een gratis
 Gmail-account biedt die niet. Het formulier vraagt uitdrukkelijk géén medische
 details; dat is bewust.
+
+## Psychodiagnostiek (afgeschermd)
+
+De pagina `psychodiagnostiek.qmd` (Engels: `en/psychodiagnostiek.qmd`) toont in
+een iframe de MMPI-2 Casusanalyse: het instrument waarmee NVM-, SCL-90- en
+UCL-scores worden vertaald naar de aard en het niveau van avidya en dukkha.
+Die app bevat cliëntgegevens en is dus met een wachtwoord afgeschermd, alleen
+voor de behandelaar. Bezoekers van de site zien op die pagina uitsluitend een
+inlogscherm.
+
+### Hoe de afscherming werkt
+
+- Het bestand `netlify/protected/psychodiagnostiek.html` (de app zelf) staat
+  **niet** in `_site` en wordt dus nooit als los, publiek bestand geserveerd.
+  Het gaat wel gewoon mee in de git-commit; de bescherming zit 'm niet in
+  geheimhouding van het bestand, maar in hoe het wordt uitgeleverd.
+- Elk verzoek naar `/app/psychodiagnostiek/…` wordt door `netlify.toml`
+  doorgestuurd naar de functie `netlify/functions/psychodiag-app.mjs`. Die
+  functie bundelt het app-bestand via `included_files` en levert het pas uit
+  na een geslaagde login; zonder geldig sessiecookie krijgt iedereen alleen
+  het inlogscherm.
+- Een geslaagde login zet een ondertekend cookie (HttpOnly, Secure, 8 uur
+  geldig, alleen voor het pad `/app/psychodiagnostiek`). Wordt het cookie
+  aangepast of is het verlopen, dan verschijnt opnieuw het inlogscherm.
+- Staan de onderstaande omgevingsvariabelen niet ingesteld, dan weigert de
+  functie de app te tonen (nooit stilzwijgend openzetten): bij twijfel dicht.
+
+Zet in Netlify → *Site configuration → Environment variables*:
+
+| Variabele | Waarde |
+|---|---|
+| `PSYCHODIAG_PASSWORD` | het wachtwoord waarmee jij inlogt |
+| `PSYCHODIAG_SECRET` | een willekeurige, lange tekenreeks (bijvoorbeeld een gegenereerd wachtwoord van 40+ tekens); dient alleen om het sessiecookie te ondertekenen, is zelf geen wachtwoord |
+
+Zolang deze twee ontbreken toont de pagina een duidelijke "nog niet actief"
+melding in plaats van de app, aan iedereen, ook aan jou.
+
+### Wat dit niet doet
+
+De MMPI-2-app zelf doet geen netwerkverzoeken en slaat niets op een server op
+(alles blijft in de browser). De wachtwoordbeveiliging voorkomt dat willekeurige
+sitebezoekers de app te zien krijgen of gebruiken; ze vervangt geen
+apparaatbeveiliging. Gebruik voor cliëntgegevens dus geen gedeelde of publieke
+computer, en log uit (of sluit het tabblad) op een apparaat dat anderen
+gebruiken.
 
 ## Meldingen bij een nieuw bericht
 

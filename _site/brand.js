@@ -6,7 +6,7 @@
 (function () {
   var EN_LABEL = {
     "Home": "Home", "RTC": "RTC", "Therapie": "Therapy", "Suite": "Suite", "Blog": "Blog",
-    "Afspraak": "Booking",
+    "Afspraak": "Booking", "Psychodiagnostiek": "Psychodiagnostics",
     "MBMR — bewegingstherapie": "MBMR — movement therapy",
     "STM — hersynchroniserende methode": "STM — re-synchronising method",
     "Onderzoek": "Research", "Publicaties": "Publications",

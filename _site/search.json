@@ -56,109 +56,172 @@
     "text": "Onderzoek\n\nAlleen de stukken met de categorie RTC. Essays en notities staan in de blog.\n\n\n   \n    \n    \n      Sorteer op\n      Standaard\n      \n        Jaar - Oudste\n      \n      \n        Jaar - Nieuwste\n      \n      \n        Titel\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nJaar\n\n\n\nTitel\n\n\n\nSamenvatting\n\n\n\n\n\n\n\n\n14 jul 2026\n\n\nDe Mind-Energy-wet en de derde macht\n\n\nWaarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf toestanden laat zien. \n\n\n\n\n\n\nGeen overeenkomsten"
   },
   {
-    "objectID": "posts/2026-07-14-mind-energy/index.html",
-    "href": "posts/2026-07-14-mind-energy/index.html",
-    "title": "De Mind-Energy-wet en de derde macht",
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html",
+    "href": "posts/2026-01-19-quarto-workflow/index.html",
+    "title": "Van .qmd naar gepubliceerd artikel",
     "section": "",
-    "text": "De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde macht van de perceptuele tijdsdrempel:\nE_m = \\frac{1}{\\tau^3}\nDe drempel \\tau is de kleinste tijdsduur waarbinnen twee prikkels nog als één moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie 1/\\tau meeloopt."
+    "text": "Schrijven. Nieuw artikel: posts/JJJJ-MM-DD-slug/index.qmd. De YAML-kop bevat titel, description, date, categories en image. De tekst is markdown; berekeningen staan in R-chunks.\nRenderen. In RStudio: Build → Render Website, of in de terminal quarto render. Het resultaat komt in _site/ te staan, inclusief de figuren die de R-chunks hebben getekend.\nPushen. Bron én _site/ gaan samen in één commit naar GitHub.\nPubliceren. Netlify pakt _site op en zet de nieuwe versie live. Geen buildstap op de server."
   },
   {
-    "objectID": "posts/2026-07-14-mind-energy/index.html#de-wet",
-    "href": "posts/2026-07-14-mind-energy/index.html#de-wet",
-    "title": "De Mind-Energy-wet en de derde macht",
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html#vier-stappen",
+    "href": "posts/2026-01-19-quarto-workflow/index.html#vier-stappen",
+    "title": "Van .qmd naar gepubliceerd artikel",
     "section": "",
-    "text": "De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde macht van de perceptuele tijdsdrempel:\nE_m = \\frac{1}{\\tau^3}\nDe drempel \\tau is de kleinste tijdsduur waarbinnen twee prikkels nog als één moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie 1/\\tau meeloopt."
+    "text": "Schrijven. Nieuw artikel: posts/JJJJ-MM-DD-slug/index.qmd. De YAML-kop bevat titel, description, date, categories en image. De tekst is markdown; berekeningen staan in R-chunks.\nRenderen. In RStudio: Build → Render Website, of in de terminal quarto render. Het resultaat komt in _site/ te staan, inclusief de figuren die de R-chunks hebben getekend.\nPushen. Bron én _site/ gaan samen in één commit naar GitHub.\nPubliceren. Netlify pakt _site op en zet de nieuwe versie live. Geen buildstap op de server."
   },
   {
-    "objectID": "posts/2026-07-14-mind-energy/index.html#controle-op-vijf-toestanden",
-    "href": "posts/2026-07-14-mind-energy/index.html#controle-op-vijf-toestanden",
-    "title": "De Mind-Energy-wet en de derde macht",
-    "section": "Controle op vijf toestanden",
-    "text": "Controle op vijf toestanden\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\nsummary(fit)\n\n\nCall:\nlm(formula = log(Em) ~ log(tau))\n\nResiduals:\n         1          2          3          4          5 \n 2.151e-16 -1.204e-16 -4.494e-16  3.787e-16 -2.400e-17 \n\nCoefficients:\n              Estimate Std. Error    t value Pr(&gt;|t|)    \n(Intercept)  1.589e-15  1.461e-15  1.087e+00    0.356    \nlog(tau)    -3.000e+00  5.270e-16 -5.692e+15   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.682e-16 on 3 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:      1 \nF-statistic: 3.24e+31 on 1 and 3 DF,  p-value: &lt; 2.2e-16\n\n\nDe helling komt uit op -3; afwijkingen groter dan 0,1 wijzen in de praktijk op een meetfout in \\tau, niet op een fout in de wet.\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFiguur 1: Log-log-controle: vijf toestanden, helling −3.\n\n\n\n\n\nDe volledige berekening staat als module in de suite. Voer hem daar uit en download de tabel als CSV."
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html#waarom-gerenderde-html-meegaat",
+    "href": "posts/2026-01-19-quarto-workflow/index.html#waarom-gerenderde-html-meegaat",
+    "title": "Van .qmd naar gepubliceerd artikel",
+    "section": "Waarom gerenderde HTML meegaat",
+    "text": "Waarom gerenderde HTML meegaat\nOmdat de R-chunks pakketten en data nodig hebben die niet op een buildserver hoeven te staan. Wie lokaal rendert, houdt de uitvoer reproduceerbaar op één machine en houdt de deploy simpel: Netlify publiceert wat er staat.\nfreeze: auto in _quarto.yml zorgt ervoor dat een chunk alleen opnieuw draait als het .qmd-bestand veranderd is. De opgeslagen resultaten staan in _freeze/ en gaan ook mee in de commit."
   },
   {
-    "objectID": "posts/2026-07-14-mind-energy/index.html#wat-het-niet-zegt",
-    "href": "posts/2026-07-14-mind-energy/index.html#wat-het-niet-zegt",
-    "title": "De Mind-Energy-wet en de derde macht",
-    "section": "Wat het niet zegt",
-    "text": "Wat het niet zegt\nDe wet beschrijft een schaalverhouding, geen absolute hoeveelheid. Zonder een geijkte eenheid voor E_m blijft alleen de verhouding tussen twee toestanden zinvol — en dat is precies wat de log-log-vorm meetbaar maakt."
+    "objectID": "posts/2026-01-19-quarto-workflow/index.html#concept-en-publicatie",
+    "href": "posts/2026-01-19-quarto-workflow/index.html#concept-en-publicatie",
+    "title": "Van .qmd naar gepubliceerd artikel",
+    "section": "Concept en publicatie",
+    "text": "Concept en publicatie\nZet draft: true in de YAML-kop en het artikel verschijnt niet in het overzicht. Zo staan halve stukken veilig in de repository zonder dat ze live gaan.\n---\ntitle: \"Werktitel\"\ndate: 2026-09-01\ndraft: true\n---"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "The Resonating Self",
+    "objectID": "en/therapy.html",
+    "href": "en/therapy.html",
+    "title": "Mindful Body Movement Reprocessing",
     "section": "",
-    "text": "Resonance Theory of Consciousness\n\n\n\nOnderzoek, essays en een volledige rekenomgeving rond de Resonance Theory of Consciousness. Elke formule op deze site is uitvoerbaar: open de suite, draai de R-code en download de uitkomst.\nOpen de suite Lees de theorie"
+    "text": "Therapy\nTwo methods: MBMR (this page) and the broader (Re-)Synchronising Therapy Method (STM), in which MBMR forms the physical backbone."
   },
   {
-    "objectID": "index.html#wat-hier-staat",
-    "href": "index.html#wat-hier-staat",
-    "title": "The Resonating Self",
-    "section": "Wat hier staat",
-    "text": "Wat hier staat\n\n\n\nDe suite\nAcht RTC-modules, de volledige handleiding in NL en EN, en een R-omgeving met vier panelen, pakketbeheer en Quarto-preview.\nNaar de suite →\n\n\nRTC in kort bestek\nVan het schijnbare nu naar de Mind-Energy-wet: de aannames, de formules en wat er nog openstaat.\nLees de theorie →\n\n\nAlles uit .qmd\nArtikelen worden in RStudio als Quarto-document geschreven, lokaal gerenderd en via GitHub naar Netlify gepubliceerd.\nBekijk de werkwijze →"
+    "objectID": "en/therapy.html#what-mbmr-is",
+    "href": "en/therapy.html#what-mbmr-is",
+    "title": "Mindful Body Movement Reprocessing",
+    "section": "What MBMR is",
+    "text": "What MBMR is\nA specific model of bilateral movement therapy for traumatic memories, whose central mechanism is the alternation of states of consciousness across two modalities: 1. Time (‘present’, ‘past’, ‘future’) and 2. Object of attention (‘internal stimulus’, ‘external stimulus’, ‘stimulus-free’)."
   },
   {
-    "objectID": "index.html#de-drempel-die-alles-bepaalt",
-    "href": "index.html#de-drempel-die-alles-bepaalt",
-    "title": "The Resonating Self",
-    "section": "De drempel die alles bepaalt",
-    "text": "De drempel die alles bepaalt\nDe perceptuele tijdsdrempel \\tau is de kleinste duur waarbinnen twee prikkels nog als één moment worden ervaren. In RTC is die drempel geen bijproduct van waarneming maar de basiseenheid van het model.\nE_m = \\frac{1}{\\tau^3}\nDezelfde vijf metingen leveren op een lineaire schaal een paradox op, en op een log-log-schaal een rechte lijn met helling -3.\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFiguur 1: Mind-Energy-wet: log-log-controle op vijf perceptuele toestanden.\n\n\n\n\n\nDe helling komt uit op -3, zoals de wet voorspelt."
+    "objectID": "en/therapy.html#the-two-modalities",
+    "href": "en/therapy.html#the-two-modalities",
+    "title": "Mindful Body Movement Reprocessing",
+    "section": "The two modalities",
+    "text": "The two modalities\nThe alternation runs along two axes. Each session moves the client’s attention through the nine combinations these axes span together.\n\n\n\n1 · Time\n\npresent\npast\nfuture\n\n\n\n2 · Object of attention\n\ninternal stimulus\nexternal stimulus\nstimulus-free"
   },
   {
-    "objectID": "index.html#recent",
-    "href": "index.html#recent",
-    "title": "The Resonating Self",
-    "section": "Recent",
-    "text": "Recent\n\n\n\n\n\n\n\n\n\n\nDe Mind-Energy-wet en de derde macht\n\n1 min\n\nWaarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf toestanden laat zien.\n\n\n\n14 jul 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVan .qmd naar gepubliceerd artikel\n\n1 min\n\nHoe elk artikel op deze site ontstaat: schrijven in RStudio, renderen, pushen naar GitHub, Netlify publiceert.\n\n\n\n19 jan 2026\n\n\n\n\n\n\nGeen overeenkomsten\n\nAlle artikelen →"
+    "objectID": "en/therapy.html#who-it-is-for",
+    "href": "en/therapy.html#who-it-is-for",
+    "title": "Mindful Body Movement Reprocessing",
+    "section": "Who it is for",
+    "text": "Who it is for\nThe method is used for:\n\nTrauma / PTSD\nAnxiety and panic\nBurn-out and overstrain\nDepressive complaints\nGrief and loss\nChronic stress\nPhysical tension complaints\nPersonal development (no complaint)"
   },
   {
-    "objectID": "en/theory.html",
-    "href": "en/theory.html",
-    "title": "Resonance Theory of Consciousness",
+    "objectID": "en/therapy.html#practical",
+    "href": "en/therapy.html#practical",
+    "title": "Mindful Body Movement Reprocessing",
+    "section": "Practical",
+    "text": "Practical\nA 60-minute intake, in which psychodiagnostic assessment establishes the ‘avidya’ and ‘dukkha’ values using the assessment I developed. A movement therapy programme follows — for example Mindful Running Therapy (MHT) — running eight weeks, twice a week, with 90-minute sessions in a fixed format of my own design.\n\n\n\nIntake\n60 minutes, with psychodiagnostic assessment\n\n\nProgramme\n8 weeks, 2 sessions per week\n\n\nSession length\n90 minutes, fixed format\n\n\nExample\nMindful Running Therapy (MHT)"
+  },
+  {
+    "objectID": "en/therapy.html#in-preparation",
+    "href": "en/therapy.html#in-preparation",
+    "title": "Mindful Body Movement Reprocessing",
+    "section": "In preparation",
+    "text": "In preparation\nThree parts of this page follow once the accompanying text is ready.\nPhases of a session — the fixed format of the 90-minute session, phase by phase.\nGrounding and EMDR — where MBMR comes from, and how the method differs from EMDR.\nRelation to RTC — how the method connects to the ontology of the Resonating Self from the thesis. For now, see the theory page."
+  },
+  {
+    "objectID": "en/therapy.html#book-an-intake",
+    "href": "en/therapy.html#book-an-intake",
+    "title": "Mindful Body Movement Reprocessing",
+    "section": "Book an intake",
+    "text": "Book an intake\nA programme starts with a 60-minute intake. Get in touch to schedule one.\nTo the contact form"
+  },
+  {
+    "objectID": "en/thanks.html",
+    "href": "en/thanks.html",
+    "title": "Message sent",
     "section": "",
-    "text": "Theory\nRTC describes conscious experience as a resonance state of a coupled oscillator field. The theory is built to be computable: every step below has a module in the suite."
+    "text": "Contact\n\nThank you. Your message has arrived and has been forwarded to totalegezondheidbv@gmail.com. I usually reply within a few days.\nBack to the homepage"
   },
   {
-    "objectID": "en/theory.html#the-starting-point",
-    "href": "en/theory.html#the-starting-point",
-    "title": "Resonance Theory of Consciousness",
-    "section": "The starting point",
-    "text": "The starting point\nPerception is not instantaneous. What is experienced as one moment spans an interval of a few tens of milliseconds. RTC takes that interval, the perceptual time threshold \\tau, as its point of departure rather than as a measurement artefact."
-  },
-  {
-    "objectID": "en/theory.html#four-assumptions",
-    "href": "en/theory.html#four-assumptions",
-    "title": "Resonance Theory of Consciousness",
-    "section": "Four assumptions",
-    "text": "Four assumptions\n\nThe brain holds a large number of oscillators with differing natural frequencies.\nThose oscillators are mutually coupled with a strength K that can vary.\nConscious access relates to the degree of phase synchronisation, measured as order parameter R.\nAttention acts not as an extra signal but as a controller of K."
-  },
-  {
-    "objectID": "en/theory.html#the-order-parameter",
-    "href": "en/theory.html#the-order-parameter",
-    "title": "Resonance Theory of Consciousness",
-    "section": "The order parameter",
-    "text": "The order parameter\nIn the mean-field form of the Kuramoto model a single complex number summarises the state of the whole field:\nz = \\left\\langle e^{i\\theta_j} \\right\\rangle, \\qquad R = |z|, \\qquad \\Psi = \\arg(z)\n\\frac{d\\theta_i}{dt} = \\omega_i + K R \\sin(\\Psi - \\theta_i)\n\nkuramoto &lt;- function(N = 50, K = 2.0, dt = 0.01, steps = 2000, sd_omega = 0.5) {\n  set.seed(42)\n  omega &lt;- rnorm(N, 0, sd_omega); theta &lt;- runif(N, 0, 2 * pi)\n  R_hist &lt;- numeric(steps)\n  for (s in seq_len(steps)) {\n    z &lt;- mean(exp(1i * theta)); R &lt;- Mod(z); Psi &lt;- Arg(z)\n    theta &lt;- theta + dt * (omega + K * R * sin(Psi - theta))\n    R_hist[s] &lt;- R\n  }\n  R_hist\n}\nplot(kuramoto(), type = \"l\", ylim = c(0, 1), col = \"#00549c\",\n     xlab = \"iteration\", ylab = \"order parameter R\")\nabline(h = 0.6, lty = 2, col = \"#0099c8\")\n\n\n\n\n\n\n\nFigure 1: Order parameter R(t) at K = 2, N = 50 oscillators.\n\n\n\n\n\nAs K rises, R first stays low and noisy and then jumps within a short time. That sharp knee is the candidate mechanism for the on-or-off character of conscious access."
-  },
-  {
-    "objectID": "en/theory.html#from-synchronisation-to-energy",
-    "href": "en/theory.html#from-synchronisation-to-energy",
-    "title": "Resonance Theory of Consciousness",
-    "section": "From synchronisation to energy",
-    "text": "From synchronisation to energy\nA field integrating phase information across a window \\tau can distinguish 1/\\tau independent states per unit time. Assume this happens along three independent directions, and mental energy scales with the third power of that rate:\nE_m = \\frac{1}{\\tau^3}\nThe exponent therefore follows from the dimensionality assumption, not from a fit. That makes it testable: a measured slope clearly departing from -3 refutes the assumption, not merely the parameter."
-  },
-  {
-    "objectID": "en/theory.html#what-remains-open",
-    "href": "en/theory.html#what-remains-open",
-    "title": "Resonance Theory of Consciousness",
-    "section": "What remains open",
-    "text": "What remains open\n\nThe measurement procedure for \\tau is not calibrated across laboratories.\nThe unit of E_m is not fixed, so only ratios carry meaning.\nThe link between R and reported experience is correlational; the model does not yet yield an independent prediction that rules out the standard alternatives.\n\nThose three points are why the computing modules on this site are open. Anyone who wants to test the assumptions needs the code, not only the conclusion."
-  },
-  {
-    "objectID": "en/research.html",
-    "href": "en/research.html",
-    "title": "Research line",
+    "objectID": "en/stm.html",
+    "href": "en/stm.html",
+    "title": "The (Re-)Synchronising Therapy Method",
     "section": "",
-    "text": "Research\n\nOnly the pieces carrying the RTC category. Essays and notes sit in the blog.\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Year - Oldest\n      \n      \n        Year - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nYear\n\n\n\nTitle\n\n\n\nSummary\n\n\n\n\n\n\n\n\nJul 14, 2026\n\n\nThe Mind-Energy law and the third power\n\n\nWhy mental energy scales as 1/τ³, and what a log-log check across five states shows. \n\n\n\n\n\n\nNo matching items"
+    "text": "Therapy\nTwo methods: STM (this page) and its movement core MBMR, which forms the physical backbone within STM."
+  },
+  {
+    "objectID": "en/stm.html#what-the-re-synchronising-therapy-method-is",
+    "href": "en/stm.html#what-the-re-synchronising-therapy-method-is",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "What the (Re-)Synchronising Therapy Method is",
+    "text": "What the (Re-)Synchronising Therapy Method is\nThe (Re-)Synchronising Therapy Method, STM for short, is a form of psychological and philosophical guidance for adults who are stuck with anxiety, low mood, stress, tension, difficult experiences from the past, physical complaints without a clear medical cause, or questions about identity and meaning.\nThe core idea is simple. Your inner life resembles music: all kinds of processes in your body and mind play together. When they are well attuned, your experience feels whole, coherent and alive. With complaints that attunement is disturbed; you fall out of time, as it were. STM helps you restore that inner attunement, so that you feel more whole, present and resilient again. Hence the word “re-synchronising”: coming back into sync.\nSTM is not a separate new technique. It is a way of working that brings proven forms of therapy together (talking therapy, explanation and insight, movement and body work, mindfulness, hypnotherapy, EMDR and short-term depth psychology) and determines per person which of these, and in what order, help most.\nThe method is based on the Resonance Theory of Consciousness (RTC), the research on which the practitioner is writing his thesis.\nSTM is offered by an academically trained psychologist working independently and autonomously. Read more under About."
+  },
+  {
+    "objectID": "en/stm.html#the-idea-behind-it-simply-put",
+    "href": "en/stm.html#the-idea-behind-it-simply-put",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "The idea behind it, simply put",
+    "text": "The idea behind it, simply put\nTwo ways of experiencing. You can relate to your experience in two ways. The first is direct experiencing: feeling what is here now, in your body and around you, without immediately judging it. The second is thinking about it: naming, judging, explaining, comparing, giving yourself a label. Both are needed. But with complaints, thinking often takes over. You spend a lot of time “in your head”, you ruminate, you lose contact with direct feeling.\nOld contemplative traditions have words for this. Avidya means “not-seeing”: losing contact with how your experience actually is. Dukkha means “suffering” or “inner fragmentation”: what follows from it. In this method we call the personal form this takes in you the pathologos: the particular structure of your being stuck. The psychological assessment at the start maps that structure.\nRhythm and time. Your experience has a rhythm. Under stress and anxiety that rhythm speeds up; everything fragments, you feel rushed, you jump from one thing to the next, you become exhausted. In low mood it slows down instead; everything feels sluggish, flat and empty. STM helps bring your rhythm back to a more comfortable pace, mainly through movement, breath and attention.\nBecoming whole again. Recovery does not mean you will never feel anything again, or that you will always be calm. It means you can move fluidly between states again, that you have a stable sense of “now” that can also carry difficult things, and that you are no longer stuck in the same groove."
+  },
+  {
+    "objectID": "en/stm.html#who-it-is-for-and-when-it-is-not",
+    "href": "en/stm.html#who-it-is-for-and-when-it-is-not",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "Who it is for, and when it is not",
+    "text": "Who it is for, and when it is not\n\n\n\nSuited to\nAnxiety and panic, low mood and depressive complaints, chronic stress and overstrain, the aftermath of difficult or overwhelming experiences, physical complaints in which tension plays a part, rumination and worry, feelings of estrangement or emptiness, and questions about who you are and what matters.\n\n\nNot suited, or other care first\nAn acute crisis or strong thoughts of suicide, psychosis or untreated bipolar disorder, a severe addiction that needs attention first, or a physical condition that rules out exertion (in which case we adapt the movement component or refer you). In those cases we look together at what you need now and refer you on where appropriate. STM is not a crisis service."
+  },
+  {
+    "objectID": "en/stm.html#what-a-programme-looks-like",
+    "href": "en/stm.html#what-a-programme-looks-like",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "What a programme looks like",
+    "text": "What a programme looks like\n1. Introduction and intake (two 60-minute sessions). In the first conversation we get acquainted and you map out your complaints, your background and what you are asking for. In the second we discuss the questionnaire results, I explain the model, and together we formulate your pathologos and your goals. After that we make practical arrangements.\n2. Questionnaires. At the start you complete three scientifically grounded questionnaires: the NVM (on personality characteristics), the SCL-90 (on complaints) and the UCL (on how you handle problems). They help us clarify the nature and severity of your complaints and track your progress. We repeat the complaints list a few times during the programme and at the end. A score is a snapshot and a tool, not a stamp. Your data is treated confidentially in line with privacy legislation.\n3. The treatment, in phases.\n\nPhase 1: calm and solid ground. First we make sure you stand more firmly: explanation, breathing, grounding exercises, attention to sleep and lifestyle, and where needed a plan for difficult moments.\nPhase 2: movement and presence. We work with mindful movement and walking or running with attention, with breath and with mindfulness. This brings your rhythm back and strengthens contact with your body and the present moment.\nPhase 3: loosening what is stuck. Now we address the core: with talking therapy and short-term depth psychology we look at recurring patterns; with EMDR we process circumscribed difficult memories; with hypnotherapy and exercises we loosen stuck reactions.\nPhase 4: anchoring. We make sure what you have achieved lasts: freer movement, meaning and values, relapse prevention, and a calm tapering off with one or two follow-up appointments.\n\nThe phases do not run strictly one after another; we step back when needed and go at your pace.\n4. A 60-minute session, step by step.\n\n\n\n\n\n\n\n± 5 min\nbriefly arriving and looking back on the past week\n\n\n± 5 min\nsetting the focus for today together\n\n\n± 5 min\na short exercise with breath, attention or body awareness to settle and make contact\n\n\n± 30 min\nthe actual work with one or two suitable techniques\n\n\n± 8 min\npausing at what it brought you and anchoring that\n\n\n± 5 min\ntaking home an exercise or assignment\n\n\n± 2 min\nclosing with a short check"
+  },
+  {
+    "objectID": "en/stm.html#the-techniques-we-can-use",
+    "href": "en/stm.html#the-techniques-we-can-use",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "The techniques we can use",
+    "text": "The techniques we can use\nWe choose together what suits you. Possible are:\n\nTalking therapy. Exploratory conversations in which you come to understand yourself and your history better and start to recognise recurring patterns.\nExplanation and insight (psycho-education). Clear explanation about your complaints and about what helps, so that you gain more grip yourself.\nMovement and body work (MBMR). Walking or running with attention, rhythmic exercises and breath work, to restore your inner rhythm and strengthen contact with your body. This is a method of the practitioner’s own research.\nMindfulness. Training non-judgemental attention for the present moment; helps especially with rumination, stress and preventing relapse.\nHypnotherapy. Working with a calm, inwardly directed state of attention to loosen stuck reactions and strengthen your inner resources. Always with your consent and under your direction.\nEMDR. A proven method for letting difficult memories lose their charge, in which you hold the memory while following eye movements or taps.\nShort-term psychodynamic therapy. A focused, time-limited form of depth psychology around a core theme."
+  },
+  {
+    "objectID": "en/stm.html#what-can-you-expect-as-a-result",
+    "href": "en/stm.html#what-can-you-expect-as-a-result",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "What can you expect as a result?",
+    "text": "What can you expect as a result?\nIn the practitioner’s practice, people who completed a full programme showed broad relief of complaints: not only less of one complaint, but less anxiety, low mood, physical tension, irritability and sleep problems at the same time. That fits the idea behind the method: when the underlying coherence recovers, much improves at once.\nAt the same time we are honest: there are no guarantees. How much you gain also depends on your situation and on what you practise yourself between sessions. STM does not replace your GP, a psychiatrist or medication; where needed we work together with them. The integral framework of STM rests on a worked-out theory and on practice-based research, but as a whole it has not yet been tested in large comparative studies. The individual techniques we use have been."
+  },
+  {
+    "objectID": "en/stm.html#practical",
+    "href": "en/stm.html#practical",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "Practical",
+    "text": "Practical\n\n\n\nCost\nthe standard rate is 100 euro per 60-minute session\n\n\nAdjusted rate\nif you cannot afford the standard rate, there is room for an adjusted, income-dependent rate. In a short conversation we look together at your income situation and agree a lower amount on a graduated scale: the lower the income, the lower the rate. That keeps the guidance accessible on a tighter budget. You simply raise it at the introductory meeting; there is no separate application or complicated procedure.\n\n\nFrequency\nusually weekly or fortnightly\n\n\nDuration\ngenerally two intake conversations, then around twelve to twenty sessions, and one or two follow-up appointments. This differs per person.\n\n\nCancelling\nat least 24 hours in advance please; otherwise costs may be charged (exact terms are in the treatment agreement)\n\n\nReimbursement\nSTM is uninsured care; health insurers generally do not reimburse this guidance. Please note that you pay for the sessions yourself.\n\n\nLocation\nat the practice in Zwaag; part of it can be online by arrangement\n\n\nApplying\nthrough the registration form on this website. You fill in your name, contact details and a short description of what you are asking for. Do not put medical or sensitive details in the form; we discuss those in the first conversation. After you apply we get in touch within a few working days for an introduction.\n\n\n\n\nExample of the income-dependent rate\nThe amounts below are indicative and serve as an example; we agree the exact rate together at the introductory meeting. You do not need to bring proof of income; we work from an honest conversation and trust.\n\n\n\n\n\n\n\n\nRate\nApproximate income (gross per year, household)\nPer session\n\n\n\n\nStandard\nabove 45,000 euro, or your employer or an agency pays\n100 euro\n\n\nReduced\n32,000 to 45,000 euro\n75 euro\n\n\nStrongly reduced\n22,000 to 32,000 euro\n55 euro\n\n\nMinimum\nbelow 22,000 euro, benefits, or student without income\n40 euro\n\n\n\nIf your income changes during the programme, we adjust the rate. If you live alone, the same amounts apply to your own income."
+  },
+  {
+    "objectID": "en/stm.html#about-the-practitioner",
+    "href": "en/stm.html#about-the-practitioner",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "About the practitioner",
+    "text": "About the practitioner\nEdward F. Hillenaar is an academically trained psychologist and philosopher. He connects scientific psychology with philosophy and contemplative traditions and, on the basis of his research — the Resonance Theory of Consciousness — developed the MBMR and STM methods. He is working towards completing his thesis.\nHe works independently and autonomously, with his own integrative therapy method grounded in his theory of consciousness. What that way of working involves and whether it suits you, we discuss openly at the introductory meeting, so that you can make an informed choice."
+  },
+  {
+    "objectID": "en/stm.html#frequently-asked-questions",
+    "href": "en/stm.html#frequently-asked-questions",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "Frequently asked questions",
+    "text": "Frequently asked questions\nDo I have to believe in something “spiritual”? No. The method uses concepts from philosophy and from contemplative traditions, but the treatment itself consists of ordinary, recognisable psychological techniques.\nDo I have to be able to run for the movement part? No. We start with walking and build up at your pace. With physical limitations we adapt it.\nIs hypnotherapy safe? Will I lose control? No. You remain conscious and in charge throughout. Hypnosis is a form of concentrated attention; you do nothing you do not want to do.\nCan I stop whenever I want? Yes. You set the pace yourself and can always discuss or end the programme.\nDoes this also work alongside medication or treatment with a psychiatrist? Yes, that can go well together. With your consent we coordinate with your GP or psychiatrist.\nHow does the practitioner work? As an academically trained psychologist, independently and autonomously, with his own integrative therapy method grounded in his research into consciousness. What that means precisely and whether it suits you, we discuss openly at the introductory meeting."
+  },
+  {
+    "objectID": "en/stm.html#important",
+    "href": "en/stm.html#important",
+    "title": "The (Re-)Synchronising Therapy Method",
+    "section": "Important",
+    "text": "Important\n\n\n\n\n\n\nImportant\n\n\n\nSTM is not a crisis service and is not available for emergencies. In acute distress or with thoughts of suicide: call your GP or the out-of-hours GP service, call 112, or call 113 Suicide Prevention (0800-0113, free, day and night)."
+  },
+  {
+    "objectID": "en/publications.html",
+    "href": "en/publications.html",
+    "title": "Downloads",
+    "section": "",
+    "text": "Publications\n\nThe manual and the suite work offline without installation.\n\n\n\nFormat\nTitle\nContents\n\n\n\n\n\nPDF · 32 pp.\nCalculus Companion Manual\nDerivations, worked examples and the R appendices for the RTC modules.\nDownload\n\n\nHTML\nRTC Companion (complete)\nThe entire suite in one file: manual, calculator, R environment.\nDownload\n\n\nTXT\nManual — source text\nThe plain text of the manual.\nDownload\n\n\nPNG\nPPTQ paradox\nThe same measurements on a linear and a logarithmic scale.\nDownload"
   },
   {
     "objectID": "en/posts/2026-09-02-new-post/index.html",
@@ -198,28 +261,28 @@
   {
     "objectID": "en/index.html",
     "href": "en/index.html",
-    "title": "The Resonating Self",
+    "title": "Total Health",
     "section": "",
-    "text": "Resonance Theory of Consciousness\n\n\n\nResearch, essays and a complete computing environment around the Resonance Theory of Consciousness. Every formula on this site is runnable: open the suite, run the R code and download the result.\nOpen the suite Read the theory"
+    "text": "Practice for psychological guidance\n\n\n\nPsychological guidance, psychodiagnostics and movement therapy on the foundation of The Resonating Self: my ontology and applied theory of consciousness as resonance. Every formula behind it is runnable: open the suite, run the R code and download the result.\nBook a session Read the theory"
   },
   {
     "objectID": "en/index.html#what-is-here",
     "href": "en/index.html#what-is-here",
-    "title": "The Resonating Self",
+    "title": "Total Health",
     "section": "What is here",
-    "text": "What is here\n\n\n\nThe suite\nEight RTC modules, the full manual in Dutch and English, and an R environment with four panes, package management and Quarto preview.\nGo to the suite →\n\n\nRTC in brief\nFrom the specious present to the Mind-Energy law: the assumptions, the formulas and what remains open.\nRead the theory →\n\n\nEverything from .qmd\nArticles are written in RStudio as Quarto documents, rendered locally and published to Netlify through GitHub.\nSee the workflow →"
+    "text": "What is here\n\n\n\nTherapy\nMBMR, bilateral movement therapy, and the broader (Re-)Synchronising Therapy Method (STM): for anxiety, trauma, burnout and more.\nGo to therapy →\n\n\nPsychodiagnostics\nMapping avidya and dukkha through the NVM, the SCL-90 and the UCL: the starting point of every trajectory.\nGo to psychodiagnostics →\n\n\nThe Resonating Self\nThe ontology and applied theory behind the practice: eight RTC modules, the full manual, and an R environment in the browser.\nGo to the suite →"
   },
   {
-    "objectID": "en/index.html#the-threshold-that-sets-everything",
-    "href": "en/index.html#the-threshold-that-sets-everything",
-    "title": "The Resonating Self",
-    "section": "The threshold that sets everything",
-    "text": "The threshold that sets everything\nThe perceptual time threshold \\tau is the shortest duration within which two stimuli are still experienced as one moment. In RTC that threshold is not a by-product of perception but the base unit of the model.\nE_m = \\frac{1}{\\tau^3}\nThe same five measurements produce a paradox on a linear scale, and a straight line with slope -3 on a log-log scale.\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFigure 1: Mind-Energy law: log-log check across five perceptual states.\n\n\n\n\n\nThe slope comes out at -3, as the law predicts."
+    "objectID": "en/index.html#the-resonating-self-the-theory-behind-the-practice",
+    "href": "en/index.html#the-resonating-self-the-theory-behind-the-practice",
+    "title": "Total Health",
+    "section": "The Resonating Self: the theory behind the practice",
+    "text": "The Resonating Self: the theory behind the practice\nTotal Health works from The Resonating Self, my ontology of consciousness as resonance. The perceptual time threshold \\tau is the shortest duration within which two stimuli are still experienced as one moment. In RTC that threshold is not a by-product of perception but the base unit of the model.\nE_m = \\frac{1}{\\tau^3}\nThe same five measurements produce a paradox on a linear scale, and a straight line with slope -3 on a log-log scale.\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFigure 1: Mind-Energy law: log-log check across five perceptual states.\n\n\n\n\n\nThe slope comes out at -3, as the law predicts."
   },
   {
     "objectID": "en/index.html#recent",
     "href": "en/index.html#recent",
-    "title": "The Resonating Self",
+    "title": "Total Health",
     "section": "Recent",
     "text": "Recent\n\n\n\n\n\n\n\n\n\n\nResonance Theory of Consciousness\n\n2 min\n\n\n\n\n\nSep 2, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe Mind-Energy law and the third power\n\n1 min\n\nWhy mental energy scales as 1/τ³, and what a log-log check across five states shows.\n\n\n\nJul 14, 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nFrom .qmd to published article\n\n1 min\n\nHow every article on this site comes about: write in RStudio, render, push to GitHub, Netlify publishes.\n\n\n\nJan 19, 2026\n\n\n\n\n\n\nNo matching items\n\nAll articles →"
   },
@@ -343,172 +406,109 @@
     "text": "What it does not say\nThe law describes a scaling relation, not an absolute quantity. Without a calibrated unit for E_m only the ratio between two states carries meaning — which is exactly what the log-log form makes measurable."
   },
   {
-    "objectID": "en/publications.html",
-    "href": "en/publications.html",
-    "title": "Downloads",
+    "objectID": "en/research.html",
+    "href": "en/research.html",
+    "title": "Research line",
     "section": "",
-    "text": "Publications\n\nThe manual and the suite work offline without installation.\n\n\n\nFormat\nTitle\nContents\n\n\n\n\n\nPDF · 32 pp.\nCalculus Companion Manual\nDerivations, worked examples and the R appendices for the RTC modules.\nDownload\n\n\nHTML\nRTC Companion (complete)\nThe entire suite in one file: manual, calculator, R environment.\nDownload\n\n\nTXT\nManual — source text\nThe plain text of the manual.\nDownload\n\n\nPNG\nPPTQ paradox\nThe same measurements on a linear and a logarithmic scale.\nDownload"
+    "text": "Research\n\nOnly the pieces carrying the RTC category. Essays and notes sit in the blog.\n\n\n   \n    \n    \n      Order By\n      Default\n      \n        Year - Oldest\n      \n      \n        Year - Newest\n      \n      \n        Title\n      \n    \n  \n    \n      \n      \n    \n\n\n\n\n\n\nYear\n\n\n\nTitle\n\n\n\nSummary\n\n\n\n\n\n\n\n\nJul 14, 2026\n\n\nThe Mind-Energy law and the third power\n\n\nWhy mental energy scales as 1/τ³, and what a log-log check across five states shows. \n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "en/stm.html",
-    "href": "en/stm.html",
-    "title": "The (Re-)Synchronising Therapy Method",
+    "objectID": "en/theory.html",
+    "href": "en/theory.html",
+    "title": "Resonance Theory of Consciousness",
     "section": "",
-    "text": "Therapy\nTwo methods: STM (this page) and its movement core MBMR, which forms the physical backbone within STM."
+    "text": "Theory\nRTC describes conscious experience as a resonance state of a coupled oscillator field. The theory is built to be computable: every step below has a module in the suite."
   },
   {
-    "objectID": "en/stm.html#what-the-re-synchronising-therapy-method-is",
-    "href": "en/stm.html#what-the-re-synchronising-therapy-method-is",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "What the (Re-)Synchronising Therapy Method is",
-    "text": "What the (Re-)Synchronising Therapy Method is\nThe (Re-)Synchronising Therapy Method, STM for short, is a form of psychological and philosophical guidance for adults who are stuck with anxiety, low mood, stress, tension, difficult experiences from the past, physical complaints without a clear medical cause, or questions about identity and meaning.\nThe core idea is simple. Your inner life resembles music: all kinds of processes in your body and mind play together. When they are well attuned, your experience feels whole, coherent and alive. With complaints that attunement is disturbed; you fall out of time, as it were. STM helps you restore that inner attunement, so that you feel more whole, present and resilient again. Hence the word “re-synchronising”: coming back into sync.\nSTM is not a separate new technique. It is a way of working that brings proven forms of therapy together (talking therapy, explanation and insight, movement and body work, mindfulness, hypnotherapy, EMDR and short-term depth psychology) and determines per person which of these, and in what order, help most.\nThe method is based on the Resonance Theory of Consciousness (RTC), the research on which the practitioner is writing his thesis.\nSTM is offered by an academically trained psychologist working independently and autonomously. Read more under About."
+    "objectID": "en/theory.html#the-starting-point",
+    "href": "en/theory.html#the-starting-point",
+    "title": "Resonance Theory of Consciousness",
+    "section": "The starting point",
+    "text": "The starting point\nPerception is not instantaneous. What is experienced as one moment spans an interval of a few tens of milliseconds. RTC takes that interval, the perceptual time threshold \\tau, as its point of departure rather than as a measurement artefact."
   },
   {
-    "objectID": "en/stm.html#the-idea-behind-it-simply-put",
-    "href": "en/stm.html#the-idea-behind-it-simply-put",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "The idea behind it, simply put",
-    "text": "The idea behind it, simply put\nTwo ways of experiencing. You can relate to your experience in two ways. The first is direct experiencing: feeling what is here now, in your body and around you, without immediately judging it. The second is thinking about it: naming, judging, explaining, comparing, giving yourself a label. Both are needed. But with complaints, thinking often takes over. You spend a lot of time “in your head”, you ruminate, you lose contact with direct feeling.\nOld contemplative traditions have words for this. Avidya means “not-seeing”: losing contact with how your experience actually is. Dukkha means “suffering” or “inner fragmentation”: what follows from it. In this method we call the personal form this takes in you the pathologos: the particular structure of your being stuck. The psychological assessment at the start maps that structure.\nRhythm and time. Your experience has a rhythm. Under stress and anxiety that rhythm speeds up; everything fragments, you feel rushed, you jump from one thing to the next, you become exhausted. In low mood it slows down instead; everything feels sluggish, flat and empty. STM helps bring your rhythm back to a more comfortable pace, mainly through movement, breath and attention.\nBecoming whole again. Recovery does not mean you will never feel anything again, or that you will always be calm. It means you can move fluidly between states again, that you have a stable sense of “now” that can also carry difficult things, and that you are no longer stuck in the same groove."
+    "objectID": "en/theory.html#four-assumptions",
+    "href": "en/theory.html#four-assumptions",
+    "title": "Resonance Theory of Consciousness",
+    "section": "Four assumptions",
+    "text": "Four assumptions\n\nThe brain holds a large number of oscillators with differing natural frequencies.\nThose oscillators are mutually coupled with a strength K that can vary.\nConscious access relates to the degree of phase synchronisation, measured as order parameter R.\nAttention acts not as an extra signal but as a controller of K."
   },
   {
-    "objectID": "en/stm.html#who-it-is-for-and-when-it-is-not",
-    "href": "en/stm.html#who-it-is-for-and-when-it-is-not",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "Who it is for, and when it is not",
-    "text": "Who it is for, and when it is not\n\n\n\nSuited to\nAnxiety and panic, low mood and depressive complaints, chronic stress and overstrain, the aftermath of difficult or overwhelming experiences, physical complaints in which tension plays a part, rumination and worry, feelings of estrangement or emptiness, and questions about who you are and what matters.\n\n\nNot suited, or other care first\nAn acute crisis or strong thoughts of suicide, psychosis or untreated bipolar disorder, a severe addiction that needs attention first, or a physical condition that rules out exertion (in which case we adapt the movement component or refer you). In those cases we look together at what you need now and refer you on where appropriate. STM is not a crisis service."
+    "objectID": "en/theory.html#the-order-parameter",
+    "href": "en/theory.html#the-order-parameter",
+    "title": "Resonance Theory of Consciousness",
+    "section": "The order parameter",
+    "text": "The order parameter\nIn the mean-field form of the Kuramoto model a single complex number summarises the state of the whole field:\nz = \\left\\langle e^{i\\theta_j} \\right\\rangle, \\qquad R = |z|, \\qquad \\Psi = \\arg(z)\n\\frac{d\\theta_i}{dt} = \\omega_i + K R \\sin(\\Psi - \\theta_i)\n\nkuramoto &lt;- function(N = 50, K = 2.0, dt = 0.01, steps = 2000, sd_omega = 0.5) {\n  set.seed(42)\n  omega &lt;- rnorm(N, 0, sd_omega); theta &lt;- runif(N, 0, 2 * pi)\n  R_hist &lt;- numeric(steps)\n  for (s in seq_len(steps)) {\n    z &lt;- mean(exp(1i * theta)); R &lt;- Mod(z); Psi &lt;- Arg(z)\n    theta &lt;- theta + dt * (omega + K * R * sin(Psi - theta))\n    R_hist[s] &lt;- R\n  }\n  R_hist\n}\nplot(kuramoto(), type = \"l\", ylim = c(0, 1), col = \"#00549c\",\n     xlab = \"iteration\", ylab = \"order parameter R\")\nabline(h = 0.6, lty = 2, col = \"#0099c8\")\n\n\n\n\n\n\n\nFigure 1: Order parameter R(t) at K = 2, N = 50 oscillators.\n\n\n\n\n\nAs K rises, R first stays low and noisy and then jumps within a short time. That sharp knee is the candidate mechanism for the on-or-off character of conscious access."
   },
   {
-    "objectID": "en/stm.html#what-a-programme-looks-like",
-    "href": "en/stm.html#what-a-programme-looks-like",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "What a programme looks like",
-    "text": "What a programme looks like\n1. Introduction and intake (two 60-minute sessions). In the first conversation we get acquainted and you map out your complaints, your background and what you are asking for. In the second we discuss the questionnaire results, I explain the model, and together we formulate your pathologos and your goals. After that we make practical arrangements.\n2. Questionnaires. At the start you complete three scientifically grounded questionnaires: the NVM (on personality characteristics), the SCL-90 (on complaints) and the UCL (on how you handle problems). They help us clarify the nature and severity of your complaints and track your progress. We repeat the complaints list a few times during the programme and at the end. A score is a snapshot and a tool, not a stamp. Your data is treated confidentially in line with privacy legislation.\n3. The treatment, in phases.\n\nPhase 1: calm and solid ground. First we make sure you stand more firmly: explanation, breathing, grounding exercises, attention to sleep and lifestyle, and where needed a plan for difficult moments.\nPhase 2: movement and presence. We work with mindful movement and walking or running with attention, with breath and with mindfulness. This brings your rhythm back and strengthens contact with your body and the present moment.\nPhase 3: loosening what is stuck. Now we address the core: with talking therapy and short-term depth psychology we look at recurring patterns; with EMDR we process circumscribed difficult memories; with hypnotherapy and exercises we loosen stuck reactions.\nPhase 4: anchoring. We make sure what you have achieved lasts: freer movement, meaning and values, relapse prevention, and a calm tapering off with one or two follow-up appointments.\n\nThe phases do not run strictly one after another; we step back when needed and go at your pace.\n4. A 60-minute session, step by step.\n\n\n\n\n\n\n\n± 5 min\nbriefly arriving and looking back on the past week\n\n\n± 5 min\nsetting the focus for today together\n\n\n± 5 min\na short exercise with breath, attention or body awareness to settle and make contact\n\n\n± 30 min\nthe actual work with one or two suitable techniques\n\n\n± 8 min\npausing at what it brought you and anchoring that\n\n\n± 5 min\ntaking home an exercise or assignment\n\n\n± 2 min\nclosing with a short check"
+    "objectID": "en/theory.html#from-synchronisation-to-energy",
+    "href": "en/theory.html#from-synchronisation-to-energy",
+    "title": "Resonance Theory of Consciousness",
+    "section": "From synchronisation to energy",
+    "text": "From synchronisation to energy\nA field integrating phase information across a window \\tau can distinguish 1/\\tau independent states per unit time. Assume this happens along three independent directions, and mental energy scales with the third power of that rate:\nE_m = \\frac{1}{\\tau^3}\nThe exponent therefore follows from the dimensionality assumption, not from a fit. That makes it testable: a measured slope clearly departing from -3 refutes the assumption, not merely the parameter."
   },
   {
-    "objectID": "en/stm.html#the-techniques-we-can-use",
-    "href": "en/stm.html#the-techniques-we-can-use",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "The techniques we can use",
-    "text": "The techniques we can use\nWe choose together what suits you. Possible are:\n\nTalking therapy. Exploratory conversations in which you come to understand yourself and your history better and start to recognise recurring patterns.\nExplanation and insight (psycho-education). Clear explanation about your complaints and about what helps, so that you gain more grip yourself.\nMovement and body work (MBMR). Walking or running with attention, rhythmic exercises and breath work, to restore your inner rhythm and strengthen contact with your body. This is a method of the practitioner’s own research.\nMindfulness. Training non-judgemental attention for the present moment; helps especially with rumination, stress and preventing relapse.\nHypnotherapy. Working with a calm, inwardly directed state of attention to loosen stuck reactions and strengthen your inner resources. Always with your consent and under your direction.\nEMDR. A proven method for letting difficult memories lose their charge, in which you hold the memory while following eye movements or taps.\nShort-term psychodynamic therapy. A focused, time-limited form of depth psychology around a core theme."
+    "objectID": "en/theory.html#what-remains-open",
+    "href": "en/theory.html#what-remains-open",
+    "title": "Resonance Theory of Consciousness",
+    "section": "What remains open",
+    "text": "What remains open\n\nThe measurement procedure for \\tau is not calibrated across laboratories.\nThe unit of E_m is not fixed, so only ratios carry meaning.\nThe link between R and reported experience is correlational; the model does not yet yield an independent prediction that rules out the standard alternatives.\n\nThose three points are why the computing modules on this site are open. Anyone who wants to test the assumptions needs the code, not only the conclusion."
   },
   {
-    "objectID": "en/stm.html#what-can-you-expect-as-a-result",
-    "href": "en/stm.html#what-can-you-expect-as-a-result",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "What can you expect as a result?",
-    "text": "What can you expect as a result?\nIn the practitioner’s practice, people who completed a full programme showed broad relief of complaints: not only less of one complaint, but less anxiety, low mood, physical tension, irritability and sleep problems at the same time. That fits the idea behind the method: when the underlying coherence recovers, much improves at once.\nAt the same time we are honest: there are no guarantees. How much you gain also depends on your situation and on what you practise yourself between sessions. STM does not replace your GP, a psychiatrist or medication; where needed we work together with them. The integral framework of STM rests on a worked-out theory and on practice-based research, but as a whole it has not yet been tested in large comparative studies. The individual techniques we use have been."
-  },
-  {
-    "objectID": "en/stm.html#practical",
-    "href": "en/stm.html#practical",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "Practical",
-    "text": "Practical\n\n\n\nCost\nthe standard rate is 100 euro per 60-minute session\n\n\nAdjusted rate\nif you cannot afford the standard rate, there is room for an adjusted, income-dependent rate. In a short conversation we look together at your income situation and agree a lower amount on a graduated scale: the lower the income, the lower the rate. That keeps the guidance accessible on a tighter budget. You simply raise it at the introductory meeting; there is no separate application or complicated procedure.\n\n\nFrequency\nusually weekly or fortnightly\n\n\nDuration\ngenerally two intake conversations, then around twelve to twenty sessions, and one or two follow-up appointments. This differs per person.\n\n\nCancelling\nat least 24 hours in advance please; otherwise costs may be charged (exact terms are in the treatment agreement)\n\n\nReimbursement\nSTM is uninsured care; health insurers generally do not reimburse this guidance. Please note that you pay for the sessions yourself.\n\n\nLocation\nat the practice in Zwaag; part of it can be online by arrangement\n\n\nApplying\nthrough the registration form on this website. You fill in your name, contact details and a short description of what you are asking for. Do not put medical or sensitive details in the form; we discuss those in the first conversation. After you apply we get in touch within a few working days for an introduction.\n\n\n\n\nExample of the income-dependent rate\nThe amounts below are indicative and serve as an example; we agree the exact rate together at the introductory meeting. You do not need to bring proof of income; we work from an honest conversation and trust.\n\n\n\n\n\n\n\n\nRate\nApproximate income (gross per year, household)\nPer session\n\n\n\n\nStandard\nabove 45,000 euro, or your employer or an agency pays\n100 euro\n\n\nReduced\n32,000 to 45,000 euro\n75 euro\n\n\nStrongly reduced\n22,000 to 32,000 euro\n55 euro\n\n\nMinimum\nbelow 22,000 euro, benefits, or student without income\n40 euro\n\n\n\nIf your income changes during the programme, we adjust the rate. If you live alone, the same amounts apply to your own income."
-  },
-  {
-    "objectID": "en/stm.html#about-the-practitioner",
-    "href": "en/stm.html#about-the-practitioner",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "About the practitioner",
-    "text": "About the practitioner\nEdward F. Hillenaar is an academically trained psychologist and philosopher. He connects scientific psychology with philosophy and contemplative traditions and, on the basis of his research — the Resonance Theory of Consciousness — developed the MBMR and STM methods. He is working towards completing his thesis.\nHe works independently and autonomously, with his own integrative therapy method grounded in his theory of consciousness. What that way of working involves and whether it suits you, we discuss openly at the introductory meeting, so that you can make an informed choice."
-  },
-  {
-    "objectID": "en/stm.html#frequently-asked-questions",
-    "href": "en/stm.html#frequently-asked-questions",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "Frequently asked questions",
-    "text": "Frequently asked questions\nDo I have to believe in something “spiritual”? No. The method uses concepts from philosophy and from contemplative traditions, but the treatment itself consists of ordinary, recognisable psychological techniques.\nDo I have to be able to run for the movement part? No. We start with walking and build up at your pace. With physical limitations we adapt it.\nIs hypnotherapy safe? Will I lose control? No. You remain conscious and in charge throughout. Hypnosis is a form of concentrated attention; you do nothing you do not want to do.\nCan I stop whenever I want? Yes. You set the pace yourself and can always discuss or end the programme.\nDoes this also work alongside medication or treatment with a psychiatrist? Yes, that can go well together. With your consent we coordinate with your GP or psychiatrist.\nHow does the practitioner work? As an academically trained psychologist, independently and autonomously, with his own integrative therapy method grounded in his research into consciousness. What that means precisely and whether it suits you, we discuss openly at the introductory meeting."
-  },
-  {
-    "objectID": "en/stm.html#important",
-    "href": "en/stm.html#important",
-    "title": "The (Re-)Synchronising Therapy Method",
-    "section": "Important",
-    "text": "Important\n\n\n\n\n\n\nImportant\n\n\n\nSTM is not a crisis service and is not available for emergencies. In acute distress or with thoughts of suicide: call your GP or the out-of-hours GP service, call 112, or call 113 Suicide Prevention (0800-0113, free, day and night)."
-  },
-  {
-    "objectID": "en/thanks.html",
-    "href": "en/thanks.html",
-    "title": "Message sent",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Totale Gezondheid",
     "section": "",
-    "text": "Contact\n\nThank you. Your message has arrived and has been forwarded to totalegezondheidbv@gmail.com. I usually reply within a few days.\nBack to the homepage"
+    "text": "Praktijk voor psychologische begeleiding\n\n\n\nPsychologische begeleiding, psychodiagnostiek en bewegingstherapie op grondslag van The Resonating Self: mijn ontologie en toegepaste theorie van bewustzijn als resonantie. Elke formule erachter is uitvoerbaar: open de suite, draai de R-code en download de uitkomst.\nMaak een afspraak Lees de theorie"
   },
   {
-    "objectID": "en/therapy.html",
-    "href": "en/therapy.html",
-    "title": "Mindful Body Movement Reprocessing",
+    "objectID": "index.html#wat-hier-staat",
+    "href": "index.html#wat-hier-staat",
+    "title": "Totale Gezondheid",
+    "section": "Wat hier staat",
+    "text": "Wat hier staat\n\n\n\nTherapie\nMBMR, bilaterale bewegingstherapie, en de bredere (Her-)Synchroniserende Therapie Methode (STM): voor angst, trauma, burn-out en meer.\nNaar therapie →\n\n\nPsychodiagnostiek\nAvidya en dukkha in kaart via de NVM, de SCL-90 en de UCL: het uitgangspunt van elk traject.\nNaar psychodiagnostiek →\n\n\nThe Resonating Self\nDe ontologie en toegepaste theorie achter de praktijk: acht RTC-modules, de volledige handleiding, en een R-omgeving in de browser.\nNaar de suite →"
+  },
+  {
+    "objectID": "index.html#the-resonating-self-de-theorie-achter-de-praktijk",
+    "href": "index.html#the-resonating-self-de-theorie-achter-de-praktijk",
+    "title": "Totale Gezondheid",
+    "section": "The Resonating Self: de theorie achter de praktijk",
+    "text": "The Resonating Self: de theorie achter de praktijk\nTotale Gezondheid werkt vanuit The Resonating Self, mijn ontologie van bewustzijn als resonantie. De perceptuele tijdsdrempel \\tau is de kleinste duur waarbinnen twee prikkels nog als één moment worden ervaren. In RTC is die drempel geen bijproduct van waarneming maar de basiseenheid van het model.\nE_m = \\frac{1}{\\tau^3}\nDezelfde vijf metingen leveren op een lineaire schaal een paradox op, en op een log-log-schaal een rechte lijn met helling -3.\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFiguur 1: Mind-Energy-wet: log-log-controle op vijf perceptuele toestanden.\n\n\n\n\n\nDe helling komt uit op -3, zoals de wet voorspelt."
+  },
+  {
+    "objectID": "index.html#recent",
+    "href": "index.html#recent",
+    "title": "Totale Gezondheid",
+    "section": "Recent",
+    "text": "Recent\n\n\n\n\n\n\n\n\n\n\nDe Mind-Energy-wet en de derde macht\n\n1 min\n\nWaarom mentale energie schaalt met 1/τ³, en wat een log-log-controle op vijf toestanden laat zien.\n\n\n\n14 jul 2026\n\n\n\n\n\n\n\n\n\n\n\n\n\nVan .qmd naar gepubliceerd artikel\n\n1 min\n\nHoe elk artikel op deze site ontstaat: schrijven in RStudio, renderen, pushen naar GitHub, Netlify publiceert.\n\n\n\n19 jan 2026\n\n\n\n\n\n\nGeen overeenkomsten\n\nAlle artikelen →"
+  },
+  {
+    "objectID": "posts/2026-07-14-mind-energy/index.html",
+    "href": "posts/2026-07-14-mind-energy/index.html",
+    "title": "De Mind-Energy-wet en de derde macht",
     "section": "",
-    "text": "Therapy\nTwo methods: MBMR (this page) and the broader (Re-)Synchronising Therapy Method (STM), in which MBMR forms the physical backbone."
+    "text": "De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde macht van de perceptuele tijdsdrempel:\nE_m = \\frac{1}{\\tau^3}\nDe drempel \\tau is de kleinste tijdsduur waarbinnen twee prikkels nog als één moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie 1/\\tau meeloopt."
   },
   {
-    "objectID": "en/therapy.html#what-mbmr-is",
-    "href": "en/therapy.html#what-mbmr-is",
-    "title": "Mindful Body Movement Reprocessing",
-    "section": "What MBMR is",
-    "text": "What MBMR is\nA specific model of bilateral movement therapy for traumatic memories, whose central mechanism is the alternation of states of consciousness across two modalities: 1. Time (‘present’, ‘past’, ‘future’) and 2. Object of attention (‘internal stimulus’, ‘external stimulus’, ‘stimulus-free’)."
-  },
-  {
-    "objectID": "en/therapy.html#the-two-modalities",
-    "href": "en/therapy.html#the-two-modalities",
-    "title": "Mindful Body Movement Reprocessing",
-    "section": "The two modalities",
-    "text": "The two modalities\nThe alternation runs along two axes. Each session moves the client’s attention through the nine combinations these axes span together.\n\n\n\n1 · Time\n\npresent\npast\nfuture\n\n\n\n2 · Object of attention\n\ninternal stimulus\nexternal stimulus\nstimulus-free"
-  },
-  {
-    "objectID": "en/therapy.html#who-it-is-for",
-    "href": "en/therapy.html#who-it-is-for",
-    "title": "Mindful Body Movement Reprocessing",
-    "section": "Who it is for",
-    "text": "Who it is for\nThe method is used for:\n\nTrauma / PTSD\nAnxiety and panic\nBurn-out and overstrain\nDepressive complaints\nGrief and loss\nChronic stress\nPhysical tension complaints\nPersonal development (no complaint)"
-  },
-  {
-    "objectID": "en/therapy.html#practical",
-    "href": "en/therapy.html#practical",
-    "title": "Mindful Body Movement Reprocessing",
-    "section": "Practical",
-    "text": "Practical\nA 60-minute intake, in which psychodiagnostic assessment establishes the ‘avidya’ and ‘dukkha’ values using the assessment I developed. A movement therapy programme follows — for example Mindful Running Therapy (MHT) — running eight weeks, twice a week, with 90-minute sessions in a fixed format of my own design.\n\n\n\nIntake\n60 minutes, with psychodiagnostic assessment\n\n\nProgramme\n8 weeks, 2 sessions per week\n\n\nSession length\n90 minutes, fixed format\n\n\nExample\nMindful Running Therapy (MHT)"
-  },
-  {
-    "objectID": "en/therapy.html#in-preparation",
-    "href": "en/therapy.html#in-preparation",
-    "title": "Mindful Body Movement Reprocessing",
-    "section": "In preparation",
-    "text": "In preparation\nThree parts of this page follow once the accompanying text is ready.\nPhases of a session — the fixed format of the 90-minute session, phase by phase.\nGrounding and EMDR — where MBMR comes from, and how the method differs from EMDR.\nRelation to RTC — how the method connects to the ontology of the Resonating Self from the thesis. For now, see the theory page."
-  },
-  {
-    "objectID": "en/therapy.html#book-an-intake",
-    "href": "en/therapy.html#book-an-intake",
-    "title": "Mindful Body Movement Reprocessing",
-    "section": "Book an intake",
-    "text": "Book an intake\nA programme starts with a 60-minute intake. Get in touch to schedule one.\nTo the contact form"
-  },
-  {
-    "objectID": "posts/2026-01-19-quarto-workflow/index.html",
-    "href": "posts/2026-01-19-quarto-workflow/index.html",
-    "title": "Van .qmd naar gepubliceerd artikel",
+    "objectID": "posts/2026-07-14-mind-energy/index.html#de-wet",
+    "href": "posts/2026-07-14-mind-energy/index.html#de-wet",
+    "title": "De Mind-Energy-wet en de derde macht",
     "section": "",
-    "text": "Schrijven. Nieuw artikel: posts/JJJJ-MM-DD-slug/index.qmd. De YAML-kop bevat titel, description, date, categories en image. De tekst is markdown; berekeningen staan in R-chunks.\nRenderen. In RStudio: Build → Render Website, of in de terminal quarto render. Het resultaat komt in _site/ te staan, inclusief de figuren die de R-chunks hebben getekend.\nPushen. Bron én _site/ gaan samen in één commit naar GitHub.\nPubliceren. Netlify pakt _site op en zet de nieuwe versie live. Geen buildstap op de server."
+    "text": "De Mind-Energy-wet stelt dat mentale energie omgekeerd schaalt met de derde macht van de perceptuele tijdsdrempel:\nE_m = \\frac{1}{\\tau^3}\nDe drempel \\tau is de kleinste tijdsduur waarbinnen twee prikkels nog als één moment worden ervaren. De exponent 3 is geen vrije parameter: hij volgt uit de aanname dat het perceptuele veld zich in drie onafhankelijke richtingen kan opdelen, en dat de energie per richting lineair met de bemonsteringsfrequentie 1/\\tau meeloopt."
   },
   {
-    "objectID": "posts/2026-01-19-quarto-workflow/index.html#vier-stappen",
-    "href": "posts/2026-01-19-quarto-workflow/index.html#vier-stappen",
-    "title": "Van .qmd naar gepubliceerd artikel",
-    "section": "",
-    "text": "Schrijven. Nieuw artikel: posts/JJJJ-MM-DD-slug/index.qmd. De YAML-kop bevat titel, description, date, categories en image. De tekst is markdown; berekeningen staan in R-chunks.\nRenderen. In RStudio: Build → Render Website, of in de terminal quarto render. Het resultaat komt in _site/ te staan, inclusief de figuren die de R-chunks hebben getekend.\nPushen. Bron én _site/ gaan samen in één commit naar GitHub.\nPubliceren. Netlify pakt _site op en zet de nieuwe versie live. Geen buildstap op de server."
+    "objectID": "posts/2026-07-14-mind-energy/index.html#controle-op-vijf-toestanden",
+    "href": "posts/2026-07-14-mind-energy/index.html#controle-op-vijf-toestanden",
+    "title": "De Mind-Energy-wet en de derde macht",
+    "section": "Controle op vijf toestanden",
+    "text": "Controle op vijf toestanden\n\ntau &lt;- c(0.100, 0.080, 0.062, 0.050, 0.042)\nEm  &lt;- 1 / tau^3\nfit &lt;- lm(log(Em) ~ log(tau))\nsummary(fit)\n\n\nCall:\nlm(formula = log(Em) ~ log(tau))\n\nResiduals:\n         1          2          3          4          5 \n 2.151e-16 -1.204e-16 -4.494e-16  3.787e-16 -2.400e-17 \n\nCoefficients:\n              Estimate Std. Error    t value Pr(&gt;|t|)    \n(Intercept)  1.589e-15  1.461e-15  1.087e+00    0.356    \nlog(tau)    -3.000e+00  5.270e-16 -5.692e+15   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 3.682e-16 on 3 degrees of freedom\nMultiple R-squared:      1, Adjusted R-squared:      1 \nF-statistic: 3.24e+31 on 1 and 3 DF,  p-value: &lt; 2.2e-16\n\n\nDe helling komt uit op -3; afwijkingen groter dan 0,1 wijzen in de praktijk op een meetfout in \\tau, niet op een fout in de wet.\n\nplot(log(tau), log(Em), pch = 19, col = \"#0099c8\",\n     xlab = \"ln tau\", ylab = \"ln Em\")\nabline(fit, col = \"#00549c\")\n\n\n\n\n\n\n\nFiguur 1: Log-log-controle: vijf toestanden, helling −3.\n\n\n\n\n\nDe volledige berekening staat als module in de suite. Voer hem daar uit en download de tabel als CSV."
   },
   {
-    "objectID": "posts/2026-01-19-quarto-workflow/index.html#waarom-gerenderde-html-meegaat",
-    "href": "posts/2026-01-19-quarto-workflow/index.html#waarom-gerenderde-html-meegaat",
-    "title": "Van .qmd naar gepubliceerd artikel",
-    "section": "Waarom gerenderde HTML meegaat",
-    "text": "Waarom gerenderde HTML meegaat\nOmdat de R-chunks pakketten en data nodig hebben die niet op een buildserver hoeven te staan. Wie lokaal rendert, houdt de uitvoer reproduceerbaar op één machine en houdt de deploy simpel: Netlify publiceert wat er staat.\nfreeze: auto in _quarto.yml zorgt ervoor dat een chunk alleen opnieuw draait als het .qmd-bestand veranderd is. De opgeslagen resultaten staan in _freeze/ en gaan ook mee in de commit."
-  },
-  {
-    "objectID": "posts/2026-01-19-quarto-workflow/index.html#concept-en-publicatie",
-    "href": "posts/2026-01-19-quarto-workflow/index.html#concept-en-publicatie",
-    "title": "Van .qmd naar gepubliceerd artikel",
-    "section": "Concept en publicatie",
-    "text": "Concept en publicatie\nZet draft: true in de YAML-kop en het artikel verschijnt niet in het overzicht. Zo staan halve stukken veilig in de repository zonder dat ze live gaan.\n---\ntitle: \"Werktitel\"\ndate: 2026-09-01\ndraft: true\n---"
+    "objectID": "posts/2026-07-14-mind-energy/index.html#wat-het-niet-zegt",
+    "href": "posts/2026-07-14-mind-energy/index.html#wat-het-niet-zegt",
+    "title": "De Mind-Energy-wet en de derde macht",
+    "section": "Wat het niet zegt",
+    "text": "Wat het niet zegt\nDe wet beschrijft een schaalverhouding, geen absolute hoeveelheid. Zonder een geijkte eenheid voor E_m blijft alleen de verhouding tussen twee toestanden zinvol — en dat is precies wat de log-log-vorm meetbaar maakt."
   },
   {
     "objectID": "publications.html",

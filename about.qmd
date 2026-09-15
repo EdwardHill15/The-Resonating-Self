@@ -9,7 +9,7 @@ about:
   links:
     - icon: globe
       text: Totale Gezondheid
-      href: https://resonance-consciousness.netlify.app/
+      href: https://the-resonating-self.netlify.app/
     - icon: github
       text: GitHub
       href: https://github.com/EdwardHill15

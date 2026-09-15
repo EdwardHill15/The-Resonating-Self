@@ -9,15 +9,15 @@ project:
     - "booking.js"
 
 website:
-  title: "The Resonating Self"
-  description: "Research and computation around the Resonance Theory of Consciousness."
+  title: "Totale Gezondheid"
+  description: "Totale Gezondheid: psychologische begeleiding, psychodiagnostiek en bewegingstherapie op grondslag van The Resonating Self, de Resonance Theory of Consciousness."
   site-url: https://the-resonating-self.netlify.app
   favicon: assets/favicon.png
   navbar:
     background: light
     collapse-below: lg
     logo: assets/total-health-logo.jpg
-    logo-alt: "Total Health"
+    logo-alt: "Totale Gezondheid"
     logo-href: index.qmd
     left:
       - href: index.qmd
@@ -30,6 +30,8 @@ website:
             text: "MBMR — bewegingstherapie"
           - href: stm.qmd
             text: "STM — hersynchroniserende methode"
+      - href: psychodiagnostiek.qmd
+        text: Psychodiagnostiek
       - href: afspraak.qmd
         text: Afspraak
       - href: suite.qmd
@@ -46,7 +48,7 @@ website:
         text: Contact
   page-footer:
     background: dark
-    left: "© 2026 Edward F. Hillenaar · The Resonating Self"
+    left: "© 2026 Totale Gezondheid · Edward F. Hillenaar · The Resonating Self"
     center: "Geschreven in Quarto · beheerd in GitHub · gepubliceerd via Netlify"
     right:
       - text: "Bron op GitHub"

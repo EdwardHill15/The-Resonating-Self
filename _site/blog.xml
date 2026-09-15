@@ -5,10 +5,10 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>The Resonating Self</title>
+<title>Totale Gezondheid</title>
 <link>https://the-resonating-self.netlify.app/blog.html</link>
 <atom:link href="https://the-resonating-self.netlify.app/blog.xml" rel="self" type="application/rss+xml"/>
-<description>Research and computation around the Resonance Theory of Consciousness.</description>
+<description>Totale Gezondheid: psychologische begeleiding, psychodiagnostiek en bewegingstherapie op grondslag van The Resonating Self, de Resonance Theory of Consciousness.</description>
 <generator>quarto-1.8.25</generator>
 <lastBuildDate>Mon, 13 Jul 2026 22:00:00 GMT</lastBuildDate>
 <item>
