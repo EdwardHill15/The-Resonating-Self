@@ -58,7 +58,7 @@ p,li{text-wrap:pretty}
   position:relative;color:#fff;
   margin:0 calc(50% - 50vw) 3.5rem;padding:6rem 1.5rem 5.5rem;width:100vw;
   background:linear-gradient(180deg,rgba(0,32,58,.72),rgba(0,32,58,.88)),
-             url("assets/hero-photo.jpg") center/cover no-repeat;
+             url("assets/hero-photo.jpg?v=2") center/cover no-repeat;
 }
 .hero-inner{max-width:var(--content-max);margin:0 auto}
 .hero h1{color:#fff;font-size:3.2rem;line-height:1.06;max-width:19ch;margin:0 0 1.1rem}
