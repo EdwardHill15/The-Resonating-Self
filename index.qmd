@@ -23,8 +23,7 @@ Praktijk voor psychologische begeleiding
 
 Psychologische begeleiding, psychodiagnostiek en bewegingstherapie op
 grondslag van *The Resonating Self*: mijn ontologie en toegepaste theorie van
-bewustzijn als resonantie. Elke formule erachter is uitvoerbaar: open de suite,
-draai de R-code en download de uitkomst.
+bewustzijn als resonantie.
 
 [Maak een afspraak](afspraak.qmd){.btn .btn-primary}
 [Lees de theorie](theory.qmd){.btn .btn-outline-light}
