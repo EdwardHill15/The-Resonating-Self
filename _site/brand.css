@@ -1,5 +1,5 @@
 /* Total Health Design System — webfonts and brand chrome.
-   Loaded via format.html.css so url() paths stay relative to /brand.css. */
+   Loaded via format.html.css so url-paths stay relative to /brand.css. */
 
 @font-face{font-family:"Oranienbaum";src:url("assets/fonts/Oranienbaum-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:"Carlito";src:url("assets/fonts/Carlito-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
@@ -86,7 +86,7 @@ body.quarto-dark .navbar{
   position:relative;color:#fff;
   margin:0 calc(50% - 50vw) 3.5rem;padding:6rem 1.5rem 5.5rem;width:100vw;
   background:linear-gradient(180deg,rgba(0,32,58,.34),rgba(0,32,58,.58)),
-             url("assets/hero-photo.jpg?v=2") center/cover no-repeat;
+             url("assets/hero-photo.jpg") center/cover no-repeat;
 }
 .hero-inner{max-width:var(--content-max);margin:0 auto}
 .hero h1{color:#fff;font-size:3.2rem;line-height:1.06;max-width:19ch;margin:0 0 1.1rem;text-shadow:0 2px 16px rgba(0,18,36,.65),0 1px 3px rgba(0,18,36,.75)}
